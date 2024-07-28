@@ -1,0 +1,47 @@
+<%= form_with(model: site_var) do |form| %>
+  <% if site_var.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(site_var.errors.count, "error") %> prohibited this site_var from being saved:</h2>
+
+      <ul>
+        <% site_var.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :site_var_heading1, style: "display: block" %>
+    <%= form.text_field :site_var_heading1 %>
+  </div>
+
+  <div>
+    <%= form.label :site_var_heading2, style: "display: block" %>
+    <%= form.text_field :site_var_heading2 %>
+  </div>
+
+  <div>
+    <%= form.label :site_var_heading3, style: "display: block" %>
+    <%= form.text_field :site_var_heading3 %>
+  </div>
+
+  <div>
+    <%= form.label :site_var_heading4, style: "display: block" %>
+    <%= form.text_field :site_var_heading4 %>
+  </div>
+
+  <div>
+    <%= form.label :site_var_heading5, style: "display: block" %>
+    <%= form.text_field :site_var_heading5 %>
+  </div>
+
+  <div>
+    <%= form.label :site_var_disclaimer1, style: "display: block" %>
+    <%= form.text_field :site_var_disclaimer1 %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

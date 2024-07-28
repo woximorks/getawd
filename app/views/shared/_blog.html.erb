@@ -1,0 +1,9 @@
+<div id="blog">
+  <% @articles.reverse.each do |article| %>
+    <ul>
+      <li><%= image_tag("#{article.article_image_url}.png") %></li>
+      <li><%= article.article_title %></li>
+      <li><%= article.article_description %><%= link_to "...Keep Reading", article %></li>
+    </ul>
+  <% end %>
+</div>

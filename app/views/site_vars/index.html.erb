@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Site vars</h1>
+
+<div id="site_vars">
+  <% @site_vars.each do |site_var| %>
+    <%= render site_var %>
+    <p>
+      <%= link_to "Show this site var", site_var %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New site var", new_site_var_path %>

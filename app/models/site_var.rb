@@ -1,0 +1,2 @@
+class SiteVar < ApplicationRecord
+end

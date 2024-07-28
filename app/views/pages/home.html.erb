@@ -1,0 +1,11 @@
+<%= render "shared/nav" %>
+
+<div id="heading1">
+    <% @site_vars.each do |site_var| %>
+        <h3><%= site_var.site_var_heading1 %></h3>
+    <% end %>
+</div>
+
+<%= render "shared/portfolio" %>
+
+<%= render "shared/blog" %>

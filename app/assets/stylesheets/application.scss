@@ -13,3 +13,49 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap";
+
+ ul {
+    list-style-type: none;
+    padding-left: 0;
+    padding: 1em;
+ }
+
+ img {
+   max-width: 100%;
+   height: auto;
+}
+ 
+ #nav {
+    display: flex;
+    justify-content: space-between;
+    ul {
+       display: flex;
+       flex-direction: row;
+       li {
+          padding: .25em;
+       }
+    }
+  }
+ 
+  #portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    ul {
+       li {
+          max-width: 500px;
+       }
+    }
+  }
+ 
+  #blog {
+    display: flex;
+    overflow: scroll;
+    ul {
+       li {
+          width: 500px;
+       }
+    }
+  }

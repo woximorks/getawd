@@ -1,0 +1,2 @@
+class PortfolioCard < ApplicationRecord
+end
