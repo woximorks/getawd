@@ -30,4 +30,9 @@
         - Added authentication requirements to articles, site_vars, and portfolio_cards controller
         - Created navuser shared view
 - f. Really basic front end implementation
+
+2. Site Planning
+    - Some filler content for now to continue work on as I have time
+    - 3 initial blog articles
+    - 5 initial projects
     
