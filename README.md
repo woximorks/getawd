@@ -36,5 +36,4 @@
     - 3 initial blog articles
     - 5 initial projects
     
-3. Migration
-    - Adding some additional paragraph bodies to Articles.
+3. Rollback
