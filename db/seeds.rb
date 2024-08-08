@@ -11,28 +11,23 @@
 PortfolioCard.create!([
     {
     portfolio_card_title: "Close Enough Fabrication",
-    portfolio_card_description: "A website created as a way to showcase one of my favorite hobbies outside of web development, showcasing some of my many of my ongoing shop projects!",
+    portfolio_card_description: "A website created as a way to showcase one of my favorite hobbies outside of web development, where you can see some of my many of my ongoing shop projects!",
     portfolio_card_image_url: "portfolio1"
 },
 {
     portfolio_card_title: "Beard Bros Dumpsters",
-    portfolio_card_description: "A rails app created to help a company based out of Pennsylvania offering dumpster rental services, including delivery and junk removal assistance in the greater Pennsylvania area.",
+    portfolio_card_description: "A rails app created to help a company based out of Pennsylvania offering dumpster rental services, including delivery and junk removal assistance in the surrounding area.",
     portfolio_card_image_url: "portfolio2",
 },
 {
     portfolio_card_title: "Heefusdeluxe",
-    portfolio_card_description: "A comedian local to the Tacoma area doing shows here in the Northwest and beyond. Catch him hosting an open mic night at a local Comedy Club, a Super Funny one at that!",
+    portfolio_card_description: "One of my favorite comedians local to the Tacoma area, doing weekly shows in the Northwest and beyond. Catch him hosting an open mic night at a local Comedy Club, a Super Funny one at that!",
     portfolio_card_image_url: "portfolio3",
 },
 {
     portfolio_card_title: "GhuackAMole",
-    portfolio_card_description: "This is one of the first JavaScript projects created that I put my own spin on while following a freeCodeCamp tutorial. It's not real food. Do not eat. 1 click = 1 point. Can you get to 69? Click here to play!",
+    portfolio_card_description: "This is one of the first JavaScript projects created while following a freeCodeCamp tutorial (that I put my own spin on). It's not real food. Do not eat. 1 click = 1 point. Can you get to 69?",
     portfolio_card_image_url: "portfolio4",
-},
-{
-    portfolio_card_title: "Beard Industries",
-    portfolio_card_description: "This website was built while familiarizing myself with the Bootstrap library, and later CSS media queries. It is now updated to a fully responsive design and showcases a transport company out of Pennsylvania. Check it out!",
-    portfolio_card_image_url: "portfolio5",
 }
 ])
 Article.create!([{
@@ -49,16 +44,8 @@ Article.create!([{
 },   
 {
     article_title: "Project Spotlight - Beard Bros Dumpsters",
-    article_description: "One of the latest projects I've been working on! This project really demonstrates how easy it can be to implement Gems like Simple Calendar and Devise.",
+    article_description: "One of the latest projects I've been working on! This one demonstrates how easy it is to implement Gems like Simple Calendar and Devise.",
     article_body: "Beard Bros Dumpsters, LLC is a company based out of Pennsylvania that offers a unique service for residents and businesses alike – dumpster delivery. This Rails app is a site built to showcase that business while streamlining the company scheduling process and other related tasks, using Gems like Devise, Bootstrap and Simple Calendar to make that happen! Head on over to beardbrosdumpsters.com and check it out!",
     article_image_url: "blog3"
 }
-=begin
-{
-    article_title: "",
-    article_description: "",
-    article_body: "",
-    article_image_url: "",
-}
-=end
 ])
