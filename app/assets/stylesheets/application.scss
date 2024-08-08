@@ -16,7 +16,7 @@
  @import "bootstrap";
 
  body {
-   background-color: salmon;
+   background-color: rgb(182, 182, 182);
  }
  ul {
     list-style-type: none;
@@ -32,6 +32,9 @@
  #nav {
     display: flex;
     justify-content: space-between;
+    img {
+      width: 175px;
+    }
     ul {
        display: flex;
        flex-direction: row;
