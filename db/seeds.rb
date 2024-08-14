@@ -12,22 +12,26 @@ PortfolioCard.create!([
     {
     portfolio_card_title: "Close Enough Fabrication",
     portfolio_card_description: "A website created as a way to showcase one of my favorite hobbies outside of web development, where you can see some of my many of my ongoing shop projects!",
-    portfolio_card_image_url: "portfolio1"
+    portfolio_card_image_url: "portfolio1",
+    portfolio_card_url: "https://cefab-offroad.com"
 },
 {
     portfolio_card_title: "Beard Bros Dumpsters",
     portfolio_card_description: "A rails app created to help a company based out of Pennsylvania offering dumpster rental services, including delivery and junk removal assistance in the surrounding area.",
     portfolio_card_image_url: "portfolio2",
+    portfolio_card_url: "https://beardbrosdumpsters.com"
 },
 {
     portfolio_card_title: "Heefusdeluxe",
     portfolio_card_description: "One of my favorite comedians local to the Tacoma area, doing weekly shows in the Northwest and beyond. Catch him hosting an open mic night at a local Comedy Club, a Super Funny one at that!",
     portfolio_card_image_url: "portfolio3",
+    portfolio_card_url: "https://heefusdeluxe.com"
 },
 {
     portfolio_card_title: "GhuackAMole",
     portfolio_card_description: "This is one of the first JavaScript projects created while following a freeCodeCamp tutorial (that I put my own spin on). It's not real food. Do not eat. 1 click = 1 point. Can you get to 69?",
     portfolio_card_image_url: "portfolio4",
+    portfolio_card_url: "https://master.d2rge8c7efug7r.amplifyapp.com/"
 }
 ])
 Article.create!([{

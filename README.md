@@ -36,4 +36,7 @@
     - 3 initial blog articles
     - 5 initial projects
     
-3. Rollback
+3. Doin a migration
+    - rails g migration AddUrlToPortfolioCard portfolio_card_url
+    - Showing these URLs on the view
+    - Adding URLs to the database seed file
