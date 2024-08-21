@@ -40,3 +40,5 @@
     - rails g migration AddUrlToPortfolioCard portfolio_card_url
     - Showing these URLs on the view
     - Adding URLs to the database seed file
+
+4. 
