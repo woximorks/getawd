@@ -28,7 +28,7 @@ PortfolioCard.create!([
     portfolio_card_url: "https://heefusdeluxe.com"
 },
 {
-    portfolio_card_title: "GhuackAMole",
+    portfolio_card_title: "GuacAMole",
     portfolio_card_description: "This is one of the first JavaScript projects created while following a freeCodeCamp tutorial (that I put my own spin on). It's not real food. Do not eat. 1 click = 1 point. Can you get to 69?",
     portfolio_card_image_url: "portfolio4",
     portfolio_card_url: "https://master.d2rge8c7efug7r.amplifyapp.com/"
@@ -51,5 +51,12 @@ Article.create!([{
     article_description: "One of the latest projects I've been working on! This one demonstrates how easy it is to implement Gems like Simple Calendar and Devise.",
     article_body: "Beard Bros Dumpsters, LLC is a company based out of Pennsylvania that offers a unique service for residents and businesses alike – dumpster delivery. This Rails app is a site built to showcase that business while streamlining the company scheduling process and other related tasks, using Gems like Devise, Bootstrap and Simple Calendar to make that happen! Head on over to beardbrosdumpsters.com and check it out!",
     article_image_url: "blog3"
+},
+{
+    article_title: "ChatGPT - Exploring the power of AI",
+    article_description: "I've spent a few days talking to AI about programming and Toyotas, and the result is something rather interesting. They aren't perfect, but I've created some pretty decent looking images of my favorite toyota trucks, check them out!",
+    article_body: "ChatGPT is not limited to messaging, it's really cool to see what people are doing with image manipulation using the same models, and I've been able to generate some pretty neat looking images to use when building applications and websites. Using retro Toyotas as a test subject, it's easy to see how powerful of a tool this can be. Head on over to chatgpt.com and check out the 'image generator', as I've found this to be the best tool for this type of job.",
+    article_image_url: "blog4"
 }
+
 ])
