@@ -15,6 +15,7 @@
  */
  @import "bootstrap";
 
+
  body {
    background-color: rgb(182, 182, 182);
  }
@@ -32,14 +33,20 @@
  #nav {
     display: flex;
     justify-content: space-between;
+    height: 100px;
+    background-color: white;
     img {
-      width: 175px;
+      max-height: 100%;
     }
     ul {
        display: flex;
        flex-direction: row;
        li {
           padding: .25em;
+          a {
+            text-decoration: none;
+            color: black;
+          }
        }
     }
   }
@@ -47,7 +54,7 @@
   #portfolio {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     text-align: center;
     ul {
        li {
@@ -59,6 +66,7 @@
   #blog {
     display: flex;
     overflow: scroll;
+    background-color: white;
     ul {
        li {
           width: 500px;
