@@ -1,0 +1,20 @@
+#nav {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    background-color: white;
+    img {
+      max-height: 100%;
+    }
+    ul {
+       display: flex;
+       flex-direction: row;
+       li {
+          padding: .25em;
+          a {
+            text-decoration: none;
+            color: black;
+          }
+       }
+    }
+  }

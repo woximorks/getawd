@@ -41,4 +41,6 @@
     - Showing these URLs on the view
     - Adding URLs to the database seed file
 
-4. 
+4. Front End and Design
+    - ChatGPT assisted logo and other related image content
+    - Stylesheets separated

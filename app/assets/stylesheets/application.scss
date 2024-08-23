@@ -13,7 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+ /* External Stylesheets */
  @import "bootstrap";
+
+ /* Local Stylesheets */
+ @import "blog";
+ @import "nav";
+ @import "portfolio";
 
 
  body {
@@ -28,48 +35,7 @@
  img {
    max-width: 100%;
    height: auto;
-}
+ }
  
- #nav {
-    display: flex;
-    justify-content: space-between;
-    height: 100px;
-    background-color: white;
-    img {
-      max-height: 100%;
-    }
-    ul {
-       display: flex;
-       flex-direction: row;
-       li {
-          padding: .25em;
-          a {
-            text-decoration: none;
-            color: black;
-          }
-       }
-    }
-  }
  
-  #portfolio {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    text-align: center;
-    ul {
-       li {
-          max-width: 500px;
-       }
-    }
-  }
  
-  #blog {
-    display: flex;
-    overflow: scroll;
-    background-color: white;
-    ul {
-       li {
-          width: 500px;
-       }
-    }
-  }

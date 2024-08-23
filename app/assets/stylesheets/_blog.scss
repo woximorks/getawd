@@ -1,0 +1,10 @@
+#blog {
+    display: flex;
+    overflow: scroll;
+    background-color: white;
+    ul {
+       li {
+          width: 500px;
+       }
+    }
+  }
