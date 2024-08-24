@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :site_vars
   resources :articles
   resources :portfolio_cards
   get 'pages/home'

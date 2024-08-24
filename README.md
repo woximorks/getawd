@@ -44,3 +44,5 @@
 4. Front End and Design
     - ChatGPT assisted logo and other related image content
     - Stylesheets separated
+
+
