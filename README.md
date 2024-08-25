@@ -48,3 +48,5 @@
 5. Adding new page for videos
     - https://gorails.com/forum/embed-youtube-video-in-rails-app
     - rails g model VideoCard youtube_id
+    - Updating nav so that we can get there
+    - Removing some bloat
