@@ -11,4 +11,8 @@ class PagesController < ApplicationController
   def portfolio
     @portfolio_cards = PortfolioCard.all
   end
+  
+  def videos
+    @video_cards = VideoCard.all
+  end
 end

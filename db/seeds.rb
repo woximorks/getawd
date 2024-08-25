@@ -60,3 +60,12 @@ Article.create!([{
 }
 
 ])
+
+VideoCard.create!([
+    {
+    youtube_id: "EVho5M4SfGY?si=20i_0cNobOTR-sSk"
+},
+{
+    youtube_id: "Zrfsuu33IYI?si=ZYu_Xik8A6FGaHiv"
+}
+])

@@ -45,4 +45,6 @@
     - ChatGPT assisted logo and other related image content
     - Stylesheets separated
 
-
+5. Adding new page for videos
+    - https://gorails.com/forum/embed-youtube-video-in-rails-app
+    - rails g model VideoCard youtube_id

@@ -1,0 +1,9 @@
+<div id="videos">
+    <% @video_cards.each do |video_card| %>
+        <ul>
+            <li>
+                <iframe src='https://www.youtube.com/embed/<%= video_card.youtube_id %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
+            </li>
+        </ul>
+    <% end %>
+</div>
