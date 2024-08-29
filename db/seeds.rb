@@ -63,9 +63,18 @@ Article.create!([{
 
 VideoCard.create!([
     {
-    youtube_id: "EVho5M4SfGY?si=20i_0cNobOTR-sSk"
+    youtube_id: "EVho5M4SfGY?si=20i_0cNobOTR-sSk",
+    video_card_title: "WJ Cherokee Break In Run",
+    video_card_description: ""
 },
 {
-    youtube_id: "Zrfsuu33IYI?si=ZYu_Xik8A6FGaHiv"
+    youtube_id: "Zrfsuu33IYI?si=ZYu_Xik8A6FGaHiv",
+    video_card_title: "Tahuya Off-Road 2024",
+    video_card_description: ""
+},
+{
+    youtube_id: "T5fi5Bkn5qk?si=n5VzxSAlRhjZYcSP",
+    video_card_title: "Nostalgia Drags 2024",
+    video_card_description: ""
 }
 ])

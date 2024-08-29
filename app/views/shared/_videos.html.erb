@@ -2,7 +2,15 @@
     <% @video_cards.each do |video_card| %>
         <ul>
             <li>
-                <iframe src='https://www.youtube.com/embed/<%= video_card.youtube_id %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
+                <div class="video_holster">
+                    <iframe src='https://www.youtube.com/embed/<%= video_card.youtube_id %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
+                </div>
+            </li>
+            <li>
+                <h5><%= video_card.video_card_title %></h5>
+            </li>
+            <li>
+                <h6><%= video_card.video_card_description %></h6>
             </li>
         </ul>
     <% end %>

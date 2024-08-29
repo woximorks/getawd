@@ -50,3 +50,6 @@
     - rails g model VideoCard youtube_id
     - Updating nav so that we can get there
     - Removing some bloat
+    - rails g migration AddVideoCardTitleToVideoCard video_card_title
+    - rails g migration AddVideoCardDescriptionToVideoCard video_card_description
+    - view updated for responsive sizing
