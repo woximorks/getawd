@@ -53,3 +53,8 @@
     - rails g migration AddVideoCardTitleToVideoCard video_card_title
     - rails g migration AddVideoCardDescriptionToVideoCard video_card_description
     - view updated for responsive sizing
+
+6. Search for portfolio section implemented
+    - pg_search
+    - https://github.com/Casecommons/pg_search
+    - https://www.youtube.com/watch?v=ZRpXAY21t28
