@@ -1,16 +1,51 @@
-<div id="portfolio">
-    <% @portfolio_cards.each do |portfolio_card| %>
-        <ul>
+  <% if @search_performed %>
+    <% if @results.present? %>
+      <div id="portfolio">
+        <% @results.each do |portfolio_card| %>
+          <ul>
             <li>
-                <%= image_tag("#{portfolio_card.portfolio_card_image_url}.png") %>
+              <%= image_tag("#{portfolio_card.portfolio_card_image_url}.png") %>
             </li>
             <li>
-                <h5><%= portfolio_card.portfolio_card_title %></h5>
+              <h5><%= portfolio_card.portfolio_card_title %></h5>
             </li>
             <li>
-                <h6><%= portfolio_card.portfolio_card_description %></h6>
+              <h6><%= portfolio_card.portfolio_card_description %></h6>
             </li>
-            <li><%= link_to portfolio_card.portfolio_card_url, portfolio_card.portfolio_card_url %></li>
-        </ul>
+            <li>
+              <%= link_to portfolio_card.portfolio_card_url, portfolio_card.portfolio_card_url %>
+            </li>
+          </ul>
+        <% end %>
+      </div>
+    <% else %>
+      <p>Try refining your search, or selecting a different keyword!</p>
     <% end %>
-</div>
+  <% else %>
+    <div id="portfolio">
+      <% @portfolio_cards.each do |portfolio_card| %>
+        <ul>
+          <li>
+            <%= image_tag("#{portfolio_card.portfolio_card_image_url}.png") %>
+          </li>
+          <li>
+            <h5><%= portfolio_card.portfolio_card_title %></h5>
+          </li>
+          <li>
+            <h6><%= portfolio_card.portfolio_card_description %></h6>
+          </li>
+          <li>
+            <%= link_to portfolio_card.portfolio_card_url, portfolio_card.portfolio_card_url %>
+          </li>
+        </ul>
+      <% end %>
+    </div>
+  <% end %>
+  
+  <div id="search">
+  <%= form_tag(portfolio_path, method: :get) do %>
+    <%= label_tag(:keyword, "Search Portfolio:") %>
+    <%= text_field_tag(:keyword) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+  </div>

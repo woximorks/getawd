@@ -58,3 +58,4 @@
     - pg_search
     - https://github.com/Casecommons/pg_search
     - https://www.youtube.com/watch?v=ZRpXAY21t28
+    - Had a discussion with ChatGPT about how to conditionally display portfolio items, and when to display them, and when to tell the user to search for something else

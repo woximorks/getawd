@@ -10,12 +10,12 @@ class PagesController < ApplicationController
   end
 
   def portfolio
-    @portfolio_cards = PortfolioCard.all
     if params[:keyword].present?
-      @results = @portfolio_cards.search(params[:keyword])
-      Rails.logger.debug "Search results: #{@results.inspect}"
+      @search_performed = true
+      @results = PortfolioCard.search(params[:keyword])
     else
-      @results = []
+      @search_performed = false
+      @portfolio_cards = PortfolioCard.all
     end
   end
   
