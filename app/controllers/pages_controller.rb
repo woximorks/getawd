@@ -22,4 +22,8 @@ class PagesController < ApplicationController
   def videos
     @video_cards = VideoCard.all
   end
+
+  def articles
+    @articles = Article.all
+  end
 end
