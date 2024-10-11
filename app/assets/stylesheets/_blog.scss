@@ -5,6 +5,11 @@
     ul {
        li {
           width: 500px;
+          img {
+            max-height: 225px;
+            display: block;
+            margin: 0 auto;
+          }
        }
     }
   }
