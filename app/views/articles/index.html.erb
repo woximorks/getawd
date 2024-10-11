@@ -1,12 +1,12 @@
 <h1>Articles</h1>
 
-<div id="Articles">
-  <% @Articles.each do |Article| %>
-    <%= render Article %>
+<div id="articles">
+  <% @articles.each do |article| %>
+    <%= render article %>
     <p>
-      <%= link_to "Show this Article", Article %>
+      <%= link_to "Show this Article", article %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New Article", new_Article_path %>
+<%= link_to "New Article", new_article_path %>
