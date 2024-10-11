@@ -1,5 +1,17 @@
 require "active_support/core_ext/integer/time"
 
+  # Configure the Action Mailer for production environment
+  config.action_mailer.default_url_options = { host: 'www.getawd.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  address: 'email-smtp.us-west-1.amazonaws.com', # Use the correct region endpoint
+  port: 587,
+  user_name: ENV['SES_SMTP_USERNAME'],
+  password: ENV['SES_SMTP_PASSWORD'],
+  authentication: :login,
+  enable_starttls_auto: true
+}
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
