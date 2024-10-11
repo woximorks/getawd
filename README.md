@@ -59,4 +59,6 @@
     - https://www.youtube.com/watch?v=ZRpXAY21t28
     - Had a discussion with ChatGPT about how to conditionally display portfolio items, and when to display them, and when to tell the user to search for something else
 
-7. 
+7. Devise User Management
+    - Detailed notes can be found for this implementation elsewhere :D
+    - A user can create an account but it must be approved before they can do anything with it
