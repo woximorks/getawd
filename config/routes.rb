@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   get 'pages/blog'
   get 'pages/portfolio'
   get 'pages/videos'
-  get 'pages/articles'
 
   get 'portfolio', to: 'pages#portfolio'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
