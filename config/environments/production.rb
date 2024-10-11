@@ -1,5 +1,8 @@
 require "active_support/core_ext/integer/time"
 
+
+Rails.application.configure do
+  # Settings specified here will take precedence over those in config/application.rb.
   # Configure the Action Mailer for production environment
   config.action_mailer.default_url_options = { host: 'www.getawd.com' }
   config.action_mailer.delivery_method = :smtp
@@ -10,11 +13,7 @@ require "active_support/core_ext/integer/time"
   password: ENV['SES_SMTP_PASSWORD'],
   authentication: :login,
   enable_starttls_auto: true
-}
-
-Rails.application.configure do
-  # Settings specified here will take precedence over those in config/application.rb.
-
+  }
   # Code is not reloaded between requests.
   config.enable_reloading = false
 
