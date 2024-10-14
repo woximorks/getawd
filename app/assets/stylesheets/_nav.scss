@@ -1,20 +1,36 @@
 #nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2em; // Add padding to the sides
+  height: 100px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Add a subtle shadow
+
+  img {
+    max-height: 80px; // Set the maximum height for the image
+    height: auto; // Maintain the aspect ratio
+    width: auto; // Maintain the aspect ratio
+  }
+
+  ul {
     display: flex;
-    justify-content: space-between;
-    height: 100px;
-    background-color: white;
-    img {
-      max-height: 100%;
-    }
-    ul {
-       display: flex;
-       flex-direction: row;
-       li {
-          padding: .25em;
-          a {
-            text-decoration: none;
-            color: black;
-          }
-       }
+    flex-direction: row;
+    list-style: none; // Remove default list style
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: 0.5em 1em; // Add more padding for better spacing
+      a {
+        text-decoration: none;
+        color: #333; // Change to a slightly softer black
+        transition: color 0.3s;
+
+        &:hover {
+          color: #007BFF; // Change color on hover
+        }
+      }
     }
   }
+}

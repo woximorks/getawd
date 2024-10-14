@@ -1,16 +1,14 @@
 <div id="nav">
-    <div>
-        <%= image_tag("logo.png") %>
-    </div>
-    <div>
-        <ul>
-            <li><%= link_to "Home", root_path %></li>
-            <li>|</li>
-            <li><%= link_to "Portfolio", 'portfolio' %></li>
-            <li>|</li>
-            <li><%= link_to "Videos", "videos" %></li>
-            <li>|</li>
-            <li><%= link_to "Blog", "blog" %></li>
-        </ul>
-    </div>
+  <div>
+    <%= image_tag("logo.png") %>
+  </div>
+  <div>
+    <ul>
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Portfolio", 'portfolio' %></li>
+      <li><%= link_to "Videos", "videos" %></li>
+      <li><%= link_to "Blog", "blog" %></li>
+      <%= render "shared/navuser" %>
+    </ul>
+  </div>
 </div>
