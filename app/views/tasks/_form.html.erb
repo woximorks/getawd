@@ -1,0 +1,79 @@
+
+<%= form_with(model: task, local: true) do |form| %>
+  <% if task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+        <% task.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :task_name %>
+    <%= form.text_field :task_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.select :status, options_for_select(["Not Started", "In Progress", "Completed"]) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :priority %>
+    <%= form.select :priority, options_for_select(["Low", "Medium", "High"]) %>
+  </div>
+
+  <div>
+    <%= form.label :start_date, style: "display: block" %>
+    <%= form.date_field :start_date %>
+  </div>
+
+  <div>
+    <%= form.label :due_date, style: "display: block" %>
+    <%= form.date_field :due_date %>
+  </div>
+
+  <div>
+    <%= form.label :completion_date, style: "display: block" %>
+    <%= form.date_field :completion_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :assigned_to %>
+    <%= form.text_field :assigned_to %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estimated_time, "Estimated Time" %>
+    <div>
+      <%= form.number_field :estimated_time_hours, min: 0, placeholder: "Hours" %>
+      <%= form.label :estimated_time_hours, "hours" %>
+      <%= form.number_field :estimated_time_minutes, min: 0, max: 59, placeholder: "Minutes" %>
+      <%= form.label :estimated_time_minutes, "minutes" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :actual_time, "Actual Time" %>
+    <div>
+      <%= form.number_field :actual_time_hours, min: 0, placeholder: "Hours" %>
+      <%= form.label :actual_time_hours, "hours" %>
+      <%= form.number_field :actual_time_minutes, min: 0, max: 59, placeholder: "Minutes" %>
+      <%= form.label :actual_time_minutes, "minutes" %>
+    </div>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
