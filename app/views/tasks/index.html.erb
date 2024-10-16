@@ -1,14 +1,61 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Tasks</h1>
-
-<div id="tasks">
-  <% @tasks.each do |task| %>
-    <%= render task %>
-    <p>
-      <%= link_to "Show this task", task %>
-    </p>
-  <% end %>
+<div>
+  <h1 style="text-align: center;">Task Manager</h1>
+  <%= link_to "New task", new_task_path %>
 </div>
 
-<%= link_to "New task", new_task_path %>
+<hr>
+
+<div id="tasks">
+  <div id="high-priority-tasks">
+    <h2>High</h2>
+    <% @tasks.select { |task| task.priority == "High" }.each do |task| %>
+      <p>
+        <strong>Task name:</strong>
+        <%= task.task_name %>
+      </p>
+      <p>
+        <strong>Description:</strong>
+        <%= task.description %>
+      </p>
+      <p>
+        <%= link_to "Show this task", task %>
+      </p>
+    <% end %>
+  </div>
+  <div id="medium-priority-tasks">
+    <h2>Medium</h2>
+    <% @tasks.select { |task| task.priority == "Medium" }.each do |task| %>
+      <p>
+        <strong>Task name:</strong>
+        <%= task.task_name %>
+      </p>
+      <p>
+        <strong>Description:</strong>
+        <%= task.description %>
+      </p>
+      <p>
+        <%= link_to "Show this task", task %>
+      </p>
+    <% end %>
+  </div>
+  <div id="low-priority-tasks">
+    <h2>Low</h2>
+    <% @tasks.select { |task| task.priority == "Low" }.each do |task| %>
+      <p>
+        <strong>Task name:</strong>
+        <%= task.task_name %>
+      </p>
+      <p>
+        <strong>Description:</strong>
+        <%= task.description %>
+      </p>
+      <% if due_date_close?(task.due_date) %>
+        <p><strong>Due Date:</strong> <%= task.due_date.strftime("%Y-%m-%d") %></p>
+      <% end %>
+      <p>
+        <%= link_to "Show this task", task %>
+      </p>
+    <% end %>
+  </div>
+
+</div>
