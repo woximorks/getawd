@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] 2024-10-15
+
+### Added
+- Link to 'New Task' added to navuser.html.erb 
+- This document referenced in the README, as well as a link to access the site
+
+### Changed
+- n/a
+
+## Removed
+- n/a
+
+### Fixed
+- n/a
+
+## Security 
+- n/a
+
 ## [1.0.0]
 
 ### Added

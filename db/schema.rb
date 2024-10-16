@@ -32,6 +32,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_10_15_050800) do
     t.string "portfolio_card_url"
   end
 
+  create_table "projects", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "status"
+    t.date "start_date"
+    t.date "end_date"
+    t.string "tags"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "tasks", force: :cascade do |t|
     t.string "task_name"
     t.text "description"
