@@ -1,0 +1,30 @@
+<h1>All Tasks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Task Name</th>
+      <th>Status</th>
+      <th>Priority</th>
+      <th>Start Date</th>
+      <th>Due Date</th>
+      <th>Assigned To</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.task_name %></td>
+        <td><%= task.status %></td>
+        <td><%= task.priority %></td>
+        <td><%= task.start_date %></td>
+        <td><%= task.due_date %></td>
+        <td><%= task.assigned_to %></td>
+        <td>
+          <%= link_to 'Show', task_path(task) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

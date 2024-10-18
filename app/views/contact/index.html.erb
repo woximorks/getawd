@@ -1,0 +1,18 @@
+<h1>Contact Us</h1>
+
+<p>We'd love to hear from you! If you have any questions, comments, or suggestions, feel free to reach out to us.</p>
+
+<h2>Contact Information</h2>
+<ul>
+  <li><strong>Email:</strong> <%= @contact_info['contact']['email'] %></li>
+  <li><strong>Phone:</strong> <%= @contact_info['contact']['phone'] %></li>
+  <li><strong>Address:</strong> <%= @contact_info['contact']['address'] %></li>
+</ul>
+
+<h2>Follow Us</h2>
+<p>Stay connected with us on social media!</p>
+<ul>
+  <li><a href="<%= @contact_info['social_media']['facebook'] %>" target="_blank">Facebook</a></li>
+  <li><a href="<%= @contact_info['social_media']['twitter'] %>" target="_blank">Twitter</a></li>
+  <li><a href="<%= @contact_info['social_media']['instagram'] %>" target="_blank">Instagram</a></li>
+</ul>

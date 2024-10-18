@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  task_name: MyString
+  description: MyText
+  status: 1
+  priority: 1
+  start_date: 2024-10-16
+  due_date: 2024-10-16
+  completion_date: 2024-10-16
+  assigned_to: MyString
+  estimated_time: 1
+  actual_time: 1
+
+two:
+  task_name: MyString
+  description: MyText
+  status: 1
+  priority: 1
+  start_date: 2024-10-16
+  due_date: 2024-10-16
+  completion_date: 2024-10-16
+  assigned_to: MyString
+  estimated_time: 1
+  actual_time: 1

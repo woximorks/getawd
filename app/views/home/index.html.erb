@@ -1,0 +1,52 @@
+<h1>Home</h1>
+
+<section id="about">
+  <h2>About</h2>
+  <p><%= @about_app_level %></p>
+</section>
+
+<section id="about">
+  <h2>Contact</h2>
+  <p><%= @contact_app_level %></p>
+</section>
+
+<section id="projects">
+  <h2>Featured Projects</h2>
+  <ul>
+    <% @featured_projects.each do |project| %>
+      <li>
+        <h3><%= project.title %></h3>
+        <p><%= project.description %></p>
+        <%= image_tag project.image if project.image.present? %>
+        <a href="<%= project.url %>">View Project</a>
+      </li>
+    <% end %>
+  </ul>
+</section>
+
+<section id="blog-posts">
+  <h2>Featured Blog Posts</h2>
+  <ul>
+    <% @featured_blog_posts.each do |blog_post| %>
+      <li>
+        <h3><%= blog_post.title %></h3>
+        <p><%= blog_post.description %></p>
+        <%= image_tag blog_post.image if blog_post.image.present? %>
+        <%= link_to 'Read More', blog_post_path(blog_post) %>
+      </li>
+    <% end %>
+  </ul>
+</section>
+
+<section id="videos">
+  <h2>Featured Videos</h2>
+  <ul>
+    <% @featured_videos.each do |video| %>
+      <li>
+        <h3><%= video.title %></h3>
+        <p><%= video.description %></p>
+        <iframe src='https://www.youtube.com/embed/<%= video.youtube_id %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
+      </li>
+    <% end %>
+  </ul>
+</section>

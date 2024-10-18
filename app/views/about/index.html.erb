@@ -1,0 +1,15 @@
+<h1>About</h1>
+
+<!-- change this in about_controller.rb-->
+<p id="about_from_controller"><%= @about %></p>
+
+<ul id="links_from_yml"> <!--change this in about_info.yml-->
+  <li><a href="<%= @about_info['about']['link1'] %>">Link 1(URL editable in the about_info.yml file)</a></li>
+  <li><a href="<%= @about_info['about']['link2'] %>">Link 2(Link description itself editable in the about/index.html.erb file)</a></li>
+  <li><a href="<%= @about_info['about']['link3'] %>">Link 3, editable in the about_info.yml file, about/index.html.erb file</a></li>
+</ul>
+
+<ul id="paragraphs_from_yml">
+  <li><%= @about_info['about']['paragraph1'] %></li>
+  <li><%= @about_info['about']['paragraph2'] %></li>
+</ul>

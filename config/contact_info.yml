@@ -1,0 +1,9 @@
+contact:
+  email: "edit"
+  phone: "in"
+  address: "contact_info.yml"
+
+social_media:
+  facebook: "https://facebook.com/yourpage"
+  twitter: "https://twitter.com/yourpage"
+  instagram: "https://instagram.com/yourpage"

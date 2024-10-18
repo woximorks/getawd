@@ -1,0 +1,13 @@
+<section id="blog-posts">
+  <h2>Blog Posts</h2>
+  <ul>
+    <% @blog_posts.each do |blog_post| %>
+      <li>
+        <h3><%= blog_post.title %></h3>
+        <p><%= blog_post.description %></p>
+        <%= image_tag blog_post.image if blog_post.image.present? %>
+        <%= link_to 'Read More', blog_post_path(blog_post) %>
+      </li>
+    <% end %>
+  </ul>
+</section>
