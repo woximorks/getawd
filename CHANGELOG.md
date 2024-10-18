@@ -4,6 +4,34 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] 2024/10/18
+## Seed refactoring, files contain actual information
+
+### Added
+- /db/seeds/{#db_model}
+- images/blog{#1-5}
+- images/project{#1-5}
+
+### Changed
+- seeds.rb
+    - Updated to separate out into individual files based on db model
+    - Added portfolio and related information to each individual file
+- about_info.yml
+    - Removed unnecessary info, changed other info
+- contact_info.yml
+    - Removed unnecessary info, changed other info
+- about/index.html.erb
+    - Updated to accurately reflect the yml info
+- contact/index.html.erb
+    - Updated to accurately reflect the yml info
+- appliacation_controller.rb
+    - Updated to accurately reflect application info
+- home/index.html.erb
+    - contact to bottom
+
+## Removed
+- n/a
+
 ## [1.1.0] 2024/10/18
 ## Addressing some initial concerns, seed file upgrade (continued)
 

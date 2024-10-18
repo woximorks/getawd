@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
     private
   
     def set_app_content
-        @about_app_level = "This is any hardcoded about section content, modified in the application_controller directly."
-        @contact_app_level = "This is any hardcoded about section content, modified in the application_controller directly."
+        @about_app_level = "AW Development - Rails applications and API integrations."
+        @contact_app_level = "We can help with your next development project!"
     end
   end
