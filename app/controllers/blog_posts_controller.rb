@@ -1,6 +1,5 @@
 class BlogPostsController < ApplicationController
   def index
-    @featured_blog_posts = BlogPost.limit(3) # Adjust as necessary for your featured logic
     @blog_posts = BlogPost.all
   end
 

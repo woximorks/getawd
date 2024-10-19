@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] 2024/10/19
+## Migration for better featured blog post control, database correction
+
+## Added
+- Corresponding schema and migration file related to AddFeaturedToBlogPosts migration generated.
+
+## Changed
+- blog_posts_controller.rb
+    - Removed featured from this controller, shouldn't have been there.
+- home_controller.rb
+    - Added logic to check if featured = true for featured blog posts.
+- seeds.rb
+    - Updated to add 'featured' data
+- database.yml
+    - was referencing aw_development db. Corrected that.
+
 ## [1.2.0] 2024/10/18
 ## Seed refactoring, files contain actual information
 
