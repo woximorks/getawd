@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.6.0] 2024/10/19
+## Chat GPTify the front end
+
+### Added
+- _navbar.scss
+
+### Changed
+- application.scss
+    - Added stylization generated from chatGPT for each section
+- home/index.html.erb
+    - Moved sstuff around to make more display better
+- about_info.yml
+    - removed a typo
+- navbar.scss
+    - stylization specific to the navbar
+
+## Removed
+
 ## [1.5.0] 2024/10/19
 ## Implementing Sass (npm install -g sass)
 

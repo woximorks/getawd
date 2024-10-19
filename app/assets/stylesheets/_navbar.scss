@@ -1,0 +1,57 @@
+// stylesheets/_navbar.scss
+
+$navbar-background: #797979;
+$navbar-text-color: #fff;
+$navbar-hover-color: #555;
+$navbar-padding: 1rem;
+
+.navbar {
+  background-color: $navbar-background;
+  padding: $navbar-padding;
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; // Center the items
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin: 0.5rem;
+
+      a {
+        color: $navbar-text-color;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+
+        &:not(:has(img)):hover {
+          background-color: $navbar-hover-color;
+        }
+      }
+
+      // Logo special style
+      .navbar-logo {
+        height: 100px; // Set a height for the logo
+        width: auto; // Keep the aspect ratio
+      }
+    }
+  }
+}
+
+// Responsive Styles
+@media (max-width: 768px) {
+  .navbar {
+    ul {
+      flex-direction: column; // Stack items vertically
+      align-items: center; // Center the items
+
+      li {
+        width: 100%; // Make each item full-width
+        text-align: center; // Center text
+      }
+    }
+  }
+}
