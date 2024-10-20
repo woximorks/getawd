@@ -1,5 +1,12 @@
 ## [AW Development](https://www.getawd.com)
 
+## Requirements
+General information that does not fall into any specific category quite yet:
+- Image sizing
+  - blog_posts
+  - projects
+  - 
+
 ## Database
 
 The application uses a PostgreSQL database with the following tables:
