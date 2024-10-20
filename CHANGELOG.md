@@ -4,7 +4,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.7.1] 2024/10/19
+## Front end implementation including new images, API font
+
+### Changed
+- images/{#image}.png
+    - Reflecting actual images, not stock photo
+- application.scss
+    - Referenced 'Roboto' google API font as added to application.html.erb file
+- application.html.erb
+    - Calling Google API for Roboto font to display
+
+## Fixed
+- blog_posts/show.html.erb
+    - Updated how the image displays, so that it displays
+
 ## [1.6.1] 2024/10/19
+
 ## Front end cleanup and organization
 
 ### Changed
