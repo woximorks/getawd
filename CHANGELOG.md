@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.6.1] 2024/10/19
+## Front end cleanup and organization
+
+### Changed
+- application.scss
+    - Organized alphabetically
+    - Added section info that wasn't previously there. Entire site now stylized enough.
+    - Updated some sizing related to flex.
+- about/index.html.erb
+    - wrapped that biotch in a section that identifies what it is
+- contact/index.html.erb
+    - wrapped in section tag with appropriate id 'contact'
+- tasks/index.html.erb
+    - wrapped in section tag with appropriate id 'tasks'
+
+
 ## [1.6.0] 2024/10/19
 ## Chat GPTify the front end
 
