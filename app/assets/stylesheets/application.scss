@@ -210,6 +210,12 @@ body {
     }
   }
 
+  .blog-post {
+    img {
+      max-width: 100%;
+    }
+  }
+
 // Styles for the All Tasks section
 #tasks {
     padding: 2rem;
