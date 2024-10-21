@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.8.4] 2024/10/20
+## Devise Gem Implemented
+
+### Added
+- devise gem - https://github.com/heartcombo/devise
+- approve user - https://github.com/heartcombo/devise/wiki/How-To:-Require-admin-to-activate-account-before-sign_in
+    - migrations related to both of these, for the user, and to add approved to user
+
+### Changed
+- README.md
+    - Some documentation
+- gemfile, related to devise implementation
+- routes.rb, related to devise implementation and user model
+- schema.rb, related to devise implementation and user model
+
 ## [1.7.4] 2024/10/20
 ## Refactoring application.scss
 

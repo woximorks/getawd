@@ -1,11 +1,14 @@
 ## [AW Development](https://www.getawd.com)
 
-## Requirements
+### Information and Requirements
+
 General information that does not fall into any specific category quite yet:
-- Image sizing
-  - blog_posts
-  - projects
-  - 
+  - Image sizing
+    - 1:1
+      - blog_posts
+      - projects
+  - Devise - Straightforward implementation for the most part.
+    - User must be approved before they can do anything
 
 ## Database
 
