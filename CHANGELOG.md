@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.9.1] 2024/10/21
+### Launch Time
+
+### Changed
+- README.md
+    - TMPFI
+- .gitignore
+    - Guess where all that README info went. It's still public info thanks to this repository :D
+
 ## [1.9.0] 2024/10/21
 ### Sweeping the floor
 
