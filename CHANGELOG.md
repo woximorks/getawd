@@ -4,19 +4,35 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.8.9] 2024/10/21
-## Removing task_params
+## [1.9.0] 2024/10/21
+### Sweeping the floor
 
-## Changed
-- Put back task_params method for now
+### Changed
+- This file.
+    - It looks better when you're looking at it from a 'user' perspective.
+- tasks/index.html.erb
+    - Insert redneck - **Thems be some fancy new 'new / create' routes boihhhhh, it'd be a shame if the user couldn't.. use 'em**
+
+## [1.8.9] 2024/10/21
+### Removing, and then re-adding task_params because chat GPT
+
+### Changed
+- Put back task_params method
+
+## [1.8.8] 2024/10/21
+### Basically chatGPT told me to remove task_params
+
+### Changed
+- Removed task params so that stuff would display on the front end
+- As it turns out, those params had nothing to do with it, and chatGPT and I did not quite see eye to eye. We both understand the importance of strict params, especially when it comes to user input. This rubber ducky sucks sometimes.
 
 ## [1.8.7] 2024/10/21
-## 187 on a motherCRUDDin (lap)TOP
+### 187 on a motherCRUDDin (lap)TOP
 
-## Added
+### Added
 - new, edit, _form.html.erb
 
-## Changed 
+### Changed 
 - _navbar.scss, application.scss
     - Updates to color and how stuff displays
 - new, edit, _form.html.erb
@@ -27,7 +43,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
     - converted to full beans resources for tasks. That's a Jeff Arcuri reference, look him up.
 
 ## [1.8.6] 2024/10/20
-## Devise Gem | Tasks cannot be accessed at all unless signed in
+### Devise Gem | Tasks cannot be accessed at all unless signed in
 
 ### Changed
 - tasks_controller.rb
@@ -37,14 +53,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
     - blog-post didn't have image sizing set appropriately
 
 ## [1.8.5] 2024/10/20
-## Devise Gem | Tasks hidden unless signed in
+### Devise Gem | Tasks hidden unless signed in
 
 ### Changed
 - _navbar.html.erb
     - <% if user_signed_in? %> for tasks
 
 ## [1.8.4] 2024/10/20
-## Devise Gem Implemented
+### Devise Gem Implemented
 
 ### Added
 - devise gem - https://github.com/heartcombo/devise
@@ -59,7 +75,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - schema.rb, related to devise implementation and user model
 
 ## [1.7.4] 2024/10/20
-## Refactoring application.scss
+### Refactoring application.scss
 
 ### Changed
 - application.scss
@@ -68,21 +84,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
     - Make videos more taller too
 
 ## [1.7.3] 2024/10/20
-## Standard 1:1 image sizing for most content
+### Standard 1:1 image sizing for most content
 
 ### Changed
 - README.md
     - Standard image sizing
 
 ## [1.7.2] 2024/10/19
-## Front end implementation including new images, API font
+### Front end implementation including new images, API font
 
 ### Changed
 - README.md
     - Call it what it is
 
 ## [1.7.1] 2024/10/19
-## Front end implementation including new images, API font
+### Front end implementation including new images, API font
 
 ### Changed
 - images/{#image}.png
@@ -92,13 +108,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - application.html.erb
     - Calling Google API for Roboto font to display
 
-## Fixed
+### Fixed
 - blog_posts/show.html.erb
     - Updated how the image displays, so that it displays
 
 ## [1.6.1] 2024/10/19
-
-## Front end cleanup and organization
+### Front end cleanup and organization
 
 ### Changed
 - application.scss
@@ -114,7 +129,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 
 ## [1.6.0] 2024/10/19
-## Chat GPTify the front end
+### Chat GPTify the front end
 
 ### Added
 - _navbar.scss
@@ -129,10 +144,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - navbar.scss
     - stylization specific to the navbar
 
-## Removed
-
 ## [1.5.0] 2024/10/19
-## Implementing Sass (npm install -g sass)
+### Implementing Sass (npm install -g sass)
 
 ### Added
 - application.scss
@@ -147,7 +160,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - application.css
 
 ## [1.4.0] 2024/10/19
-## Other 'featured' migrations
+### Other 'featured' migrations
 
 ### Added
 - Corresponding schema and migration files related migrations run
@@ -159,7 +172,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
     - Updated to add 'featured' data
 
 ## [1.3.0] 2024/10/19
-## Migration for better featured blog post control, database correction
+### Migration for better featured blog post control, database correction
 
 ### Added
 - Corresponding schema and migration file related to AddFeaturedToBlogPosts migration generated.
@@ -175,7 +188,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
     - was referencing aw_development db. Corrected that.
 
 ## [1.2.0] 2024/10/18
-## Seed refactoring, files contain actual information
+### Seed refactoring, files contain actual information
 
 ### Added
 - /db/seeds/{#db_model}
@@ -199,11 +212,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - home/index.html.erb
     - contact to bottom
 
-## Removed
+### Removed
 - n/a
 
 ## [1.1.0] 2024/10/18
-## Addressing some initial concerns, seed file upgrade (continued)
+### Addressing some initial concerns, seed file upgrade (continued)
 
 ### Added
 - n/a
@@ -230,7 +243,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - videos_controller = all videos
     - @videos = all videos
 
-## Removed
+### Removed
 - n/a
 
 ## [1.0.0] 2024/10/17
@@ -256,7 +269,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ---
 
 ## [Unreleased] 2024/10/17
-## Task index and show, seed file to populate data
+### Task index and show, seed file to populate data
 
 ### Added
 - 
@@ -275,7 +288,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - 
 
 ## [Unreleased] 2024/10/17
-## Creating an About Section
+### Creating an About Section
 
 ### Added
 - about_info.yml
@@ -291,7 +304,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
     - @about = action to add on it's own controller
 
 ## [Unreleased] 2024/10/16
-## Displaying content appropriately, timezone update, YAML File
+### Displaying content appropriately, timezone update, YAML File
 
 ### Added
 - contact_info.yml
@@ -313,7 +326,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
     - Referenced this file
 
 ## [Unreleased] 2024/10/16
-## Initial Site Framework and Navbar
+### Initial Site Framework and Navbar
 
 ### Added
 - BlogPosts, Projects, Tasks, Videos
