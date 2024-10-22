@@ -10,6 +10,8 @@
 <p><strong>Assigned To:</strong> <%= @task.assigned_to %></p>
 <p><strong>Estimated Time (hours):</strong> <%= @task.estimated_time %></p>
 <p><strong>Actual Time (hours):</strong> <%= @task.actual_time %></p>
+<%= link_to 'Edit', edit_task_path %>
+<%= button_to 'Delete', @task, method: :delete, data: { confirm: 'Are you sure?' } %>
 
 <%= link_to 'Back to Tasks', tasks_path %>
 </section>

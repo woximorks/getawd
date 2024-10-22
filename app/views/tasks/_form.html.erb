@@ -1,0 +1,68 @@
+<%= form_with(model: @task, local: true) do |form| %>
+    <% if @task.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+  
+        <ul>
+          <% @task.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="field">
+      <%= form.label :task_name %>
+      <%= form.text_field :task_name %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :description %>
+      <%= form.text_area :description %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :status %>
+      <%= form.select :status, ['Not Started', 'In Progress', 'Completed'] %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :priority %>
+      <%= form.number_field :priority %>
+    </div>
+  
+    <div class="field">
+    <%= form.label :start_date %>
+    <%= form.date_field :start_date, class: 'datepicker' %>
+    </div>
+
+    <div class="field">
+    <%= form.label :due_date %>
+    <%= form.date_field :due_date, class: 'datepicker' %>
+    </div>
+
+    <div class="field">
+    <%= form.label :completion_date %>
+    <%= form.date_field :completion_date, class: 'datepicker' %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :assigned_to %>
+      <%= form.text_field :assigned_to %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :estimated_time %>
+      <%= form.number_field :estimated_time %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :actual_time %>
+      <%= form.number_field :actual_time %>
+    </div>
+  
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+  

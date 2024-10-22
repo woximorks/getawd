@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :blog_posts, only: [:index, :show]
   resources :contacts, only: [:index]
   resources :projects, only: [:index, :show]
-  resources :tasks, only: [:index, :show]
+  resources :tasks
   resources :videos, only: [:index, :show]
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
