@@ -40,10 +40,5 @@ class TasksController < ApplicationController
     @task.destroy
     redirect_to tasks_url, notice: 'Task was successfully deleted.'
   end
-  private
-
-  def task_params
-    params.require(:task).permit(:task_name, :description, :status, :priority, :start_date, :due_date)
-  end
 
 end
