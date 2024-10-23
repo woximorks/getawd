@@ -3,7 +3,6 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.all
-    @tasks_by_due_date = Task.where("due_date >= ?", Date.today).order(:due_date)
   end
 
   # Action to show a specific task

@@ -23,7 +23,7 @@
   
     <div class="field">
       <%= form.label :status %>
-      <%= form.select :status, ['Not Started', 'In Progress', 'Completed'] %>
+      <%= form.select :status, Task.statuses.keys.map { |status| [status.humanize, status] }, {}, { include_blank: false } %>
     </div>
   
     <div class="field">
