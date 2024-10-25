@@ -1,29 +1,39 @@
 <section id="tasks">
-<h1>All Tasks</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Task Name</th>
-      <th>Status</th>
-      <th>Priority</th>
-      <th>Due Date</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @tasks.each do |task| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= task.task_name %></td>
-        <td><%= task.status %></td>
-        <td><%= task.priority %></td>
-        <td><%= task.due_date %></td>
-        <td>
-          <%= link_to 'Show', task_path(task) %>
-        </td>
+        <th>
+        <%= form_with url: tasks_path, method: :get, local: true do %>
+          <div>
+            <%= text_field_tag :search, params[:search], placeholder: "Enter task name", style: "width: 200px;" %>
+            <%= submit_tag "Search", style: "margin-right: 1em;" %>
+            <%= link_to 'Task Name', tasks_path(sort: 'task_name') %></th>
+          </div>
+        <% end %>
+        
+        <th><%= link_to 'Status', tasks_path(sort: 'status') %></th>
+        <th><%= link_to 'Priority', tasks_path(sort: 'priority') %></th>
+        <th><%= link_to 'Due Date', tasks_path(sort: 'due_date') %></th>
+        <th>Actions</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-<%= link_to 'New task', new_task_path %>
+    </thead>
+    <tbody>
+      <% @tasks.each do |task| %>
+        <tr class="<%= 'overdue' if task.due_date < Date.today %>">
+          <td class="<%= 'highlight' if params[:search].present? && task.task_name.downcase.include?(params[:search].downcase) %>">
+            <%= task.task_name %>
+          </td>
+          <td><%= task.human_status %></td>
+          <td><%= task.priority %></td>
+          <td><%= task.due_date %></td>
+          <td>
+            <%= link_to 'Show', task_path(task) %> |
+            <%= link_to 'Edit', edit_task_path(task) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'New task', new_task_path %>
 </section>

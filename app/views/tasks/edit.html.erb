@@ -2,4 +2,5 @@
 
 <%= render 'form', task: @task %>
 
-<%= link_to 'Back', task_path(@task) %>
+<%= link_to 'Task Manager', tasks_path %>
+<%= link_to 'Back to This Task', task_path(@task) %>

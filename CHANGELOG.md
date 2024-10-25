@@ -4,6 +4,27 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.9.4] 2024/10/22
+### Refining Task Manager with search, sorting
+#### Updating Public Facing Contact Info
+
+### Created
+- tasks_helper.rb
+
+### Changed
+- contact_info.yml
+    - Removed phone number, added linkedin
+- tasks_controller.rb
+    - Sorting if params are present
+- application.scss
+    - overdue tasks highlight in red
+- task.rb
+    - Added support for 'on-hold'
+- tasks/index.html.erb
+    - Front end support necessary to sort these tasks
+    - Basic search form
+- tasks_helper.rb
+
 ## [1.9.3] 2024/10/22
 ### Cleanup
 

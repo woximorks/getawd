@@ -224,7 +224,30 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 2rem;
-  
+    input[type="text"] {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+    input[type="submit"] {
+      background-color: white; 
+      color: $primary-color;
+      padding: 8px 12px; 
+      border: none; 
+      border-radius: 4px; 
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .highlight {
+      background-color: #ffffcc; /* Light yellow background for highlighted tasks */
+      font-weight: bold; /* Optional: Make the text bold */
+    }
+    
+    .overdue {
+      background-color: #ffe6e6; /* Light red background for overdue tasks */
+    }
+    
     h1 {
       font-size: 2.5rem;
       margin-bottom: 1.5rem;
@@ -244,6 +267,9 @@ body {
         th {
           padding: 1rem;
           text-align: left; // Align header text to the left
+          a {
+            color: white;
+          }
         }
       }
   

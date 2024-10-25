@@ -3,6 +3,10 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.all
+    if params[:sort].present?
+      # Handle sorting based on actual column names
+      @tasks = @tasks.order(params[:sort])
+    end
   end
 
   # Action to show a specific task
