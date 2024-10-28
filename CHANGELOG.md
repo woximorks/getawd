@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.9.6] 2024/10/27
+### Refining Task Manager | Front end fixes
+
+### Changed
+-tasks/index.html.erb
+    - Removed chatGPT generated front end styling directly on the html.erb file :facepalm:
+    - Moved search box and filtering to it's own section altogether
+
 ## [1.9.5] 2024/10/27
 ### Refining Task Manager | Hidden Tasks | Checkboxes for filtering
 
