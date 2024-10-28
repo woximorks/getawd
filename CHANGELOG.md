@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.9.5] 2024/10/27
+### Refining Task Manager | Hidden Tasks | Checkboxes for filtering
+
+### Changed
+- tasks_controller.rb
+    - Added logic to show all tasks, on_hold, completed hidden by default
+    - The %w[...] syntax is shorthand in Ruby to create an array of strings, so %w[completed on_hold] is the same as writing ['completed', 'on_hold'].
+-tasks/index.html.erb
+    - Added checkbox to show all tasks, on hold, completed
+
 ## [1.9.4] 2024/10/22
 ### Refining Task Manager with search, sorting
 #### Updating Public Facing Contact Info

@@ -8,7 +8,23 @@
           <div>
             <%= text_field_tag :search, params[:search], placeholder: "Enter task name", style: "width: 200px;" %>
             <%= submit_tag "Search", style: "margin-right: 1em;" %>
-            <%= link_to 'Task Name', tasks_path(sort: 'task_name') %></th>
+            
+            <div style="display: inline; margin-left: 1em;">
+              <%= check_box_tag :show_all, "true", params[:show_all] == "true", onchange: "this.form.submit()" %>
+              <label for="show_all">Show All Tasks</label>
+            </div>
+
+            <!-- Checkbox for "On Hold" tasks -->
+            <div style="display: inline; margin-left: 1em;">
+              <%= check_box_tag :on_hold, "true", params[:on_hold] == "true", onchange: "this.form.submit()" %>
+              <label for="on_hold">Show On Hold Tasks</label>
+            </div>
+        
+            <!-- Checkbox for "Completed" tasks -->
+            <div style="display: inline; margin-left: 1em;">
+              <%= check_box_tag :completed, "true", params[:completed] == "true", onchange: "this.form.submit()" %>
+              <label for="completed">Show Completed Tasks</label>
+            </div>
           </div>
         <% end %>
         

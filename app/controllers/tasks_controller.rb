@@ -3,11 +3,35 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.all
+  
+    # Apply filter only if `show_all` is not checked
+    unless params[:show_all] == "true"
+      if params[:on_hold] == "true" && params[:completed] == "true"
+        # Show tasks that are either "on hold" or "completed"
+        @tasks = @tasks.where(status: %w[on_hold completed])
+      elsif params[:on_hold] == "true"
+        # Show only "on hold" tasks
+        @tasks = @tasks.where(status: "on_hold")
+      elsif params[:completed] == "true"
+        # Show only "completed" tasks
+        @tasks = @tasks.where(status: "completed")
+      else
+        # Default view excludes "on hold" and "completed" if no filters are selected
+        @tasks = @tasks.where.not(status: %w[completed on_hold])
+      end
+    end
+  
+    # Apply sorting if a sort parameter is present
     if params[:sort].present?
-      # Handle sorting based on actual column names
       @tasks = @tasks.order(params[:sort])
     end
+  
+    # Apply search filter if a search parameter is present
+    if params[:search].present?
+      @tasks = @tasks.where("task_name ILIKE ?", "%#{params[:search]}%")
+    end
   end
+  
 
   # Action to show a specific task
   def show
