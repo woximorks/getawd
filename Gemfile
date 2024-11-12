@@ -5,6 +5,7 @@ ruby "3.2.2"
 # Added by a human
 gem 'bootstrap', '~> 5.0.0' # unreleased
 gem 'sassc-rails' # unreleased
+gem "simple_calendar" # 1.9.7
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.4"

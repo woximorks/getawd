@@ -1,4 +1,6 @@
 @import 'navbar'; 
+@import "simple_calendar";
+@import 'calendar';
 
 // Variables for colors and fonts
 $primary-color: #3a579d;
@@ -11,7 +13,6 @@ $font-stack: 'Roboto', sans-serif;
 // General styles
 body {
   font-family: $font-stack;
-  background-color: $background-color;
   color: $text-color;
   margin: 0;
   padding: 0;

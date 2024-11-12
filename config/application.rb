@@ -22,6 +22,8 @@ module AwDevelopment
     # in config/environments, which are processed later.
     #
      config.time_zone = "Pacific Time (US & Canada)"
+     config.active_record.default_timezone = :local
+     config.beginning_of_week = :sunday
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end

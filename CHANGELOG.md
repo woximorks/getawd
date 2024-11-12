@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.9.7] 2024/11/11
+### Simple Calendar for Task Tracking
+
+### Added 
+- _calendar.scss
+    - Any custom calendar styling goes here
+    - Also referenced this file on application.scss
+
+### Changed
+- Gemfile.rb
+    - simple_calendar gem added
+- application.rb
+    - Calendar starts on Sunday
+- tasks/index.html.erb
+    - Electing to put calendar directly on this page for now
+
 ## [1.9.6] 2024/10/27
 ### Refining Task Manager | Front end fixes
 
