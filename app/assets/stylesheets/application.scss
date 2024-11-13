@@ -68,7 +68,7 @@ body {
     }
   }
 
-  #blog-posts, #projects {
+  #blog-posts, #games, .game, #projects {
     padding: 2rem;
     background-color: lighten($background-color, 10%);
     border-radius: 8px;
@@ -138,8 +138,15 @@ body {
           max-width: 100%;
           border-radius: 5px;
           margin-bottom: 1rem;
+          max-height: 50vh;
         }
       }
+    }
+  }
+
+  .blog-post {
+    img {
+      max-width: 100%;
     }
   }
 
@@ -209,12 +216,6 @@ body {
       &:hover {
         background-color: $hover-color;
       }
-    }
-  }
-
-  .blog-post {
-    img {
-      max-width: 100%;
     }
   }
 

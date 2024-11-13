@@ -4,6 +4,30 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.9.8] 2024/11/12
+### Gaming section
+
+### Added
+- Migration related files For gaming section
+- controllers/games_controller.rb
+    - With index and show actions
+- views/games/index.html.erb, show.html.erb
+    - With related info displaying
+- models/games.rb
+- seeds/games.rb
+    - With dummy data
+- assets/images/game1-3.png
+    - Starter stock images
+
+### Changed
+- schema.rb
+    - related to migration run
+- routes.rb
+    - games related routes, alphabetized file
+- navbar
+    - gaming section added (if logged in for now)
+
+
 ## [1.9.7] 2024/11/11
 ### Simple Calendar for Task Tracking
 

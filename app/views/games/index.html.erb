@@ -1,0 +1,14 @@
+<section id="games">
+  <h2>Games</h2>
+  <ul>
+  <% @games.each do |game| %>
+    <li>
+        <h2><%= game.game_name %></h2>
+        <div><%= image_tag(game.game_image) if game.game_image.present? %></div>
+        <h3><%= game.game_notes %></h3>
+        <div><%= link_to 'See More', game_path(game) %></div>
+    </li>
+  <% end %>
+</ul>
+
+</section>
