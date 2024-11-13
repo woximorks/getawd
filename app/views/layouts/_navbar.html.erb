@@ -12,7 +12,7 @@
     <li><%= link_to 'Videos', videos_path %></li>
     <% if user_signed_in? %>
         <li><%= link_to 'Tasks', tasks_path %></li>
-        <!-- Add more links here as needed -->
+        <li><%= link_to 'Gaming', games_path %></li>
         <li><%= button_to 'Logout', destroy_user_session_path, method: :delete %></li>
     <% end %>
   </ul>
