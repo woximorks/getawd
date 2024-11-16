@@ -81,6 +81,10 @@ body {
       color: $primary-color;
       text-align: center;
     }
+
+    h3 {
+      text-align: center;
+    }
   
     ul {
       list-style-type: none;
@@ -147,6 +151,15 @@ body {
   .blog-post {
     img {
       max-width: 100%;
+    }
+  }
+
+  .document {
+    margin-left: 15%;
+    text-align: center;
+    width: 70%;
+    img {
+      max-height: 20vh;
     }
   }
 

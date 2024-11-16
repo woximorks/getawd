@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_11_13_051641) do
+ActiveRecord::Schema[7.1].define(version: 2024_11_16_160944) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,6 +22,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_13_051641) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "featured"
+  end
+
+  create_table "documents", id: :serial, force: :cascade do |t|
+    t.string "title", limit: 255
+    t.json "subheadings"
+    t.json "body"
+    t.json "images"
+    t.json "youtube_id"
+    t.json "metadata"
+    t.datetime "created_at", precision: nil, default: -> { "now()" }, null: false
+    t.datetime "updated_at", precision: nil, default: -> { "now()" }, null: false
   end
 
   create_table "games", force: :cascade do |t|

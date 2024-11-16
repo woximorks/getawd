@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  subheadings: 
+  body: 
+  images: 
+  youtube_id: 
+  metadata: 
+
+two:
+  title: MyString
+  subheadings: 
+  body: 
+  images: 
+  youtube_id: 
+  metadata: 

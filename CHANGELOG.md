@@ -4,6 +4,30 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.9.9] 2024/11/12
+### Documentation section
+
+### Added
+- Document scaffold
+    - Removed most of it lol
+- document{#i}-{#i}.png
+    - Supporting images for documentation
+
+### Changed
+- application.scss
+    - for gaming section, front end
+    - for documents, front end
+- games/index.html.erb
+    - updating what displays
+- document_controller.rb
+    - auth user before access
+- nav.html.erb
+    - referencing documentation section when authenticated
+- seeds/documents.rb
+    - dummy data
+- documents/index.html.erb, show.html.erb, _document.html.erb
+    - Seeing what we want when we want 
+
 ## [1.9.8] 2024/11/12
 ### Gaming section
 
