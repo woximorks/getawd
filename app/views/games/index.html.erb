@@ -1,15 +1,22 @@
 <section id="games">
   <h2>Gaming Highlights</h2>
-  <h3>Some of our favorite video game highlights, how tos, and other happenings with the games we play.</h3>
+  <h3>Some of our favorite video game highlights, how-tos, and other happenings with the games we play.</h3>
   <ul>
-  <% @games.each do |game| %>
-    <li>
+    <% @games.each do |game| %>
+      <li>
         <h2><%= game.game_name %></h2>
-        <div><%= image_tag(game.game_image) if game.game_image.present? %></div>
-        <h3><%= game.game_notes %></h3>
+        <% if game.game_image.present? %>
+          <div><%= image_tag(game.game_image, alt: game.game_name) %></div>
+        <% end %>
+        <% if game.game_notes.is_a?(Array) %>
+          <% game.game_notes.each do |note| %>
+            <p><%= note %></p>
+          <% end %>
+        <% else %>
+          <p><%= game.game_notes %></p>
+        <% end %>
         <div><%= link_to 'See More', game_path(game) %></div>
-    </li>
-  <% end %>
-</ul>
-
+      </li>
+    <% end %>
+  </ul>
 </section>

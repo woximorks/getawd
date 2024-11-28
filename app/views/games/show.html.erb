@@ -1,11 +1,28 @@
 <section class="game">
-    <ul><li>
-    <h2><%= @game.game_name %></h2>
-    <div><%= image_tag(@game.game_image) if @game.game_image.present? %></div>
-    <h3><%= @game.game_notes %></h3>
-    <h3><%= @game.game_type %></h3>
-    <h3>Start Date: <%= @game.start_date %></h3>
-    <h3>Completion Date: <%= @game.completion_date %></h3>
-    <div><iframe src='https://www.youtube.com/embed/<%= @game.youtube_id %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe></div>
-    </li></ul>
+  <ul>
+    <li>
+      <h2><%= @game.game_name %></h2>
+      <% if @game.game_image.present? %>
+        <div>
+          <%= image_tag(@game.game_image, alt: @game.game_name) %>
+        </div>
+      <% end %>
+      <% if @game.game_notes.is_a?(Array) %>
+        <% @game.game_notes.each do |note| %>
+          <p><%= note %></p>
+        <% end %>
+      <% else %>
+        <p><%= @game.game_notes %></p>
+      <% end %>
+      <% if @game.youtube_id.present? %>
+        <div>
+          <iframe 
+            src="https://www.youtube.com/embed/<%= @game.youtube_id %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>" 
+            frameborder="0" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      <% end %>
+    </li>
+  </ul>
 </section>

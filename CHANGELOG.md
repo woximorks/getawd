@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.10.9] 2024/11/23
+### Gaming Section Updates
+#### Been doing changelogs wrong this whole time lol whoops
+
+### Added
+- Migration files
+    - Related to converting game_notes to json
+
+### Changed
+- seeds/games.rb
+    - updated gaming info for existing, and upcoming
+- games/index.html, show.html
+    - Front end stuff, mostly related to displaying json
+- Migration
+    - Related to converting game_notes to json
+- games_controller.rb
+    - Auth for any action for now
+
+
 ## [1.9.9] 2024/11/12
 ### Documentation section
 
