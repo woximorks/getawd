@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.10.12] 2024/12/2
+### Updating how the buttons display
+
+### Changed
+- home/index.html.erb, projects, blog_posts, application.scss
+    - Button was landing on same line as image in some resolutions, causing display issues.
+
 ## [1.10.11] 2024/12/2
 ### Adding new blog post image
 
