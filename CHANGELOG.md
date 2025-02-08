@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.11.1] - 2025/02/08
+### Improved Pagination and SCSS Organization
+
+### Added
+- **`_videos.scss`**: New SCSS partial for video-related styles.
+- **`_tasks.scss`**: New SCSS partial for task-specific styles.
+
+### Changed
+- **`tasks_controller.rb`**:
+  - Implemented pagination, now displaying **10 tasks per page** for better performance.
+
+### Notes
+- SCSS files are now more modular, improving maintainability.
+- Pagination logic enhances task list usability and prevents long page loads.
+
 ## [1.11.0] 2025/02/08
 ### Calendar Moved to Its Own Section
 
