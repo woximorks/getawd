@@ -1,27 +1,11 @@
-<section id="task-calendar">
-  <%= month_calendar(attribute: :due_date) do |date| %>
-    <div class="day">
-      <strong><%= date.day %></strong> <!-- Shows the day number -->
-
-      <!-- Fetch tasks for this specific date, adjusted for timezone -->
-      <% tasks_for_date = @tasks.select { |task| task.due_date.in_time_zone.to_date == date } %>
-
-      <% tasks_for_date.each do |task| %>
-        <div class="task">
-          <%= link_to task.task_name, task_path(task) %>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
-</section>
-
-<hr>
-
-<section id="tasks">
+<section id="search">
   <%= form_with url: tasks_path, method: :get, local: true do %>
     <div>
-      <%= text_field_tag :search, params[:search], placeholder: "Enter task name", style: "width: 200px;" %>
-      <%= submit_tag "Search", style: "margin-right: 1em;" %>
+      <%= form_with url: tasks_path, method: :get, local: true do |f| %>
+        <%= f.text_field :search, value: params[:search], placeholder: "Enter task name", style: "width: 200px;" %>
+        <%= f.submit "Search", style: "margin-right: 1em;" %>
+        <%= link_to "Clear", tasks_path, class: "button", style: "margin-left: 1em;" %>
+      <% end %>
       
       <div>
         <%= check_box_tag :show_all, "true", params[:show_all] == "true", onchange: "this.form.submit()" %>
@@ -41,6 +25,46 @@
       </div>
     </div>
   <% end %>
+</section>
+
+<section id="task-calendar-daily">
+<h1>Daily Calendar</h1>
+  <%= calendar(number_of_days: 1) do |date| %>
+    <ul class="task-calendar-today">
+        <!-- Fetch tasks for this specific date, adjusted for timezone -->
+        <% tasks_for_date = @tasks.select { |task| task.due_date.in_time_zone.to_date == date } %>
+
+        <% tasks_for_date.each do |task| %>
+          <li class="task">
+            <%= link_to task.task_name, task_path(task) %>
+          </li>
+        <% end %>
+    </ul>
+  <% end %>
+  <%= link_to 'New task', new_task_path %>
+</section>
+
+<section id="task-calendar-monthly">
+<h1>Monthly Calendar</h1>
+  <%= month_calendar(attribute: :due_date) do |date| %>
+    <ul class="task-calendar-monthly-day">
+      <strong class="date_day"><%= date.day %></strong> <!-- Shows the day number -->
+
+      <!-- Fetch tasks for this specific date, adjusted for timezone -->
+      <% tasks_for_date = @tasks.select { |task| task.due_date.in_time_zone.to_date == date } %>
+
+      <% tasks_for_date.each do |task| %>
+        <li class="task">
+          <%= link_to task.task_name, task_path(task) %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</section>
+
+<hr>
+
+<section id="tasks">
   <table>
     <thead>
       <tr>
@@ -68,5 +92,17 @@
       <% end %>
     </tbody>
   </table>
-  <%= link_to 'New task', new_task_path %>
+
+  <div>
+    <% if @page > 1 %>
+      <%= link_to "Previous", tasks_path(page: @page - 1, search: params[:search], show_all: params[:show_all], on_hold: params[:on_hold], completed: params[:completed]) %>
+    <% end %>
+
+    Page <%= @page %> of <%= @total_pages %>
+
+    <% if @page < @total_pages %>
+      <%= link_to "Next", tasks_path(page: @page + 1, search: params[:search], show_all: params[:show_all], on_hold: params[:on_hold], completed: params[:completed]) %>
+    <% end %>
+  </div>
+
 </section>

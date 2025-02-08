@@ -1,9 +1,30 @@
-#task-calendar {
-    width: 80%;
-    margin-left: 10%;
-  .task {
-    margin-top: 5px;
-    font-size: 0.9em;
-    color: #555;
+.simple-calendar {
+  .day {
+    li {
+      margin-left: 18%;
+      list-style-type: none;
+    }
+    .date_day {
+      position: absolute;
+    }
+  }
+}
+
+#search {
+  margin: 1em;
+}
+
+#task-calendar-daily {
+  margin-left: 10%;
+  width: 80%;
+}
+#task-calendar-monthly {
+  width: 80%;
+  margin-left: 10%;
+  ul {
+    padding: 0;
+    max-height: 80px;
+    overflow: scroll;
+    margin: 0;
   }
 }

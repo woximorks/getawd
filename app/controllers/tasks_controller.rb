@@ -7,22 +7,19 @@ class TasksController < ApplicationController
     # Apply filter only if `show_all` is not checked
     unless params[:show_all] == "true"
       if params[:on_hold] == "true" && params[:completed] == "true"
-        # Show tasks that are either "on hold" or "completed"
-        @tasks = @tasks.where(status: %w[on_hold completed])
+        @tasks = @tasks.where(status: %w[on_hold completed]) # Show both "on hold" and "completed"
       elsif params[:on_hold] == "true"
-        # Show only "on hold" tasks
-        @tasks = @tasks.where(status: "on_hold")
+        @tasks = @tasks.where(status: "on_hold") # Only "on hold" tasks
       elsif params[:completed] == "true"
-        # Show only "completed" tasks
-        @tasks = @tasks.where(status: "completed")
+        @tasks = @tasks.where(status: "completed") # Only "completed" tasks
       else
-        # Default view excludes "on hold" and "completed" if no filters are selected
-        @tasks = @tasks.where.not(status: %w[completed on_hold])
+        @tasks = @tasks.where.not(status: %w[completed on_hold]) # Default: Exclude both
       end
     end
   
-    # Apply sorting if a sort parameter is present
-    if params[:sort].present?
+    # Allow sorting only by specific columns to prevent SQL injection
+    allowed_sort_columns = %w[task_name status priority due_date]
+    if params[:sort].present? && allowed_sort_columns.include?(params[:sort])
       @tasks = @tasks.order(params[:sort])
     end
   
@@ -30,6 +27,12 @@ class TasksController < ApplicationController
     if params[:search].present?
       @tasks = @tasks.where("task_name ILIKE ?", "%#{params[:search]}%")
     end
+  
+    # Pagination logic (manual, 10 tasks per page)
+    @page = (params[:page] || 1).to_i
+    @per_page = @tasks.count
+    @total_pages = (@tasks.count / @per_page.to_f).ceil
+    @tasks = @tasks.offset((@page - 1) * @per_page).limit(@per_page)
   end
   
 
