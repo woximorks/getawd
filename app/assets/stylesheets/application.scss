@@ -236,6 +236,10 @@ body {
   }
 
 // Styles for the All Tasks section
+#search {
+  margin: 1em;
+}
+
 #tasks {
     padding: 2rem;
     background-color: lighten($background-color, 5%);

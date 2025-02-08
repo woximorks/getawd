@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'calendar/show'
   resources :documents
   devise_for :users
   root 'home#index'
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
   get 'videos/show'
   get 'projects', to: 'projects#index'
   get 'projects/show'
+  get 'calendar', to: 'calendar#show'
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
