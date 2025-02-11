@@ -7,6 +7,7 @@
 
         <% tasks_for_date.each do |task| %>
           <li class="task">
+            <span class="status-dot <%= task.status %>"></span>
             <%= link_to task.task_name, task_path(task) %>
           </li>
         <% end %>
@@ -26,8 +27,8 @@
 
       <% tasks_for_date.each do |task| %>
         <li class="task">
-          <%= link_to task.task_name, task_path(task) %>
-        </li>
+          <span class="status-dot <%= task.status %>"></span>
+          <%= link_to task.task_name, task_path(task) %>        </li>
       <% end %>
     </ul>
   <% end %>

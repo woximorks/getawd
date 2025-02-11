@@ -31,3 +31,16 @@ $font-stack: 'Roboto', sans-serif;
     margin: 0;
   }
 }
+
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 5px;
+
+  &.not_started { background-color: orange; }
+  &.in_progress { background-color: blue; }
+  &.on_hold { background-color: red; }
+  &.completed { background-color: lime; }
+}
