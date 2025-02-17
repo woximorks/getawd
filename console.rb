@@ -49,9 +49,19 @@ def add_task_once_weekly(weekday, task_name, description = "No description provi
   end
 
   # Task List
-  
+
   add_task_once_weekly('Sunday', 'Planning', 'General SMART goals added for all daily tasks for the upcoming week. For example, 30 minutes of cardio(running) and 100 pushups is a SMART exercise goal.')
   add_task_once_weekly('Friday', 'Web Development', '1 hour of development')
   add_task_once_weekly('Thursday', 'Fabrication', '1 hour on 55 rollcage')
   add_task_once_weekly('Thursday', 'School', '30 minutes of school')
 
+##### New blog post
+BlogPost.create!(
+  title: "Using the Rails Console to Quickly Populate Data",
+  description: "The Rails console is a powerful tool for quickly adding and managing data without needing a full UI. Whether you're creating blog posts, adding recurring tasks, or testing new features, the console can save time and streamline development.",
+  body: "<p>The Rails console is a fast and efficient way to add and update data without using the UI. Whether you're creating tasks, adding blog posts, or setting up recurring events, the console allows you to work directly with the database, saving time and reducing manual input.</p><p>Using simple commands, you can quickly populate information that would otherwise require multiple clicks in the app. This is especially useful for testing, debugging, or automating repeatable tasks like scheduled events or default records.</p>",
+  image: "blog1.png",
+  created_at: Time.current,
+  updated_at: Time.current,
+  featured: true
+)

@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
     private
   
     def set_app_content
-        @about_app_level = "AW Development - Rails applications and API integrations."
-        @contact_app_level = "We can help with your next development project!"
+        @about_app_level = "Web App Development | API Integrations | Database Management"
+        @contact_app_level = "AW Development - A site showcasing some development projects we've created or contributed to!"
     end
   end

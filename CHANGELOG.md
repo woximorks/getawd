@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.11.3] - 2025/02/16
+### Homepage Updates
+
+### Changed
+- **`index.html.erb`**: Moved **About** and **Contact** sections to the top for better visibility.
+- **`application_controller.rb`**: Updated homepage content display logic.
+- **`application.scss`**: Added styling for `<h3>` elements.
+
+### Notes
+- Improves homepage organization for a better user experience.
+- Enhanced styling consistency for section headers.
+
 ## [1.11.2] - 2025/02/11  
 ### Status Indicators and App Name Fix  
 
