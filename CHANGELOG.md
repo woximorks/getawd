@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.11.5] - 2025/02/17
+### Footer Implementation
+
+### Added
+- **`layouts/_footer.html.erb`**: New footer partial for consistent site-wide use.
+
+### Changed
+- **`layouts/application.html.erb`**: Integrated the new footer into the layout.
+- **`blog_posts/show.html.erb`**: Fixed a missing closing `<div>` to ensure proper structure.
+
+### Notes
+- The new footer improves site consistency and navigation.
+- Fixed structural issue in blog posts to prevent layout breaks.
+
 ## [1.11.4] - 2025/02/17
 ### Blog Cleanup
 

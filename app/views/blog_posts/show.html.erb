@@ -1,25 +1,27 @@
 <div class="blog-post">
 
-<% if @blog_post.image.present? %>
-    <div class="img">
-        <%= image_tag @blog_post.image, alt: @blog_post.title %>
+    <% if @blog_post.image.present? %>
+        <div class="img">
+            <%= image_tag @blog_post.image, alt: @blog_post.title %>
+        </div>
+    <% end %>
+
+    <div class="title">
+        <h3><%= @blog_post.title %></h3>
     </div>
-<% end %>
 
-<div class="title">
-    <h3><%= @blog_post.title %></h3>
-</div>
+    <% if @blog_post.description.present? %>
+        <div class="description">
+            <p><%= @blog_post.description %></p>
+        </div>
+    <% end %>
 
-<% if @blog_post.description.present? %>
-    <div class="description">
-        <p><%= @blog_post.description %></p>
+    <div class="body">
+        <%= simple_format(@blog_post.body) %>
     </div>
-<% end %>
-
-<div class="body">
-    <%= simple_format(@blog_post.body) %>
-</div>
-<p><em>Posted: <%= @blog_post.created_at.strftime("%B %d, %Y") %></em></p> <!-- Added line -->
-<div class="navigation">
-<%= link_to 'Back to Blog Posts', blog_posts_path %>
+    <p><em>Posted: <%= @blog_post.created_at.strftime("%B %d, %Y") %></em></p> <!-- Added line -->
+    <div class="navigation">
+    <%= link_to 'Back to Blog Posts', blog_posts_path %>
+    </div>
+    
 </div>
