@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.11.4] - 2025/02/17
+### Blog Cleanup
+
+### Changed
+- **`home/index.html.erb`**: Updated the **About** subheading name for clarity.
+- **`application.scss`**: Added styling improvements for blog post formatting.
+- **`blog_posts/show.html.erb`**: Removed unnecessary elements for a cleaner layout.
+
+### Notes
+- Improves readability and structure of the blog section.
+- Simplifies blog post presentation by removing unnecessary bloat.
+
 ## [1.11.3] - 2025/02/16
 ### Homepage Updates
 

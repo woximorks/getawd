@@ -1,20 +1,18 @@
-<h1><%= @blog_post.title %></h1>
-
 <div class="blog-post">
 
 <% if @blog_post.image.present? %>
-    <div class="image">
+    <div class="img">
         <%= image_tag @blog_post.image, alt: @blog_post.title %>
     </div>
 <% end %>
 
 <div class="title">
-    <%= @blog_post.title %>
+    <h3><%= @blog_post.title %></h3>
 </div>
 
 <% if @blog_post.description.present? %>
     <div class="description">
-        <%= @blog_post.description %>
+        <p><%= @blog_post.description %></p>
     </div>
 <% end %>
 

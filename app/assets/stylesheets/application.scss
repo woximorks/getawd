@@ -84,7 +84,7 @@ body {
   }
 }
 
-  #blog-posts, #games, .game, #projects {
+  #blog-posts, .blog-post, #games, .game, #projects {
     padding: 2rem;
     background-color: lighten($background-color, 10%);
     border-radius: 8px;
@@ -165,8 +165,12 @@ body {
   }
 
   .blog-post {
-    img {
+    max-width: 50%;
+    margin: 0 auto;
+    .img {
+      img {
       max-width: 100%;
+      }
     }
   }
 
