@@ -1,0 +1,85 @@
+// Variables for colors and fonts need to be updated on each individual sheet
+$primary-color: #3a579d;
+$secondary-color: #3e3e3e;
+$background-color: #ecf0f1;
+$text-color: #465563;
+$hover-color: darken($primary-color, 10%);
+$font-stack: 'Roboto', sans-serif;
+
+#contact {
+    text-align: center;
+    padding: 2rem;
+    background-color: lighten($background-color, 5%);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+  
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: $primary-color;
+      text-align: center; // Center the heading
+    }
+  
+    h2 {
+      font-size: 2rem;
+      margin: 1.5rem 0 1rem; // Spacing above and below the subheading
+      color: $secondary-color;
+    }
+
+    h3 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: $primary-color;
+      text-align: center; // Center the heading
+    }
+  
+    ul {
+      
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 1em;
+      li {
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        transition: transform 0.3s, box-shadow 0.3s;
+        strong {
+          color: $primary-color; // Emphasize the strong elements
+        }
+  
+        // Add hover effect for list items
+        &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  
+    p {
+      font-size: 1.2rem;
+      margin: 1.5rem 0;
+      text-align: center; // Center the paragraph
+      color: $text-color;
+    }
+  
+    // Styles for social media links
+    a {
+      display: inline-block;
+      background-color: $primary-color;
+      color: white;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+  
+      &:hover {
+        background-color: $hover-color;
+      }
+    }
+  }

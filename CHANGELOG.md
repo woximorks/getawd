@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.11.6] - 2025/02/17  
+### SCSS Cleanup & Project Refactoring  
+
+### Added  
+- **`_about.scss`**: New SCSS partial for About page styles.  
+- **`_contact.scss`**: New SCSS partial for Contact page styles.  
+
+### Changed  
+- **`application.scss`**: Moved About and Contact styles to dedicated SCSS files for better organization.  
+- **`projects_controller.rb`**: Removed `show` action since projects link to external URLs.  
+
+### Removed  
+- **`projects/show.html.erb`**: Removed unnecessary view file (not ever needed).  
+
+### Notes  
+- Improved SCSS structure for easier maintenance.  
+- Simplified project handling by removing an unnecessary controller action and view.  
+
+
 ## [1.11.5] - 2025/02/17
 ### Footer Implementation
 
