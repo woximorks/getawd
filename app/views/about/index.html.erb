@@ -1,13 +1,18 @@
-<section id="about">
+<section class="about">
 <h1>About</h1>
 
-<!-- change this in about_controller.rb-->
-<p id="about_from_controller"><%= @about %></p>
-
 <ul id="paragraphs_from_yml">
-  <li><%= @about_info['about']['paragraph1'] %></li>
-  <li><%= @about_info['about']['paragraph2'] %></li>
-  <li><%= @about_info['about']['paragraph3'] %></li>
-  <li><%= @about_info['about']['paragraph4'] %></li>
+  <li>
+    <%= image_tag "logo.png", alt: "Logo", class: "navbar-logo" %>
+    <p><%= @about_info['about']['paragraph1'] %></p>
+  </li>  
+  <li>
+    <%= image_tag "logo.png", alt: "Logo", class: "navbar-logo" %>
+    <p><%= @about_info['about']['paragraph2'] %></p>
+  </li>
+  <li>
+    <%= image_tag "logo.png", alt: "Logo", class: "navbar-logo" %>
+    <p><%= @about_info['about']['paragraph3'] %></p>
+  </li>
 </ul>
 </section>

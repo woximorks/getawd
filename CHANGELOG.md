@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.12.0] - 2025/02/18
+## Front end changes for greater consistency
+
+### Changes
+- Various changes to scss and html.erb files for a more organized front end.
+
 ## [1.11.6] - 2025/02/17  
 ### SCSS Cleanup & Project Refactoring  
 

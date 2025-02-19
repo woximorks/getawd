@@ -1,9 +1,13 @@
-<section id="about">
-  <h1 style="font-size: 1.5rem!important;"><%= @about_app_level %></h1>
-  <h3><%= @about_sub_app_level %></h3>
+<section class="featured-about" style="border-radius: 0; padding: 2rem; border-top: 3px solid #3a579d; border-bottom-right-radius: 8px; border-bottom-left-radius: 8px;">
+  <h2 style="font-size: 1.5rem!important;">
+    <%= @about_app_level %>
+  </h2>
+  <h3>
+    <%= @about_sub_app_level %>
+  </h3>
 </section>
 
-<section id="projects">
+<section class="featured-projects">
   <h2>Featured Projects</h2>
   <ul>
     <% @featured_projects.each do |project| %>
@@ -19,7 +23,7 @@
   </ul>
 </section>
 
-<section id="blog-posts">
+<section class="featured-blog-posts">
   <h2>Featured Blog Posts</h2>
   <ul>
     <% @featured_blog_posts.each do |blog_post| %>
@@ -35,7 +39,7 @@
   </ul>
 </section>
 
-<section id="videos">
+<section class="featured-videos">
   <h2>Featured Videos</h2>
   <ul>
     <% @featured_videos.each do |video| %>

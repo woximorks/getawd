@@ -1,13 +1,15 @@
 // stylesheets/_navbar.scss
 
-$navbar-background: gray;
-$navbar-text-color: white;
-$navbar-hover-color: #3a579d;
-$navbar-padding: 1rem;
+$primary-color: #3a579d;
+$secondary-color: #3e3e3e;
+$background-color: #ecf0f1;
+$text-color: #465563;
+$hover-color: darken($primary-color, 10%);
+$font-stack: 'Roboto', sans-serif;
 
 .navbar {
-  background-color: $navbar-background;
-  padding: $navbar-padding;
+  background-color: gray;
+  padding: 1rem;
 
   ul {
     list-style: none;
@@ -21,14 +23,14 @@ $navbar-padding: 1rem;
       margin: 0.5rem;
 
       a {
-        color: $navbar-text-color;
+        color: $background-color;
         text-decoration: none;
         padding: 0.5rem 1rem;
         border-radius: 4px;
         transition: background-color 0.3s;
 
         &:not(:has(img)):hover {
-          background-color: $navbar-hover-color;
+          background-color: #3a579d;
         }
       }
 

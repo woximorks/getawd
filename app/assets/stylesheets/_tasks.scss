@@ -10,8 +10,8 @@ $font-stack: 'Roboto', sans-serif;
     padding: 2rem;
     background-color: lighten($background-color, 5%);
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 2rem;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
     input[type="text"] {
       padding: 8px;
       border: 1px solid #ccc;

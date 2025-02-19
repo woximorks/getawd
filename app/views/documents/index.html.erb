@@ -1,10 +1,11 @@
-<h1>Documents</h1>
-
-<div id="documents">
+<section class="documents">
+  <h2>Documents</h2>
+  <ul>
   <% @documents.each do |document| %>
+    <li>
     <%= render document %>
-    <p>
-      <%= link_to "Show this document", document %>
-    </p>
+    <%= link_to "Show this document", document %>
+    </li>
   <% end %>
-</div>
+</ul>
+</section>
