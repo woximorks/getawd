@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.12.2] - 2025/02/19  
+### Goals Section Upgrades & Seed File Enhancements  
+
+### Added  
+- **Migration** to associate tasks with goals.  
+- **`seeds/goals.rb`**: Seed file for generating dummy goal data.  
+
+### Changed  
+- **`task.rb`**: Tasks now belong to a goal.  
+- **`tasks/_form.html.erb`**: Added a dropdown to associate tasks with a goal.  
+- **`tasks/show.html.erb`**: Displays the corresponding goal for each task.  
+- **`tasks_controller.rb`**: Requires `goal_id` when creating tasks.  
+- **`seeds/tasks.rb`**: Now includes `goal_id` for seeded tasks.  
+- **`seeds/goals.rb`**: Populated with dummy data for testing.  
+
+### Notes  
+- Strengthens task-goal relationships for better organization.  
+- Improves seeding process for easier testing and development.  
+
+
 ## [1.12.1] - 2025/02/19
 ### Goals Section
 

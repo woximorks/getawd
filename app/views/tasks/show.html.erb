@@ -8,6 +8,14 @@
 <p><strong>Due Date:</strong> <%= @task.due_date %></p>
 <p><strong>Completion Date:</strong> <%= @task.completion_date %></p>
 <p><strong>Assigned To:</strong> <%= @task.assigned_to %></p>
+<p>
+  <strong>Goal:</strong>
+  <% if @task.goal.present? %>
+    <%= @task.goal.title %>
+  <% else %>
+    <em>Not assigned</em>
+  <% end %>
+</p>
 <p><strong>Estimated Time (hours):</strong> <%= @task.estimated_time %></p>
 <p><strong>Actual Time (hours):</strong> <%= @task.actual_time %></p>
 <%= link_to 'Edit', edit_task_path %>

@@ -8,7 +8,8 @@ Task.create!(
   completion_date: nil,
   assigned_to: "Alice",
   estimated_time: 4,
-  actual_time: nil
+  actual_time: nil,
+  goal_id: 1
 )
 
 Task.create!(
@@ -21,7 +22,8 @@ Task.create!(
   completion_date: nil,
   assigned_to: "Bob",
   estimated_time: 3,
-  actual_time: nil
+  actual_time: nil,
+  goal_id: 2
 )
 
 Task.create!(
@@ -34,5 +36,6 @@ Task.create!(
   completion_date: nil,
   assigned_to: "Charlie",
   estimated_time: 2,
-  actual_time: nil
+  actual_time: nil,
+  goal_id: 5
 )

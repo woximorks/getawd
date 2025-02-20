@@ -50,6 +50,11 @@
       <%= form.label :assigned_to %>
       <%= form.text_field :assigned_to %>
     </div>
+
+    <div class="field">
+      <%= form.label :goal_id, "Goal" %>
+      <%= form.collection_select :goal_id, Goal.all, :id, :title, include_blank: true %>
+    </div>
   
     <div class="field">
       <%= form.label :estimated_time %>
