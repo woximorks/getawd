@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.12.1] - 2025/02/19
+### Goals Section
+
+### Added
+- **Generated Goal scaffold** for managing goals.
+
+### Changed
+- **`goals_controller.rb`**:
+  - Requires user authentication for goal-related actions.
+- **`_navbar.html.erb`**:
+  - Added navigation link to Goals section (visible when signed in).
+
+### Removed
+- **Unused scaffold files** related to files that won’t be used in the near future.
+
+### Notes
+- Introduces a dedicated Goals section for tracking progress.
+- Streamlines authentication to ensure goal-related actions are secure.
+
+
 ## [1.12.0] - 2025/02/18
 ## Front end changes for greater consistency
 
