@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.12.6] - 2025/02/21
+### Tasks Section Upgrades, descriptions for tasks / goals
+
+### Changed
+- **`tasks/show.html.erb`**:
+  - Added links to related sections (**Goals**, **Calendar**) for better navigation.
+- **`tasks/_form.html.erb`**:
+  - Clarified that the input represents **minutes** to avoid confusion.
+- **`tasks/index.html.erb`**:
+  - Added a description to define **what tasks are** for better context.
+- **`goals/index.html.erb`**:
+  - Added a description to define **what goals are** for clarity.
+- **`application.scss`**:
+  - Aligning <p> sherman 42 wallaby way Sydney tag
+
+### Notes  
+- Improves navigation by linking related sections.  
+- Enhances user understanding of **tasks and goals** with better descriptions.  
+- Prevents confusion around time-tracking units.  
+
 ## [1.12.5] - 2025/02/20
 ### Goals Section Upgrades & Frontend Improvements
 

@@ -11,15 +11,19 @@
 <p>
   <strong>Goal:</strong>
   <% if @task.goal.present? %>
-    <%= @task.goal.title %>
+    <%= link_to @task.goal.title, goal_path(@task.goal) %>
   <% else %>
     <em>Not assigned</em>
   <% end %>
 </p>
-<p><strong>Estimated Time (hours):</strong> <%= @task.estimated_time %></p>
-<p><strong>Actual Time (hours):</strong> <%= @task.actual_time %></p>
-<%= link_to 'Edit', edit_task_path %>
-<%= button_to 'Delete', @task, method: :delete, data: { confirm: 'Are you sure?' } %>
+<p><strong>Estimated Time (Minutes):</strong> <%= @task.estimated_time %></p>
+<p><strong>Actual Time (Minutes):</strong> <%= @task.actual_time %></p>
 
-<%= link_to 'Back to Tasks', tasks_path %>
+<%= link_to 'Edit This Task', edit_task_path %> | 
+<%= link_to 'Back to Tasks', tasks_path %> | 
+<%= link_to 'Back to Goals', goals_path %> | 
+<%= link_to 'Back to Calendar', calendar_path %>
+<%= button_to 'Delete Task', @task, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+
 </section>
