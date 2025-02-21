@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.12.4] - 2025/02/20  
+### Goals Section Upgrades  
+
+### Changed  
+- **`goals_controller.rb`**:  
+  - Goals are now sorted by **due date (ascending)**—closer due dates appear first.  
+- **`goals/index.html.erb`**:  
+  - Implemented `goals_by_due_date_asc` for proper sorting.  
+  - Added links to related tasks for better navigation.  
+- **`tasks_controller.rb`**:  
+  - Updated filtering logic to retrieve tasks when a `goal_id` is present.  
+
+### Notes  
+- Improves organization of Goals by prioritizing urgent ones.  
+- Enhances navigation by linking tasks directly to their respective goals.  
+
 ## [1.12.3] - 2025/02/20
 ### Goals Section Upgrades
 

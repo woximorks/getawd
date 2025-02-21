@@ -4,6 +4,11 @@ class TasksController < ApplicationController
   def index
     @tasks = Task.all
   
+    # Filter by goal if goal_id is provided
+    if params[:goal_id].present?
+      @tasks = @tasks.where(goal_id: params[:goal_id])
+    end
+  
     # Apply filter only if `show_all` is not checked
     unless params[:show_all] == "true"
       if params[:on_hold] == "true" && params[:completed] == "true"
@@ -17,25 +22,24 @@ class TasksController < ApplicationController
       end
     end
   
-    # Allow sorting only by specific columns to prevent SQL injection
+    # Sorting logic
     allowed_sort_columns = %w[task_name status priority due_date]
     if params[:sort].present? && allowed_sort_columns.include?(params[:sort])
       @tasks = @tasks.order(params[:sort])
     end
   
-    # Apply search filter if a search parameter is present
+    # Search filter
     if params[:search].present?
       @tasks = @tasks.where("task_name ILIKE ?", "%#{params[:search]}%")
     end
   
-    # Pagination logic (manual, 10 tasks per page)
+    # Pagination (manual, 10 tasks per page)
     @page = (params[:page] || 1).to_i
     @per_page = 10
     @total_pages = (@tasks.count / @per_page.to_f).ceil
     @tasks = @tasks.offset((@page - 1) * @per_page).limit(@per_page)
   end
   
-
   # Action to show a specific task
   def show
     @task = Task.find(params[:id])

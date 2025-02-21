@@ -7,6 +7,7 @@
       <th>Title</th>
       <th>Icon</th>
       <th>Deadline</th>
+      <th>Projected Time</th>
       <th>Related Tasks</th>
       <th>Due Date</th>
       <th>Status</th>
@@ -14,14 +15,17 @@
     </tr>
   </thead>
   <tbody class="goal">
-    <% @goals.each do |goal| %>
+    <% @goals_by_due_date_asc.each do |goal| %>
       <tr>
         <td><%= goal.title %></td>
         <td><%= goal.title %></td>
         <td>
           <%= (goal.due_date - Date.today).to_i %> days
         </td>
-        <td><%= goal.tasks.count %></td>
+        <td><%= goal.tasks.sum(:estimated_time) %> minutes</td>
+        <td>
+          <%= link_to goal.tasks.count, tasks_path(goal_id: goal.id) %>
+        </td>
         <td>
           <%= goal.due_date %> 
         </td>
