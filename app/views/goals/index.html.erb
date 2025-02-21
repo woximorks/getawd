@@ -1,20 +1,21 @@
 <section class="goals">
 <h1>Goals</h1>
 
-<table class="goals-table">
+<table>
   <thead>
     <tr>
       <th>Title</th>
       <th>Icon</th>
       <th>Deadline</th>
       <th>Projected Time</th>
+      <th>Actual Time</th>
       <th>Related Tasks</th>
       <th>Due Date</th>
       <th>Status</th>
       <th>Actions</th>
     </tr>
   </thead>
-  <tbody class="goal">
+  <tbody>
     <% @goals_by_due_date_asc.each do |goal| %>
       <tr>
         <td><%= goal.title %></td>
@@ -23,6 +24,7 @@
           <%= (goal.due_date - Date.today).to_i %> days
         </td>
         <td><%= goal.tasks.sum(:estimated_time) %> minutes</td>
+        <td><%= goal.tasks.sum(:actual_time) %> minutes</td>
         <td>
           <%= link_to goal.tasks.count, tasks_path(goal_id: goal.id) %>
         </td>
@@ -38,5 +40,6 @@
   </tbody>
 </table>
 
-<%= link_to "New Goal", new_goal_path %>
+<%= link_to "New Goal", new_goal_path, class: "new-button" %>
+<%= link_to "New Task", new_task_path, class: "new-button" %>
 </section>

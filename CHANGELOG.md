@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.12.5] - 2025/02/20
+### Goals Section Upgrades & Frontend Improvements
+
+### Changed
+- **`goals/index.html.erb`**:
+  - Added **Actual Time** as a new metric for tracking progress.
+- **`application.scss`**:
+  - Consolidated **Goals** and **Tasks** styles for consistency and maintainability.
+
+### Removed
+- **`tasks.scss`** and **`goals.scss`**:  
+  - Merged into `application.scss` to standardize styles.
+
+### Notes
+- Improved frontend consistency between Goals and Tasks.
+- New metric helps with better tracking of time spent on goals.
+
 ## [1.12.4] - 2025/02/20  
 ### Goals Section Upgrades  
 
