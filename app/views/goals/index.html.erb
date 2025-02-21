@@ -1,16 +1,38 @@
-<p style="color: green"><%= notice %></p>
-
+<section class="goals">
 <h1>Goals</h1>
 
-<div id="goals">
-  <% @goals.each do |goal| %>
-    <p>
-      <%= goal.title %>
-    </p>
-    <p>
-      <%= link_to "Show this goal", goal %>
-    </p>
-  <% end %>
-</div>
+<table class="goals-table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Icon</th>
+      <th>Deadline</th>
+      <th>Related Tasks</th>
+      <th>Due Date</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody class="goal">
+    <% @goals.each do |goal| %>
+      <tr>
+        <td><%= goal.title %></td>
+        <td><%= goal.title %></td>
+        <td>
+          <%= (goal.due_date - Date.today).to_i %> days
+        </td>
+        <td><%= goal.tasks.count %></td>
+        <td>
+          <%= goal.due_date %> 
+        </td>
+        <td>
+          <%= goal.status %> 
+        </td>
+        <td><%= link_to "Show", goal %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<%= link_to "New goal", new_goal_path %>
+<%= link_to "New Goal", new_goal_path %>
+</section>

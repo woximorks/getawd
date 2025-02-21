@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.12.3] - 2025/02/20
+### Goals Section Upgrades
+
+### Added
+- **`_goals.scss`**: New SCSS partial for Goal-related styles.
+
+### Changed
+- **`goals/index.html.erb`**:
+  - Displays additional goal-related info to track progress more effectively.
+- **`models/goal.rb`**:
+  - Established a **one-to-many** relationship between Goals and Tasks.
+
+### Removed
+- **Default scaffold 'notice' tags**:  
+  - Removed due to inconsistent behavior and unnecessary clutter.
+
+### Notes
+- Goals now display progress-related info for better tracking.
+- Tasks can now be associated with Goals, improving structure.
+
 ## [1.12.2] - 2025/02/19  
 ### Goals Section Upgrades & Seed File Enhancements  
 
