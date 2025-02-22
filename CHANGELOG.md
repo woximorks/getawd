@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.12.8] - 2025/02/22
+### Task Icons
+
+### Changed
+- **`tasks/_form.html.erb`**:
+  - Updated to select from **existing goals** instead of using a static YAML list, ensuring correct associations.
+- **`seeds/tasks.rb`**:
+  - Added **more sample tasks** for development.
+
+### Notes
+- Improves data integrity by properly linking tasks to **actual goals**.
+- Enhances development environment with additional **seed data**.
+
 ## [1.12.7] - 2025/02/21  
 ### Task Icons  
 

@@ -53,7 +53,7 @@
 
     <div class="field">
       <%= form.label :goal_id, "Related Goal" %>
-      <%= form.select :category, GOAL_ICONS.map { |category, icon| ["#{icon} #{category.humanize}", category] } %>
+      <%= form.collection_select :goal_id, Goal.all, :id, ->(g) { "#{GOAL_ICONS[g.category.to_s] || '📝'} #{g.title}" } %>
     </div>
   
     <div class="field">
