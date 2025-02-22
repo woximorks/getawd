@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.12.9] - 2025/02/22
+### Task Icons, Task Icons Everywhere
+
+### Changed
+- **`calendar/show.html.erb`**:
+  - Added **task icons** to calendar view for better visualization.
+- **`goals/index.html.erb`**: 
+  - Added **edit link** for each goal to improve navigation.
+- **`application.scss` & `tasks/index.html.erb`**:
+  - Centered tables for **Tasks** and **Goals** for a more polished layout.
+- **`tasks/index.html.erb`**:
+  - Now displays the **related goal** for each task.
+
+### Notes  
+- Enhances UI with **icons on the calendar** for quick task identification.
+- Improves **goal management** with direct edit links.
+- Layout improvements make **task/goal tables easier to read**.
+
 ## [1.12.8] - 2025/02/22
 ### Task Icons
 

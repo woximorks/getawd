@@ -8,7 +8,7 @@
         <% tasks_for_date.each do |task| %>
           <li class="task">
             <span class="status-dot <%= task.status %>"></span>
-            <%= link_to task.task_name, task_path(task) %>
+            <%= link_to (GOAL_ICONS[task.goal.category] || "📝"), task_path(task) %>
           </li>
         <% end %>
     </ul>
@@ -28,7 +28,7 @@
       <% tasks_for_date.each do |task| %>
         <li class="task">
           <span class="status-dot <%= task.status %>"></span>
-          <%= link_to task.task_name, task_path(task) %>        </li>
+          <%= link_to (GOAL_ICONS[task.goal.category] || "📝"), task_path(task) %>
       <% end %>
     </ul>
   <% end %>

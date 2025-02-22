@@ -36,6 +36,7 @@
     <thead>
       <tr>
         <th><%= link_to 'Task Name', tasks_path(sort: 'task_name') %></th>
+        <th style="text-align: center";><%= link_to 'Related Goal', tasks_path(sort: 'goal') %></th>
         <th><%= link_to 'Status', tasks_path(sort: 'status') %></th>
         <th><%= link_to 'Priority', tasks_path(sort: 'priority') %></th>
         <th><%= link_to 'Due Date', tasks_path(sort: 'due_date') %></th>
@@ -45,8 +46,11 @@
     <tbody>
       <% @tasks.each do |task| %>
         <tr class="<%= 'overdue' if task.due_date < Date.today %>">
-          <td class="<%= 'highlight' if params[:search].present? && task.task_name.downcase.include?(params[:search].downcase) %>">
+          <td style="text-align: left" class="<%= 'highlight' if params[:search].present? && task.task_name.downcase.include?(params[:search].downcase) %>">
             <%= task.task_name %>
+          </td>
+          <td>
+            <%= link_to "#{GOAL_ICONS[task.goal.category] || '📝'} | #{task.goal.title}", goal_path(task.goal) if task.goal %>
           </td>
           <td><%= task.human_status %></td>
           <td><%= task.priority %></td>

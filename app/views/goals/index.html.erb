@@ -19,7 +19,7 @@
   <tbody>
     <% @goals_by_due_date_asc.each do |goal| %>
       <tr>
-        <td><%= GOAL_ICONS[goal.category] || "📝" %> | <%= goal.title %></td>
+        <td style="text-align: left"><%= GOAL_ICONS[goal.category] || "📝" %> | <%= goal.title %></td>
         <td>
           <%= (goal.due_date - Date.today).to_i %> days
         </td>
@@ -34,7 +34,10 @@
         <td>
           <%= goal.status %> 
         </td>
-        <td><%= link_to "Show", goal %></td>
+        <td>
+          <%= link_to "Show", goal %> | 
+          <%= link_to "Edit", edit_goal_path(goal) %>
+        </td>
       </tr>
     <% end %>
   </tbody>
