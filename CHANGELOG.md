@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.12.10] - 2025/02/22
+### SCSS Consistency & Pagination Update
+
+### Changed
+- **`files.scss`**:
+  - Standardized **SCSS variables** for consistency, specifically related to **hover colors**.
+- **`tasks_controller.rb`**:
+  - Temporarily increased **pagination limit** to **100 tasks per page** until further refinement.
+
+### Notes
+- Ensures **consistent styling** across the app by properly setting SCSS variables.
+- Adjusts **pagination for better usability** while future optimizations are considered.
+
 ## [1.12.9] - 2025/02/22
 ### Task Icons, Task Icons Everywhere
 

@@ -35,7 +35,7 @@ class TasksController < ApplicationController
   
     # Pagination (manual, 10 tasks per page)
     @page = (params[:page] || 1).to_i
-    @per_page = 10
+    @per_page = 100
     @total_pages = (@tasks.count / @per_page.to_f).ceil
     @tasks = @tasks.offset((@page - 1) * @per_page).limit(@per_page)
   end
