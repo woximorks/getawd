@@ -6,6 +6,7 @@ class GoalsController < ApplicationController
   def index
     @goals = Goal.all
     @goals_by_due_date_asc = Goal.order(due_date: :asc) # Sorts by nearest due date first
+    @goal_icons = GOAL_ICONS
   end
 
   # GET /goals/1 or /goals/1.json

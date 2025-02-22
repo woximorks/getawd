@@ -33,7 +33,7 @@
 
   <div>
     <%= form.label :category, style: "display: block" %>
-    <%= form.text_field :category %>
+    <%= form.select :category, GOAL_ICONS.map { |category, icon| ["#{icon} #{category.humanize}", category] } %>
   </div>
 
   <div>

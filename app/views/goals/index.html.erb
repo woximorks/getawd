@@ -6,8 +6,7 @@
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Icon</th>
+      <th>Goal</th>
       <th>Deadline</th>
       <th>Projected Time</th>
       <th>Actual Time</th>
@@ -20,8 +19,7 @@
   <tbody>
     <% @goals_by_due_date_asc.each do |goal| %>
       <tr>
-        <td><%= goal.title %></td>
-        <td><%= goal.title %></td>
+        <td><%= GOAL_ICONS[goal.category] || "📝" %> | <%= goal.title %></td>
         <td>
           <%= (goal.due_date - Date.today).to_i %> days
         </td>

@@ -52,8 +52,8 @@
     </div>
 
     <div class="field">
-      <%= form.label :goal_id, "Goal" %>
-      <%= form.collection_select :goal_id, Goal.all, :id, :title, include_blank: true %>
+      <%= form.label :goal_id, "Related Goal" %>
+      <%= form.select :category, GOAL_ICONS.map { |category, icon| ["#{icon} #{category.humanize}", category] } %>
     </div>
   
     <div class="field">

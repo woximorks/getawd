@@ -4,6 +4,31 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.12.7] - 2025/02/21  
+### Task Icons  
+
+### Added  
+- **`goal_icons.yml`**: Stores icon mappings for different goal categories.  
+- **`goal_icons.rb`**: Handles logic for retrieving goal-related icons.  
+
+### Changed  
+- **`_goal.html.erb`**:  
+  - Updated to reference **goal_icons** for displaying relevant icons.  
+- **`goal_icons`**:  
+  - Added initial set of icons for goal categories.  
+- **`goals/index.html.erb`**:  
+  - Now displays icons next to goal titles instead of a separate **Icon** column.  
+  - Renamed **Title** column to **Goal** for better clarity.  
+- **`goals_controller.rb`**:  
+  - Integrated **GOAL_ICONS** for managing goal-related icons.  
+- **`goals/_form.html.erb` & `tasks/_form.html.erb`**:  
+  - Updated dropdown menus to include **related categories/icons**.  
+
+### Notes  
+- Introduces **visual indicators** for goal categories, improving UI clarity.  
+- Streamlines table layout by embedding icons within the **Goal** column.  
+- Dropdown menus now provide **better category selection** with icons.  
+
 ## [1.12.6] - 2025/02/21
 ### Tasks Section Upgrades, descriptions for tasks / goals
 

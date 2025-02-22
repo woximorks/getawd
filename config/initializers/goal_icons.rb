@@ -1,0 +1,1 @@
+GOAL_ICONS = YAML.load_file(Rails.root.join("config/goal_icons.yml")).freeze
