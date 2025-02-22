@@ -5,9 +5,16 @@ class GoalsController < ApplicationController
   # GET /goals or /goals.json
   def index
     @goals = Goal.all
-    @goals_by_due_date_asc = Goal.order(due_date: :asc) # Sorts by nearest due date first
     @goal_icons = GOAL_ICONS
-  end
+  
+    # Apply search filter using 'title'
+    if params[:search].present?
+      @goals = @goals.where("title ILIKE ?", "%#{params[:search]}%")
+    end
+  
+    # Keep due date sorting if needed
+    @goals_by_due_date_asc = @goals.order(due_date: :asc)
+  end  
 
   # GET /goals/1 or /goals/1.json
   def show

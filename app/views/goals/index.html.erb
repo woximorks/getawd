@@ -1,3 +1,13 @@
+<section class="search">
+  <%= form_with url: goals_path, method: :get, local: true do |f| %>
+    <div>
+      <%= f.text_field :search, value: params[:search], placeholder: "Enter goal name", style: "width: 200px;" %>
+      <%= f.submit "Search", style: "margin-right: 1em;" %>
+      <%= link_to "Clear", goals_path, class: "button", style: "margin-left: 1em;" %>
+    </div>
+  <% end %>
+</section>
+
 <section class="goals">
 <h1>Goals</h1>
 <p>
