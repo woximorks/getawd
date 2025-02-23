@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.12.15] - 2025/02/22
+### General Debugging & Clean-Up
+
+### Changed
+- **`_calendar.scss`**:
+  - **Removed the scrollbar** from the calendar—because it looked bad.
+  - Requested **ChatGPT** for a **5% style upgrade**… verdict is still out. Might fire for another AI. (I made chatGPT format this changelog appropriately, I sure hope the robots never take over :D)
+
+### Notes
+- Improves **visual appeal** of the calendar by removing unnecessary UI clutter.
+- Style tweaks are **under evaluation** decisions pending future AI performance reviews.
+
 ## [1.12.14] - 2025/02/22
 ### General Debugging & Clean-Up
 
