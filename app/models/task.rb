@@ -10,8 +10,9 @@ class Task < ApplicationRecord
         }[status]
       end
 
-    # Ensure a start_date is always present when creating or updating a task
     validates :due_date, presence: true
+    validates :estimated_time, presence: true, numericality: true
+    validates :actual_time, presence: true, numericality: true
 
     belongs_to :goal, optional: true
 
