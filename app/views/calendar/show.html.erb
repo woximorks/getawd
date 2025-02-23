@@ -8,14 +8,13 @@
         <% tasks_for_date.each do |task| %>
           <li class="task">
             <span class="status-dot" style="background: conic-gradient(
-              <% if task.actual_time.to_f > task.estimated_time.to_f %>
-                red <%= ((task.actual_time.to_f / task.estimated_time.to_f) * 100).round %>%, 
-                green <%= ((task.estimated_time.to_f / task.actual_time.to_f) * 100).round %>%
+              <% if task.actual_time.to_f.zero? || task.estimated_time.to_f.zero? %>
+                black 0%, black 100%
               <% else %>
-                black <%= ((task.actual_time.to_f / task.estimated_time.to_f) * 100).round %>%, 
-                green 100%
+                green <%= ((task.actual_time.to_f / task.estimated_time.to_f) * 100).round %>%, 
+                black 100%
               <% end %>
-            )">
+            );">
             </span>
             <%= link_to (GOAL_ICONS[task.goal.category] || "📝"), task_path(task) %>
             <span class="estimated-time"><%= task.estimated_time - task.actual_time %>m</span>
