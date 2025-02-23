@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.12.12] - 2025/02/22  
+### Calendar Upgrades  
+
+### Changed  
+- **`calendar/show.html.erb`**:  
+  - Displays **estimated time remaining** for tasks on both **daily** and **monthly** calendars.  
+  - Updated **status-dot colors** to indicate task timing:  
+    - **Black** → Estimated time.  
+    - **Green** → Completed on time.  
+    - **Red** → Completed time exceeded estimate.  
+- **`stylesheets/_calendar.scss`**:  
+  - Adjusted styling for **status-dot** display and visibility.  
+
+### Notes  
+- Improves **time tracking** directly on the calendar for better task management.  
+- **Visual cues** make it easier to see task progress at a glance.  
+
 ## [1.12.11] - 2025/02/22  
 ### Search Implementation for Goals  
 
