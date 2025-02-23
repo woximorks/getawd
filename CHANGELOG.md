@@ -4,6 +4,33 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.12.16] - 2025/02/22  
+### General Debugging & Clean-Up  
+
+### Changed
+- **`seeds/tasks.rb`**:
+  - **`actual_time`** can no longer be **NaN**
+- **`models/goal.rb`**:
+  - **Destroying a goal now removes its related tasks**
+- **`goals/show.html.erb`**:
+  - Aligned styling with **tasks/show** for consistency.
+  - Added **emoji-powered** sub-nav.
+- **`tasks/show.html.erb`**:
+  - Now has same **sub-nav styling** as goals.
+- **`tasks/index.html.erb`, `goals/index.html.erb`**:
+  - **Icons added** for each heading.
+
+### Removed
+- **`goals/_goal.html.erb`**:
+
+### Added  
+- **Task Manager project image** 
+
+### Notes  
+- **Consistency upgrades** for better UI flow.  
+- **Stronger data integrity** (no more NaN).  
+- **Visual improvements** across the board.  
+
 ## [1.12.15] - 2025/02/22
 ### General Debugging & Clean-Up
 

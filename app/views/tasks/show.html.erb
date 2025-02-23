@@ -19,10 +19,10 @@
 <p><strong>Estimated Time (Minutes):</strong> <%= @task.estimated_time %></p>
 <p><strong>Actual Time (Minutes):</strong> <%= @task.actual_time %></p>
 
-<%= link_to 'Edit This Task', edit_task_path %> | 
-<%= link_to 'Back to Tasks', tasks_path %> | 
-<%= link_to 'Back to Goals', goals_path %> | 
-<%= link_to 'Back to Calendar', calendar_path %>
+<%= link_to "#{GOAL_ICONS["edit"]}#{GOAL_ICONS["task"]}", edit_task_path(@task) %> | 
+<%= link_to "#{GOAL_ICONS["back"]}#{GOAL_ICONS["task"]}", tasks_path %> | 
+<%= link_to "#{GOAL_ICONS["goal"]}", goals_path %> | 
+<%= link_to "#{GOAL_ICONS["calendar"]}", calendar_path %>
 <%= button_to 'Delete Task', @task, method: :delete, data: { confirm: 'Are you sure?' } %>
 
 

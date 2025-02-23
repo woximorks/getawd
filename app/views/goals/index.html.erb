@@ -9,50 +9,50 @@
 </section>
 
 <section class="goals">
-<h1>Goals</h1>
-<p>
-  Goals are long-term objectives designed to be achieved through measurable progress. They are broken down into specific <%= link_to 'tasks', tasks_path %>, which serve as actionable steps toward completion. Progress is tracked, and key milestones are met along the way to ensure steady advancement.
-</p>
-<table>
-  <thead>
-    <tr>
-      <th>Goal</th>
-      <th>Deadline</th>
-      <th>Projected Time</th>
-      <th>Actual Time</th>
-      <th>Related Tasks</th>
-      <th>Due Date</th>
-      <th>Status</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @goals_by_due_date_asc.each do |goal| %>
+  <h1><%= GOAL_ICONS["goal"] %>Goals</h1>
+  <p>
+    Goals are long-term objectives designed to be achieved through measurable progress. They are broken down into specific <%= link_to 'tasks', tasks_path %>, which serve as actionable steps toward completion. Progress is tracked, and key milestones are met along the way to ensure steady advancement.
+  </p>
+  <table>
+    <thead>
       <tr>
-        <td style="text-align: left"><%= GOAL_ICONS[goal.category] || "📝" %> | <%= goal.title %></td>
-        <td>
-          <%= (goal.due_date - Date.today).to_i %> days
-        </td>
-        <td><%= goal.tasks.sum(:estimated_time) %> minutes</td>
-        <td><%= goal.tasks.sum(:actual_time) %> minutes</td>
-        <td>
-          <%= link_to goal.tasks.count, tasks_path(goal_id: goal.id) %>
-        </td>
-        <td>
-          <%= goal.due_date %> 
-        </td>
-        <td>
-          <%= goal.status %> 
-        </td>
-        <td>
-          <%= link_to "Show", goal %> | 
-          <%= link_to "Edit", edit_goal_path(goal) %>
-        </td>
+        <th>Goal</th>
+        <th>Deadline</th>
+        <th>Projected Time</th>
+        <th>Actual Time</th>
+        <th>Related Tasks</th>
+        <th>Due Date</th>
+        <th>Status</th>
+        <th>Actions</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @goals_by_due_date_asc.each do |goal| %>
+        <tr>
+          <td style="text-align: left"><%= GOAL_ICONS[goal.category] || "📝" %> | <%= goal.title %></td>
+          <td>
+            <%= (goal.due_date - Date.today).to_i %> days
+          </td>
+          <td><%= goal.tasks.sum(:estimated_time) %> minutes</td>
+          <td><%= goal.tasks.sum(:actual_time) %> minutes</td>
+          <td>
+            <%= link_to goal.tasks.count, tasks_path(goal_id: goal.id) %>
+          </td>
+          <td>
+            <%= goal.due_date %> 
+          </td>
+          <td>
+            <%= goal.status %> 
+          </td>
+          <td>
+            <%= link_to "Show", goal %> | 
+            <%= link_to "Edit", edit_goal_path(goal) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to "New Goal", new_goal_path, class: "new-button" %>
-<%= link_to "New Task", new_task_path, class: "new-button" %>
+  <%= link_to "New Goal", new_goal_path, class: "new-button" %>
+  <%= link_to "New Task", new_task_path, class: "new-button" %>
 </section>
