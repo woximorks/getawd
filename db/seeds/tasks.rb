@@ -8,7 +8,7 @@ Task.create!(
   completion_date: nil,
   assigned_to: "Alice",
   estimated_time: 4,
-  actual_time: nil,
+  actual_time: 0,
   goal_id: 1
 )
 
@@ -22,7 +22,7 @@ Task.create!(
   completion_date: nil,
   assigned_to: "Bob",
   estimated_time: 3,
-  actual_time: nil,
+  actual_time: 0,
   goal_id: 2
 )
 
@@ -36,7 +36,7 @@ Task.create!(
   completion_date: nil,
   assigned_to: "Charlie",
   estimated_time: 2,
-  actual_time: nil,
+  actual_time: 0,
   goal_id: 3
 )
 
@@ -50,7 +50,7 @@ Task.create!(
   completion_date: nil,
   assigned_to: "Alice",
   estimated_time: 123,
-  actual_time: nil,
+  actual_time: 0,
   goal_id: 4
 )
 
@@ -64,7 +64,7 @@ Task.create!(
   completion_date: nil,
   assigned_to: "Bob",
   estimated_time: 3,
-  actual_time: nil,
+  actual_time: 0,
   goal_id: 5
 )
 
@@ -78,7 +78,7 @@ Task.create!(
   completion_date: nil,
   assigned_to: "Charlie",
   estimated_time: 2,
-  actual_time: nil,
+  actual_time: 0,
   goal_id: 4
 )
 
@@ -92,7 +92,7 @@ Task.create!(
   completion_date: nil,
   assigned_to: "Alice",
   estimated_time: 4,
-  actual_time: nil,
+  actual_time: 0,
   goal_id: 3
 )
 
@@ -106,7 +106,7 @@ Task.create!(
   completion_date: nil,
   assigned_to: "Bob",
   estimated_time: 3,
-  actual_time: nil,
+  actual_time: 0,
   goal_id: 2
 )
 
@@ -120,6 +120,6 @@ Task.create!(
   completion_date: nil,
   assigned_to: "Charlie",
   estimated_time: 2,
-  actual_time: nil,
+  actual_time: 0,
   goal_id: 1
 )

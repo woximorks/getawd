@@ -1,8 +1,42 @@
-<%= render @goal %>
+<section id="task">
+  <h1>
+    <%= GOAL_ICONS[@goal.category] || "📝" %> | <%= @goal.title %>
+  </h1>
 
-<div>
-  <%= link_to "Edit this goal", edit_goal_path(@goal) %> |
-  <%= link_to "Back to goals", goals_path %>
+  <p>
+    <strong>Description:</strong>
+    <%= @goal.description %>
+  </p>
 
-  <%= button_to "Destroy this goal", @goal, method: :delete %>
-</div>
+  <p>
+    <strong>Due date:</strong>
+    <%= @goal.due_date %>
+  </p>
+
+  <p>
+    <strong>Priority:</strong>
+    <%= @goal.priority %>
+  </p>
+
+  <p>
+    <strong>Category:</strong>
+    <%= @goal.category %>
+  </p>
+
+  <p>
+    <strong>Status:</strong>
+    <%= @goal.status %>
+  </p>
+
+  <p>
+    <strong>Completed at:</strong>
+    <%= @goal.completed_at %>
+  </p>
+
+  <%= link_to "#{GOAL_ICONS["edit"]}#{GOAL_ICONS["goal"]}", edit_goal_path(@goal) %> | 
+  <%= link_to "#{GOAL_ICONS["back"]}#{GOAL_ICONS["goal"]}", goals_path %> | 
+  <%= link_to "#{GOAL_ICONS["task"]}", tasks_path %> | 
+  <%= link_to "#{GOAL_ICONS["calendar"]}", calendar_path %>
+  <%= button_to 'Delete Goal', @goal, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+</section>
