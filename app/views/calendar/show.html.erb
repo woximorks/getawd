@@ -1,5 +1,5 @@
 <section id="task-calendar-daily">
-<h1>Daily Calendar</h1>
+<h1><%= GOAL_ICONS["task"] %> | Daily Tasks</h1>
   <%= calendar(number_of_days: 1) do |date| %>
     <ul class="task-calendar-today">
         <!-- Fetch tasks for this specific date, adjusted for timezone -->
@@ -7,17 +7,15 @@
 
         <% tasks_for_date.each do |task| %>
           <li class="task">
-            <span class="status-dot" style="background: conic-gradient(
-              <% if task.actual_time.to_f.zero? || task.estimated_time.to_f.zero? %>
-                black 0%, black 100%
-              <% else %>
-                green <%= ((task.actual_time.to_f / task.estimated_time.to_f) * 100).round %>%, 
-                black 100%
-              <% end %>
-            );">
-            </span>
             <%= link_to (GOAL_ICONS[task.goal.category] || "📝"), task_path(task) %>
             <span class="estimated-time"><%= task.estimated_time - task.actual_time %>m</span>
+            <span class="status-dot"
+            style="--progress-angle: <%= if task.actual_time.to_f.zero? || task.estimated_time.to_f.zero?
+              '0'
+            else
+              ((task.actual_time.to_f / task.estimated_time.to_f) * 360).round
+            end %>deg;">
+          </span>
           </li>
         <% end %>
     </ul>
@@ -26,7 +24,7 @@
 </section>
 
 <section id="task-calendar-monthly">
-<h1>Monthly Calendar</h1>
+<h1><%= GOAL_ICONS["calendar"] %> | Monthly Calendar</h1>
   <%= month_calendar(attribute: :due_date) do |date| %>
     <ul class="task-calendar-monthly-day">
       <strong class="date_day"><%= date.day %></strong> <!-- Shows the day number -->
@@ -38,6 +36,13 @@
         <li class="task">
           <%= link_to (GOAL_ICONS[task.goal.category] || "📝"), task_path(task) %>
           <span class="estimated-time"><%= task.estimated_time - task.actual_time %>m</span>
+          <span class="status-dot"
+            style="--progress-angle: <%= if task.actual_time.to_f.zero? || task.estimated_time.to_f.zero?
+              '0'
+            else
+              ((task.actual_time.to_f / task.estimated_time.to_f) * 360).round
+            end %>deg;">
+          </span>
       <% end %>
     </ul>
   <% end %>

@@ -58,4 +58,8 @@ $font-stack: 'Roboto', sans-serif;
   height: 1.1em;
   border-radius: 50%;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  background: conic-gradient(
+    green 0deg var(--progress-angle),
+    black var(--progress-angle) 360deg
+  );
 }
