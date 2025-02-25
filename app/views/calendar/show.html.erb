@@ -7,15 +7,15 @@
 
         <% tasks_for_date.each do |task| %>
           <li class="task">
-            <%= link_to (GOAL_ICONS[task.goal.category] || "📝"), task_path(task) %>
-            <span class="estimated-time"><%= task.estimated_time - task.actual_time %>m</span>
+            <%= link_to (GOAL_ICONS[task.goal.category] || "📝"), task_path(task) %> | 
             <span class="status-dot"
             style="--progress-angle: <%= if task.actual_time.to_f.zero? || task.estimated_time.to_f.zero?
               '0'
             else
               ((task.actual_time.to_f / task.estimated_time.to_f) * 360).round
             end %>deg;">
-          </span>
+            </span>
+            <span class="estimated-time" style="font-family: 'Orbitron';"><%= task.estimated_time - task.actual_time %>m</span>
           </li>
         <% end %>
     </ul>
@@ -34,8 +34,7 @@
 
       <% tasks_for_date.each do |task| %>
         <li class="task">
-          <%= link_to (GOAL_ICONS[task.goal.category] || "📝"), task_path(task) %>
-          <span class="estimated-time"><%= task.estimated_time - task.actual_time %>m</span>
+          <%= link_to (GOAL_ICONS[task.goal.category] || "📝"), task_path(task) %> | 
           <span class="status-dot"
             style="--progress-angle: <%= if task.actual_time.to_f.zero? || task.estimated_time.to_f.zero?
               '0'
@@ -43,6 +42,7 @@
               ((task.actual_time.to_f / task.estimated_time.to_f) * 360).round
             end %>deg;">
           </span>
+          <span class="estimated-time" style="font-family: 'Orbitron';"><%= task.estimated_time - task.actual_time %>m</span>
       <% end %>
     </ul>
   <% end %>
