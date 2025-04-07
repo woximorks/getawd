@@ -5,6 +5,11 @@ class GoalsController < ApplicationController
   # GET /goals or /goals.json
   def index
     @goals = Goal.all
+
+    unless params[:show_completed] == "1"
+      @goals = @goals.where(completed_at: nil)
+    end
+    
     @goal_icons = GOAL_ICONS
   
     # Apply search filter using 'title'

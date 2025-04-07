@@ -3,6 +3,8 @@
     <div>
       <%= f.text_field :search, value: params[:search], placeholder: "Enter goal name", style: "width: 200px;" %>
       <%= f.submit "Search", style: "margin-right: 1em;" %>
+      <%= f.check_box :show_completed, {}, "1", "0" %>
+      <%= f.label :show_completed, "Show completed goals" %>
       <%= link_to "Clear", goals_path, class: "button", style: "margin-left: 1em;" %>
     </div>
   <% end %>

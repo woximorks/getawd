@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.12.22] - 2025/04/06  
+### Goal Section Cleanup  
+
+### Changed  
+- **`goals_controller.rb`**:  
+  - Updated logic to exclude completed goals by default.  
+- **`goals/index.html.erb`**:  
+  - Added checkbox toggle to show/hide completed goals.  
+
+### Notes  
+- Helps focus on active goals while retaining access to completed ones when needed.
+
 ## [1.12.21] - 2025/03/14  
 ### Task Name Tooltip  
 
