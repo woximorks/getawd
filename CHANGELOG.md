@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.12.23] - 2025/05/06
+### Hey have a README
+
+### Changed
+- **`README.MD`**:  
+  - Put stuff in it, just read it if you've made it this far.
+
+
 ## [1.12.22] - 2025/04/06  
 ### Goal Section Cleanup  
 
