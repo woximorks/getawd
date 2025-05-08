@@ -1,0 +1,19 @@
+<!-- app/views/dashboard/index.html.erb -->
+<h1>📊 Goal Progress Dashboard</h1>
+
+<% @goals.each do |goal| %>
+  <% total_tasks = goal.tasks.count %>
+  <% completed_tasks = goal.tasks.select { |t| t.status == "completed" }.count %>
+  <% percent_complete = total_tasks.zero? ? 0 : ((completed_tasks.to_f / total_tasks) * 100).round %>
+
+  <div class="goal-summary">
+    <h2><%= goal.title %></h2>
+    <p><%= goal.description %></p>
+    <p><strong><%= completed_tasks %> of <%= total_tasks %></strong> tasks completed</p>
+
+    <div class="progress-bar-wrapper">
+      <div class="progress-bar" style="width: <%= percent_complete %>%;"></div>
+    </div>
+    <p><%= percent_complete %>% complete</p>
+  </div>
+<% end %>

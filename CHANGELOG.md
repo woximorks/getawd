@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.12.24] - 2025/05/07  
+### Dashboard  
+
+### Added  
+- **`dashboard/index.html.erb`**:  
+  - Displays all key models with basic info and edit links.  
+- **`dashboard_controller.rb`**:  
+  - Initial controller setup for centralized admin view.  
+- **`assets/stylesheets/dashboard.scss`**:  
+  - New SCSS file for custom dashboard styling.  
+
+### Changed  
+- **`dashboard_controller.rb`**:  
+  - Displays associated tasks and completion status.  
+- **`dashboard.scss`**:  
+  - Stylized dashboard layout for better readability.  
+- **`dashboard/index.html.erb`**:  
+  - Shows progress bar for each model's task completion.
+
 ## [1.12.23] - 2025/05/06
 ### Hey have a README
 

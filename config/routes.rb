@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'dashboard/index'
   resources :goals
   get 'calendar/show'
   resources :documents
@@ -17,6 +18,8 @@ Rails.application.routes.draw do
   get 'projects', to: 'projects#index'
   get 'projects/show'
   get 'calendar', to: 'calendar#show'
+  get 'dashboard', to: 'dashboard#index'
+
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
