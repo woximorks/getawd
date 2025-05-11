@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'landscaping/index'
   get 'dashboard/index'
   resources :goals
   get 'calendar/show'
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
   get 'blog_posts/show'
   get 'contact', to: 'contact#index'
   get 'games', to: 'games#index'
+  get 'landscaping', to: 'landscaping#index'
   get 'games/show'
   get 'tasks', to: 'tasks#index'
   get 'tasks/show'

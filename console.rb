@@ -65,3 +65,21 @@ BlogPost.create!(
   updated_at: Time.current,
   featured: true
 )
+
+LandscapingJob.create!(
+  title: "General Cleanup",
+  description: "Removed weeds, trimmed hedges, and refreshed the gravel parking strip with a clean new layer.",
+  image: "landscaping1.png"
+)
+
+LandscapingJob.create!(
+  title: "Backyard Refresh",
+  description: "Mowed, edged, and sharpened the border along the walkway. Also discovered a firepit.",
+  image: "landscaping2.png"
+)
+
+LandscapingJob.create!(
+  title: "Flowerbed Tidy-Up",
+  description: "Cleared debris and pulled weeds from the parking strip flowerbed.",
+  image: "landscaping3.png"
+)

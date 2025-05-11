@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.12.27] - 2025/05/10
+### Landscaping, About Updates
+
+### Added
+- **`landscaping_controller.rb`**
+- **Route**: `/landscaping` now points to `landscaping#index`
+- **`LandscapingJob` model**
+- **`landscaping/index.html.erb`**: Basic view setup
+- **`_landscaping.scss`**: Basic styling
+- **`about1.png`**: Added to images for the About section
+
+### Changed
+- **`about/index.html.erb`**
+  - Rearranged content to align with new image layout
+
+## [1.12.26] - 2025/05/10
+### Readme updates
+
 ## [1.12.26] - 2025/05/10
 ### Readme updates
 
