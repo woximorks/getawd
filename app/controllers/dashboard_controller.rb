@@ -1,5 +1,5 @@
-# app/controllers/dashboard_controller.rb
 class DashboardController < ApplicationController
+  before_action :authenticate_user!
   def index
     @goals = Goal.includes(:tasks)
   end
