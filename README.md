@@ -1,10 +1,8 @@
-# [AW Development](https://www.getawd.com)
+# [AWDevelopment](https://www.getawd.com)
 
 A personal web app. A digital workspace with a task manager, goal tracker, and whatever else I feel like adding.
 
-This isn’t meant to be a polished product or public tool.It’s mostly for me. But you're welcome to look around.
-
-> Most features are about 80% complete. That's a vibe.
+This isn’t meant to be a polished product, it’s mostly for me to learn Rails... There is some general info about me and 'stuff' I've either done or contributed to in the Blog & Projects section.
 
 ---
 
@@ -21,11 +19,3 @@ This isn’t meant to be a polished product or public tool.It’s mostly for me.
 ## 📓 Changelog
 
 For updates and technical changes, see the [CHANGELOG.md](./CHANGELOG.md).
-
----
-
-## 📌 Status
-
-Still under active development.
-Still figuring things out.
-Still better than a blank page.
