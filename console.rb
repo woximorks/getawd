@@ -83,3 +83,9 @@ LandscapingJob.create!(
   description: "Cleared debris and pulled weeds from the parking strip flowerbed.",
   image: "landscaping3.png"
 )
+
+LandscapingJob.create!(
+  title: "Flower Beds & More",
+  description: "Cleaned out the flowerbeds and prepped for planting season. Knocked down overgrown weeds from the gravel parking strip and mowed the yard.",
+  image: "landscaping4.png"
+)
