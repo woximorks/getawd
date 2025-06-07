@@ -4,6 +4,27 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+
+## [1.12.29] - 2025/06/06
+### Dashboard Layout & Task Sorting Upgrade
+
+### Added
+- **`dashboard/index.html.erb`**
+  - Split tasks into separate **Tasks** and **Completed Tasks** sections
+  - Sorted active tasks by `due_date` (soonest first)
+  - Displayed completed tasks in their own visually distinct block
+
+### Changed
+- **`dashboard.scss`**
+  - Added `.completed-tasks-container` for a third column in the dashboard
+  - Shared styling refinements for `.goal-summary`, `.task-card`, and scrollable containers
+  - Improved responsive layout with `flex-wrap` and consistent dimensions across containers
+
+### Backend
+- **`dashboard_controller.rb`**  
+  - Split `@tasks` into `@active_tasks` and `@completed_tasks`
+  - Applied ordering by `due_date` on both collections
+
 ## [1.12.28] - 2025/05/11  
 ### Landscaping Expansion  
 

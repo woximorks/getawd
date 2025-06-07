@@ -1,19 +1,54 @@
-<!-- app/views/dashboard/index.html.erb -->
-<h1>📊 Goal Progress Dashboard</h1>
+<h1 style="text-align: center;">Dashboard</h1>
 
-<% @goals.each do |goal| %>
-  <% total_tasks = goal.tasks.count %>
-  <% completed_tasks = goal.tasks.select { |t| t.status == "completed" }.count %>
-  <% percent_complete = total_tasks.zero? ? 0 : ((completed_tasks.to_f / total_tasks) * 100).round %>
+<section class="dashboard">
 
-  <div class="goal-summary">
-    <h2><%= link_to goal.title, goal_path(goal) %></h2>
-    <p><%= goal.description %></p>
-    <p><strong><%= completed_tasks %> of <%= total_tasks %></strong> tasks completed</p>
+  <!-- Goals Section -->
+  <div class="goals-container">
+    <h3>Goals</h3>
+    <% @goals.each do |goal| %>
+      <% total_tasks = goal.tasks.count %>
+      <% completed_tasks = goal.tasks.where(status: "completed").count %>
+      <% percent_complete = total_tasks.zero? ? 0 : ((completed_tasks.to_f / total_tasks) * 100).round %>
 
-    <div class="progress-bar-wrapper">
-      <div class="progress-bar" style="width: <%= percent_complete %>%;"></div>
-    </div>
-    <p><%= percent_complete %>% complete</p>
+      <div class="goal-summary">
+        <h2><%= link_to goal.title, goal_path(goal) %></h2>
+        <p><%= goal.description %></p>
+        <p><strong><%= completed_tasks %> of <%= total_tasks %></strong> tasks completed</p>
+
+        <div class="progress-bar-wrapper">
+          <div class="progress-bar" style="width: <%= percent_complete %>%;"></div>
+        </div>
+        <p><%= percent_complete %>% complete</p>
+      </div>
+    <% end %>
   </div>
-<% end %>
+
+  <!-- Active Tasks Section -->
+  <div class="tasks-container">
+    <h3>Tasks</h3>
+    <% @active_tasks.each do |task| %>
+      <div class="task-card">
+        <h2><%= link_to task.task_name, task_path(task) %></h2>
+        <p><%= task.description %></p>
+        <p>Priority: <%= task.priority %></p>
+        <p>Due: <%= task.due_date %></p>
+        <p>Goal: <%= link_to task.goal.title, goal_path(task.goal) if task.goal %></p>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- Completed Tasks Section -->
+  <div class="completed-tasks-container">
+    <h3>Completed Tasks</h3>
+    <% @completed_tasks.each do |task| %>
+      <div class="task-card completed">
+        <h2><%= link_to task.task_name, task_path(task) %></h2>
+        <p><%= task.description %></p>
+        <p>Priority: <%= task.priority %></p>
+        <p>Due: <%= task.due_date %></p>
+        <p>Goal: <%= link_to task.goal.title, goal_path(task.goal) if task.goal %></p>
+      </div>
+    <% end %>
+  </div>
+
+</section>
