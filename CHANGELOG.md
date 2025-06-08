@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.12.30] - 2025/06/07
+### Goal Migration for Status
+### Dashboard Completed Goal Separation
+
+### Changed
+- **`_dashboard.scss`**
+  - Styled completed goals for visual separation.
+- **`dashboard/index.html.erb`**
+  - Displays completed goals separately from active ones.
+- **`models/goal.rb`**
+  - Converted status to an enum and added humanized status labels.
+- **`goals/_form.html.erb`**
+  - Updated to allow status selection via dropdown.
+
+### Added
+- **Migration**:
+  - Removed `status:string` from `goals`.
+  - Added `status:integer` to `goals`.
+
 
 ## [1.12.29] - 2025/06/06
 ### Dashboard Layout & Task Sorting Upgrade

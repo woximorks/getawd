@@ -10,7 +10,7 @@
       <% completed_tasks = goal.tasks.where(status: "completed").count %>
       <% percent_complete = total_tasks.zero? ? 0 : ((completed_tasks.to_f / total_tasks) * 100).round %>
 
-      <div class="goal-summary">
+      <div class="goal-summary <%= 'completed' if goal.completed? %>">
         <h2><%= link_to goal.title, goal_path(goal) %></h2>
         <p><%= goal.description %></p>
         <p><strong><%= completed_tasks %> of <%= total_tasks %></strong> tasks completed</p>

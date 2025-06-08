@@ -36,9 +36,9 @@
     <%= form.select :category, GOAL_ICONS.map { |category, icon| ["#{icon} #{category.humanize}", category] } %>
   </div>
 
-  <div>
-    <%= form.label :status, style: "display: block" %>
-    <%= form.text_field :status %>
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.select :status, Goal.statuses.keys.map { |status| [status.humanize, status] }, {}, { include_blank: false } %>
   </div>
 
   <div>
