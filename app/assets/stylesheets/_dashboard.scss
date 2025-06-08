@@ -93,9 +93,28 @@
   }
 }
 
-.goal-summary.completed {
-  background-color: #e8f5e9;
+.goal-summary.not_started,
+.task-card.not_started {
+  background-color: #fffde7; // light yellow
+  border-color: #fff176;
+}
+
+.goal-summary.in_progress,
+.task-card.in_progress {
+  background-color: #f3e5f5; // light purple
+  border-color: #ba68c8;
+}
+
+.goal-summary.on_hold,
+.task-card.on_hold {
+  background-color: #ffebee; // light red
+  border-color: #ef9a9a;
+}
+
+.goal-summary.completed,
+.task-card.completed {
+  background-color: #e8f5e9; // light green
+  border-color: #c8e6c9;
   text-decoration: line-through;
   color: #888;
-  border-color: #c8e6c9;
 }

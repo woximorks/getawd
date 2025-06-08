@@ -1,0 +1,16 @@
+<% total_tasks = goal.tasks.count %>
+<% completed_tasks = goal.tasks.where(status: :completed).count %>
+<% percent_complete = total_tasks.zero? ? 0 : ((completed_tasks.to_f / total_tasks) * 100).round %>
+
+<% status_class = goal.status %>
+
+<div class="goal-summary <%= status_class %>">
+  <h2><%= link_to goal.title, goal_path(goal) %></h2>
+  <p><%= goal.description %></p>
+  <p><strong><%= completed_tasks %> of <%= total_tasks %></strong> tasks completed</p>
+
+  <div class="progress-bar-wrapper">
+    <div class="progress-bar" style="width: <%= percent_complete %>%;"></div>
+  </div>
+  <p><%= percent_complete %>% complete</p>
+</div>

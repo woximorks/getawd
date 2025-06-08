@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.13.0] - 2025/06/07
+### Dashboard Initial Release
+
+### Added
+- **`dashboard/_goal_card.html.erb`**
+  - Partial created to display individual goals in a reusable format.
+
+### Changed
+- **`dashboard_controller.rb`**
+  - Separated goals and tasks by status for clearer organization.
+- **`dashboard/index.html.erb`**
+  - Displayed goals and tasks within status-specific containers.
+- **`assets/stylesheets/dashboard.scss`**
+  - Color-coded tasks by status for better visual distinction.
+
 ## [1.12.30] - 2025/06/07
 ### Goal Migration for Status
 ### Dashboard Completed Goal Separation
