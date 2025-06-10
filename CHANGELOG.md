@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.13.2] - 2025/06/10
+### Form Styling Updates
+
+### Changed
+- **`tasks/_form.html.erb`**, **`goals/_form.html.erb`**, **`_form.scss`**
+  - Applied unified styling inspired by the "Not Started" card layout for input sections.
+- **`tasks/new.html.erb`**, **`tasks/edit.html.erb`**, **`goals/new.html.erb`**, **`goals/edit.html.erb`**
+  - Centered `<h1>` headers for improved visual hierarchy.
+
 ## [1.13.1] - 2025/06/09 (Nice)
 ### Dashboard Upgrades
 

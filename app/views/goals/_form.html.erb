@@ -1,52 +1,56 @@
-<%= form_with(model: goal) do |form| %>
+<%= form_with(model: goal, local: true, html: { class: 'goal_form' }) do |form| %>
   <% if goal.errors.any? %>
-    <div style="color: red">
+    <div class="error-explanation">
       <h2><%= pluralize(goal.errors.count, "error") %> prohibited this goal from being saved:</h2>
-
       <ul>
-        <% goal.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% goal.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="form-field">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: 'form-input' %>
   </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+  <div class="form-field">
+    <%= form.label :description %>
+    <%= form.text_area :description, class: 'form-input' %>
   </div>
 
-  <div>
-    <%= form.label :due_date, style: "display: block" %>
-    <%= form.date_field :due_date %>
+  <div class="form-field">
+    <%= form.label :due_date %>
+    <%= form.date_field :due_date, class: 'form-input' %>
   </div>
 
-  <div>
-    <%= form.label :priority, style: "display: block" %>
-    <%= form.number_field :priority %>
+  <div class="form-field">
+    <%= form.label :priority %>
+    <%= form.number_field :priority, class: 'form-input' %>
   </div>
 
-  <div>
-    <%= form.label :category, style: "display: block" %>
-    <%= form.select :category, GOAL_ICONS.map { |category, icon| ["#{icon} #{category.humanize}", category] } %>
+  <div class="form-field">
+    <%= form.label :category %>
+    <%= form.select :category, 
+                    GOAL_ICONS.map { |category, icon| ["#{icon} #{category.humanize}", category] }, 
+                    {}, 
+                    { class: 'form-input' } %>
   </div>
 
-  <div class="field">
+  <div class="form-field">
     <%= form.label :status %>
-    <%= form.select :status, Goal.statuses.keys.map { |status| [status.humanize, status] }, {}, { include_blank: false } %>
+    <%= form.select :status, 
+                    Goal.statuses.keys.map { |status| [status.humanize, status] }, 
+                    { include_blank: false, class: 'form-input' } %>
   </div>
 
-  <div>
-    <%= form.label :completed_at, style: "display: block" %>
-    <%= form.datetime_field :completed_at %>
+  <div class="form-field">
+    <%= form.label :completed_at %>
+    <%= form.datetime_local_field :completed_at, class: 'form-input' %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="form-actions">
+    <%= form.submit 'Save Goal', class: 'form-submit' %>
   </div>
 <% end %>
