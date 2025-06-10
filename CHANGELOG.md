@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.13.1] - 2025/06/09 (Nice)
+### Dashboard Upgrades
+
+### Changed
+- **`dashboard/index.html.erb`**
+  - Added emojis for visual clarity.
+  - Switched progress calculation from task count to estimated time for improved accuracy.
+  - Displayed actual time spent to reflect effort invested.
+  - Introduced burn rate warning when actual time exceeds estimate.
+  - Removed duplicate logic for a cleaner codebase.
+
+- **`dashboard/_goal_card.html.erb`**
+  - Added emojis for visual clarity.
+
 ## [1.13.0] - 2025/06/07
 ### Dashboard Initial Release
 

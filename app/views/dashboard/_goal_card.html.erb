@@ -1,16 +1,35 @@
-<% total_tasks = goal.tasks.count %>
-<% completed_tasks = goal.tasks.where(status: :completed).count %>
-<% percent_complete = total_tasks.zero? ? 0 : ((completed_tasks.to_f / total_tasks) * 100).round %>
+<%
+  total_tasks = goal.tasks.count
+  completed_tasks = goal.tasks.where(status: :completed).count
 
-<% status_class = goal.status %>
+  estimated_total = goal.tasks.sum(:estimated_time)
+  estimated_done  = goal.tasks.where(status: :completed).sum(:estimated_time)
+  actual_done     = goal.tasks.where(status: :completed).sum(:actual_time)
 
-<div class="goal-summary <%= status_class %>">
-  <h2><%= link_to goal.title, goal_path(goal) %></h2>
-  <p><%= goal.description %></p>
-  <p><strong><%= completed_tasks %> of <%= total_tasks %></strong> tasks completed</p>
+  progress_percent = estimated_total.zero? ? 0 : ((estimated_done.to_f / estimated_total) * 100).round
+  time_burn_percent = estimated_total.zero? ? 0 : ((actual_done.to_f / estimated_total) * 100).round
+%>
 
-  <div class="progress-bar-wrapper">
-    <div class="progress-bar" style="width: <%= percent_complete %>%;"></div>
+<div class="goal-summary <%= goal.status %>">
+  <h2><%= GOAL_ICONS["goal"] %> | <%= link_to goal.title, goal_path(goal) %></h2>
+  <p style="margin-bottom: 1em;"><%= goal.description %></p>
+
+  <div class="progress-bar-wrapper" style="margin-bottom: 1em;">
+    <div class="progress-bar" style="width: <%= progress_percent %>%;"></div>
   </div>
-  <p><%= percent_complete %>% complete</p>
+
+  <p style="margin-bottom: 1em;"><%= progress_percent %>% complete (estimated time remaining)</p>
+
+  <p style="margin-bottom: 1em;">
+    <strong><%= completed_tasks %> of <%= total_tasks %></strong> tasks completed<br>
+    <strong>Estimated total time:</strong> <%= estimated_total %> min<br>
+    <strong>Actual time spent so far:</strong> <%= actual_done %> min
+    
+  </p>
+
+  <% if time_burn_percent > 100 %>
+    <p style="color: red;"><strong>🔥 Over time budget:</strong> <%= time_burn_percent %>% of time used</p>
+  <% else %>
+    <p><strong>Time used:</strong> <%= time_burn_percent %>% of estimated time</p>
+  <% end %>
 </div>

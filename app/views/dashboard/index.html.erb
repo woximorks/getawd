@@ -3,7 +3,7 @@
 <section class="dashboard">
 
   <div class="goals-container">
-    <h3>Goals</h3>
+    <h3><%= GOAL_ICONS["goal"] %> | Goals</h3>
 
     <% @in_progress_goals.each do |goal| %>
       <%= render partial: "dashboard/goal_card", locals: { goal: goal } %>
@@ -26,11 +26,11 @@
   </div>
 
   <div class="tasks-container">
-    <h3>Tasks</h3>
+    <h3><%= GOAL_ICONS["task"] %> | Tasks</h3>
 
     <% @in_progress_tasks.each do |task| %>
       <div class="task-card <%= task.status %>">
-        <h2><%= link_to task.task_name, task_path(task) %></h2>
+        <h2><%= GOAL_ICONS["task"] %> | <%= link_to task.task_name, task_path(task) %></h2>
         <p><%= task.description %></p>
         <p>Priority: <%= task.priority %></p>
         <p>Due: <%= task.due_date %></p>
@@ -41,7 +41,7 @@
     <h5>Not Started</h5>
      <% @not_started_tasks.each do |task| %>
       <div class="task-card <%= task.status %>">
-        <h2><%= link_to task.task_name, task_path(task) %></h2>
+        <h2><%= GOAL_ICONS["task"] %> | <%= link_to task.task_name, task_path(task) %></h2>
         <p><%= task.description %></p>
         <p>Priority: <%= task.priority %></p>
         <p>Due: <%= task.due_date %></p>
@@ -52,7 +52,7 @@
     <h5>On Hold</h5>
     <% @on_hold_tasks.each do |task| %>
       <div class="task-card <%= task.status %>">
-        <h2><%= link_to task.task_name, task_path(task) %></h2>
+        <h2><%= GOAL_ICONS["task"] %> | <%= link_to task.task_name, task_path(task) %></h2>
         <p><%= task.description %></p>
         <p>Priority: <%= task.priority %></p>
         <p>Due: <%= task.due_date %></p>
@@ -62,10 +62,10 @@
   </div>
 
   <div class="completed-tasks-container">
-    <h3>Completed Tasks</h3>
+    <h3><%= GOAL_ICONS["task"] %> | Completed Tasks</h3>
     <% @completed_tasks.each do |task| %>
       <div class="task-card <%= task.status %>">
-        <h2><%= link_to task.task_name, task_path(task) %></h2>
+        <h2><%= GOAL_ICONS["task"] %> | <%= link_to task.task_name, task_path(task) %></h2>
         <p><%= task.description %></p>
         <p>Priority: <%= task.priority %></p>
         <p>Due: <%= task.due_date %></p>
