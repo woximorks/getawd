@@ -1,29 +1,32 @@
 <section id="task">
-<h1><%= @task.task_name %></h1>
+  <h1><%= @task.task_name %></h1>
 
-<p><strong>Description:</strong> <%= @task.description %></p>
-<p><strong>Status:</strong> <%= @task.status %></p>
-<p><strong>Priority:</strong> <%= @task.priority %></p>
-<p><strong>Start Date:</strong> <%= @task.start_date %></p>
-<p><strong>Due Date:</strong> <%= @task.due_date %></p>
-<p><strong>Completion Date:</strong> <%= @task.completion_date %></p>
-<p><strong>Assigned To:</strong> <%= @task.assigned_to %></p>
-<p>
-  <strong>Goal:</strong>
-  <% if @task.goal.present? %>
-    <%= link_to @task.goal.title, goal_path(@task.goal) %>
-  <% else %>
-    <em>Not assigned</em>
-  <% end %>
-</p>
-<p><strong>Estimated Time (Minutes):</strong> <%= @task.estimated_time %></p>
-<p><strong>Actual Time (Minutes):</strong> <%= @task.actual_time %></p>
+  <p><strong>Description:</strong> <%= @task.description %></p>
+  <p><strong>Status:</strong> <%= @task.status %></p>
+  <p><strong>Priority:</strong> <%= @task.priority %></p>
+  <p><strong>Start Date:</strong> <%= @task.start_date %></p>
+  <p><strong>Due Date:</strong> <%= @task.due_date %></p>
+  <p><strong>Completion Date:</strong> <%= @task.completion_date %></p>
+  <p><strong>Assigned To:</strong> <%= @task.assigned_to %></p>
+  <p>
+    <strong>Goal:</strong>
+    <% if @task.goal.present? %>
+      <%= link_to @task.goal.title, goal_path(@task.goal) %>
+    <% else %>
+      <em>Not assigned</em>
+    <% end %>
+  </p>
+  <p><strong>Estimated Time (Minutes):</strong> <%= @task.estimated_time %></p>
+  <p><strong>Actual Time (Minutes):</strong> <%= @task.actual_time %></p>
 
-<%= link_to "#{GOAL_ICONS["edit"]}#{GOAL_ICONS["task"]}", edit_task_path(@task) %> | 
-<%= link_to "#{GOAL_ICONS["back"]}#{GOAL_ICONS["task"]}", tasks_path %> | 
-<%= link_to "#{GOAL_ICONS["goal"]}", goals_path %> | 
-<%= link_to "#{GOAL_ICONS["calendar"]}", calendar_path %>
-<%= button_to 'Delete Task', @task, method: :delete, data: { confirm: 'Are you sure?' } %>
-
+  <ul style="list-style-type: none; display: flex; flex-direction: column; padding-left: 0;">
+    <li><%= link_to "#{GOAL_ICONS["edit"]}#{GOAL_ICONS["task"]}", edit_task_path(@task) %>Edit this Task</li>
+    <li><%= link_to "#{GOAL_ICONS["back"]}#{GOAL_ICONS["task"]}", tasks_path %>Back to Tasks</li>
+    <li style="width: 150px;"><hr></li>
+    <li><%= link_to "#{GOAL_ICONS["goal"]}", goals_path %>Go to Goals</li>
+    <li><%= link_to "#{GOAL_ICONS["calendar"]}", calendar_path %>Go to Calendar</li>
+    <li style="width: 150px;"><hr></li>
+    <li><%= button_to 'Delete Goal', @goal, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+  </ul>
 
 </section>
