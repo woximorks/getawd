@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.13.5] - 2025/06/17
+### Gaming Version Control Implementation, Necessary to Improve Goal Tracking, Checkpoints, Calculation of Related Metrics, and Ultimately an Increase of Productivity Across the Entirety of the Gaming Platform this Section Supports. The Numbers Mason.
+
+### Changed
+- **Database**:
+  - Developed insert statement to add information to DB for first series
+- **`games/index.html.erb`**: 
+  - Removed game_notes from games/index
+- **`stylesheets/application.html.erb`**, **`games/show.html.erb`**: 
+- Updating to apply style to each individual game section on the show (was referencing game class, needed to reference game id)
+
 ## [1.13.4] - 2025/06/17
 ### Navigation Clean-Up
 

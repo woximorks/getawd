@@ -8,13 +8,6 @@
         <% if game.game_image.present? %>
           <div><%= image_tag(game.game_image, alt: game.game_name) %></div>
         <% end %>
-        <% if game.game_notes.is_a?(Array) %>
-          <% game.game_notes.each do |note| %>
-            <p><%= note %></p>
-          <% end %>
-        <% else %>
-          <p><%= game.game_notes %></p>
-        <% end %>
         <div><%= link_to 'See More', game_path(game) %></div>
       </li>
     <% end %>
