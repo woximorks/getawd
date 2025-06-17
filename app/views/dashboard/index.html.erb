@@ -4,6 +4,7 @@
 
   <div class="goals-container">
     <h3><%= GOAL_ICONS["goal"] %> | Goals</h3>
+    <h5><%= link_to "New Goal", new_goal_path, class: "new-button" %></h5>
 
     <% @in_progress_goals.each do |goal| %>
       <%= render partial: "dashboard/goal_card", locals: { goal: goal } %>
@@ -27,6 +28,7 @@
 
   <div class="tasks-container">
     <h3><%= GOAL_ICONS["task"] %> | Tasks</h3>
+    <h5><%= link_to "New Task", new_task_path, class: "new-button" %></h5>
 
     <% @in_progress_tasks.each do |task| %>
       <div class="task-card <%= task.status %>">

@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.13.4] - 2025/06/17
+### Navigation Clean-Up
+
+### Added
+- **`dashboard/index.html.erb`**  
+  - Added links to create new tasks and goals directly from the dashboard.
+
+### Changed
+- **`goals/show.html.erb`**, **`tasks/show.html.erb`**
+  - Reorganized sub-navigation layout to reduce clutter and improve usability.  
+  - Moved delete buttons to avoid accidental clicks.
+  - Converted sub-nav to unordered list with inline styles (temporary solution; further styling needed and there's nothing more permanent than a temporary solution :D).
+
+
 ## [1.13.3] - 2025/06/10
 ### Form Styling Updates
 
