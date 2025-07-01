@@ -8,6 +8,7 @@
         <% tasks_for_date.each do |task| %>
           <li class="task">
             <%= link_to (GOAL_ICONS[task.goal.category] || "📝"), task_path(task), title: task.task_name %> | 
+            <span><%= task.task_name %></span> |
             <span class="estimated-time" style="font-family: 'Orbitron';">
               <% if task.completed? %> 
                 <%= GOAL_ICONS["task"] %> 
