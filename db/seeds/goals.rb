@@ -4,7 +4,7 @@ Goal.create!(
   due_date: Date.today + 14,
   priority: 1,
   category: "Work",
-  status: "in_progress",
+  status: 1,
   completed_at: nil
 )
 
@@ -14,7 +14,7 @@ Goal.create!(
   due_date: Date.today + 10,
   priority: 3,
   category: "Personal",
-  status: "pending",
+  status: 2,
   completed_at: nil
 )
 
@@ -24,7 +24,7 @@ Goal.create!(
   due_date: Date.today + 3,
   priority: 5,
   category: "Learning",
-  status: "pending",
+  status: 2,
   completed_at: nil
 )
 
@@ -34,7 +34,7 @@ Goal.create!(
   due_date: Date.today + 2,
   priority: 2,
   category: "Finance",
-  status: "pending",
+  status: 2,
   completed_at: nil
 )
 
@@ -44,6 +44,6 @@ Goal.create!(
   due_date: Date.today + 5,
   priority: 4,
   category: "Health",
-  status: "pending",
+  status: 2,
   completed_at: nil
 )

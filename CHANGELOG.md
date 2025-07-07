@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.13.7] - 2025/07/06  
+### Seed File Fixes & Repeatable Tasks
+
+### Changed
+- **`seeds/goals.rb`**
+  - Updated to reflect the correct `status` values after enum changes in [1.12.30].
+- **`repeatable_tasks.rb`**, **`.gitignore`**
+  - Added repeatable task commands for convenience; file ignored from version control.
+
 ## [1.13.6] - 2025/07/01
 ### Bug Fixes & Clarity Improvements
 
