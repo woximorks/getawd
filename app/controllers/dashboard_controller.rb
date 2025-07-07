@@ -38,11 +38,12 @@ class DashboardController < ApplicationController
     @due_today_tasks_completed = Task.completed.where(due_date: Date.today).count
     @due_today_goals_completed = Goal.completed.where(due_date: Date.today).count
 
-    remaining_tasks = Task.where.not(status: :completed)
+    remaining_tasks_today = Task.where.not(status: :completed)
+                      .where(due_date: Date.today.all_day)
 
-  @total_estimated_minutes = remaining_tasks.sum(:estimated_time).to_i
-  @total_actual_minutes = remaining_tasks.sum(:actual_time).to_i
-  @time_remaining_minutes = @total_estimated_minutes - @total_actual_minutes
+    @total_estimated_minutes_today = remaining_tasks_today.sum(:estimated_time).to_i
+    @total_actual_minutes_today = remaining_tasks_today.sum(:actual_time).to_i
+    @time_remaining_minutes_today = @total_estimated_minutes_today - @total_actual_minutes_today
 
   end
 end

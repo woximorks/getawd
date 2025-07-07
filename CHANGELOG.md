@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.13.10] - 2025/07/07
+### Time Tracking Scoped to Today
+
+### Added
+- **`dashboard_controller.rb`**
+  - Introduced `@total_estimated_minutes_today`, `@total_actual_minutes_today`, and `@time_remaining_minutes_today` to calculate workload metrics for tasks due **today** (excluding completed).
+
+### Changed
+- **`dashboard/index.html.erb`**
+  - Updated summary section to display time remaining for today:
+    - Total estimated vs. actual time
+    - Remaining time shown clearly for focused daily planning
+
+### Notes
+- Improves visibility into today's effort without noise from future/past tasks.
+
 ## [1.13.9] - 2025/07/07
 ### Dashboard Summary Expansion & Filtering Fixes
 
