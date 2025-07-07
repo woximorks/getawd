@@ -4,6 +4,42 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.13.8] - 2025/07/07
+### Filtering Overhaul & Dashboard Summary
+
+### Added
+- **`dashboard_controller.rb`**
+  - Introduced `@goal_counts` and `@task_counts` hashes to count goals and tasks by status.
+  - Added `@due_today_goals` and `@due_today_tasks` for tracking items due today with "not started" status.
+
+- **`dashboard/index.html.erb`**
+  - New summary section showing:
+    - Goal/task counts by status (linked to filtered index views).
+    - Due-today goal/task counts (also linked).
+
+### Changed
+- **`tasks_controller.rb`**
+  - Replaced legacy filtering with `params[:status]` and `params[:due]`.
+  - Default behavior hides `on_hold` and `completed` unless specified via params.
+  - Added support for filtering by due date.
+
+- **`goals_controller.rb`**
+  - Implemented identical filtering system using `params[:status]` and `params[:due]`.
+
+- **`tasks/index.html.erb`**
+  - Replaced broken checkboxes with a functional status dropdown (auto-submits).
+  - Search form and pagination updated to preserve `status` and `search` filters.
+  - Sort links now retain all current filters using `params.to_unsafe_h.merge(...)`.
+
+- **`goals/index.html.erb`**
+  - Same improvements as `tasks/index`:
+    - Status dropdown
+    - Filter-preserving pagination and sort links
+
+### Notes
+- Significantly improves filtering UX across dashboard, tasks, and goals.
+- Adds visibility into due-today items for better daily planning.
+
 ## [1.13.7] - 2025/07/06  
 ### Seed File Fixes & Repeatable Tasks
 

@@ -6,6 +6,20 @@ class GoalsController < ApplicationController
   def index
     @goals = Goal.all
 
+    if params[:status].present? && Goal.statuses.key?(params[:status])
+      @goals = @goals.where(status: Goal.statuses[params[:status]])
+    end
+
+    # Filter by due date (e.g., '2025-07-07')
+    if params[:due].present?
+      begin
+        date = Date.parse(params[:due])
+        @goals = @goals.where(due_date: date)
+      rescue ArgumentError
+        # ignore bad date
+      end
+    end
+
     unless params[:show_completed] == "1"
       @goals = @goals.where(completed_at: nil)
     end

@@ -1,14 +1,27 @@
+
 <section class="search">
   <%= form_with url: goals_path, method: :get, local: true do |f| %>
     <div>
       <%= f.text_field :search, value: params[:search], placeholder: "Enter goal name", style: "width: 200px;" %>
       <%= f.submit "Search", style: "margin-right: 1em;" %>
-      <%= f.check_box :show_completed, {}, "1", "0" %>
-      <%= f.label :show_completed, "Show completed goals" %>
-      <%= link_to "Clear", goals_path, class: "button", style: "margin-left: 1em;" %>
+      <div>
+        <%= label_tag :status, "Filter by Status:" %>
+        <%= select_tag :status,
+              options_for_select(
+                [["All (default)", ""],
+                ["Not Started", "not_started"],
+                ["In Progress", "in_progress"],
+                ["On Hold", "on_hold"],
+                ["Completed", "completed"]],
+                selected: params[:status]
+              ),
+              onchange: "this.form.submit()" %>
+      </div>
     </div>
   <% end %>
 </section>
+
+<hr>
 
 <section class="goals">
   <h1><%= GOAL_ICONS["goal"] %> | Goals</h1>

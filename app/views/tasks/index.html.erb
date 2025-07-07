@@ -5,22 +5,18 @@
       <%= f.submit "Search", style: "margin-right: 1em;" %>
       <%= link_to "Clear", tasks_path, class: "button", style: "margin-left: 1em;" %>
     </div>
-
     <div>
-      <%= check_box_tag :show_all, "true", params[:show_all] == "true", onchange: "this.form.submit()" %>
-      <label for="show_all">Show All Tasks</label>
-    </div>
-
-    <!-- Checkbox for "On Hold" tasks -->
-    <div>
-      <%= check_box_tag :on_hold, "true", params[:on_hold] == "true", onchange: "this.form.submit()" %>
-      <label for="on_hold">Show On Hold Tasks</label>
-    </div>
-
-    <!-- Checkbox for "Completed" tasks -->
-    <div>
-      <%= check_box_tag :completed, "true", params[:completed] == "true", onchange: "this.form.submit()" %>
-      <label for="completed">Show Completed Tasks</label>
+      <%= label_tag :status, "Filter by Status:" %>
+      <%= select_tag :status,
+            options_for_select(
+              [["All (default)", ""],
+              ["Not Started", "not_started"],
+              ["In Progress", "in_progress"],
+              ["On Hold", "on_hold"],
+              ["Completed", "completed"]],
+              selected: params[:status]
+            ),
+            onchange: "this.form.submit()" %>
     </div>
   <% end %>
 </section>
@@ -37,7 +33,7 @@
         <th style="text-align: center";><%= link_to 'Related Goal', tasks_path(sort: 'goal') %></th>
         <th><%= link_to 'Status', tasks_path(sort: 'status') %></th>
         <th><%= link_to 'Priority', tasks_path(sort: 'priority') %></th>
-        <th><%= link_to 'Due Date', tasks_path(sort: 'due_date') %></th>
+        <th><%= link_to 'Due Date', tasks_path(params.to_unsafe_h.merge(sort: 'due_date')) %></th>
         <th>Actions</th>
       </tr>
     </thead>

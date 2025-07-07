@@ -1,5 +1,30 @@
 <h1 style="text-align: center;">Dashboard</h1>
 
+<div class="summary-box">
+  <h3>📊 Summary</h3>
+    <div class="summary-section">
+    <strong>Goals:</strong>
+    Not Started: <%= link_to @goal_counts[:not_started], goals_path(status: 'not_started') %>,
+    In Progress: <%= link_to @goal_counts[:in_progress], goals_path(status: 'in_progress') %>,
+    On Hold: <%= link_to @goal_counts[:on_hold], goals_path(status: 'on_hold') %>,
+    Completed: <%= link_to @goal_counts[:completed], goals_path(status: 'completed', show_completed: 1) %>
+  </div>
+
+  <div class="summary-section">
+    <strong>Tasks:</strong>
+    Not Started: <%= link_to @task_counts[:not_started], tasks_path(status: 'not_started') %>,
+    In Progress: <%= link_to @task_counts[:in_progress], tasks_path(status: 'in_progress') %>,
+    On Hold: <%= link_to @task_counts[:on_hold], tasks_path(status: 'on_hold') %>,
+    Completed: <%= link_to @task_counts[:completed], tasks_path(status: 'completed') %>
+  </div>
+
+  <div class="summary-section">
+    <strong>Due Today (Not Started):</strong>
+    Tasks: <%= link_to @due_today_tasks, tasks_path(status: 'not_started', due: Date.today) %>,
+    Goals: <%= link_to @due_today_goals, goals_path(status: 'not_started', due: Date.today) %>
+  </div>
+</div>
+
 <section class="dashboard">
 
   <div class="goals-container">

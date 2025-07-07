@@ -3,23 +3,25 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.all
+
+    # Filter by status (e.g., 'not_started')
+    if params[:status].present? && Task.statuses.key?(params[:status])
+      @tasks = @tasks.where(status: Task.statuses[params[:status]])
+    end
+
+    # Filter by due date (e.g., '2025-07-07')
+    if params[:due].present?
+      begin
+        date = Date.parse(params[:due])
+        @tasks = @tasks.where(due_date: date)
+      rescue ArgumentError
+        # ignore bad date
+      end
+    end
   
     # Filter by goal if goal_id is provided
     if params[:goal_id].present?
       @tasks = @tasks.where(goal_id: params[:goal_id])
-    end
-  
-    # Apply filter only if `show_all` is not checked
-    unless params[:show_all] == "true"
-      if params[:on_hold] == "true" && params[:completed] == "true"
-        @tasks = @tasks.where(status: %w[on_hold completed]) # Show both "on hold" and "completed"
-      elsif params[:on_hold] == "true"
-        @tasks = @tasks.where(status: "on_hold") # Only "on hold" tasks
-      elsif params[:completed] == "true"
-        @tasks = @tasks.where(status: "completed") # Only "completed" tasks
-      else
-        @tasks = @tasks.where.not(status: %w[completed on_hold]) # Default: Exclude both
-      end
     end
   
     # Sorting logic
