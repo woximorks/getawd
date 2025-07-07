@@ -4,6 +4,27 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.13.9] - 2025/07/07
+### Dashboard Summary Expansion & Filtering Fixes
+
+### Added
+- **`dashboard_controller.rb`**
+  - Introduced `@due_today_tasks_*` and `@due_today_goals_*` for each status (`not_started`, `in_progress`, `on_hold`, `completed`).
+  - Calculated `@total_estimated_minutes`, `@total_actual_minutes`, and `@time_remaining_minutes` to track overall time performance.
+
+### Changed
+- **`goals_controller.rb`**
+  - Removed legacy `completed_at` logic that was interfering with `status=completed` filtering.
+
+- **`dashboard/index.html.erb`**
+  - Expanded summary section to show:
+    - “Due Today” counts for each goal/task status, linked to filtered views.
+    - Total time remaining, calculated from estimated minus actual task time.
+
+### Notes
+- Further refines the dashboard into a high-level performance view.
+- Filtering logic now behaves as expected for completed goals.
+
 ## [1.13.8] - 2025/07/07
 ### Filtering Overhaul & Dashboard Summary
 

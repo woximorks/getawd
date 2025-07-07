@@ -29,8 +29,20 @@ class DashboardController < ApplicationController
       completed:   Task.completed.count
     }
 
-    @due_today_tasks = Task.not_started.where(due_date: Date.today).count
-    @due_today_goals = Goal.not_started.where(due_date: Date.today).count
+    @due_today_tasks_not_started = Task.not_started.where(due_date: Date.today).count
+    @due_today_goals_not_started = Goal.not_started.where(due_date: Date.today).count
+    @due_today_tasks_in_progress = Task.in_progress.where(due_date: Date.today).count
+    @due_today_goals_in_progress = Goal.in_progress.where(due_date: Date.today).count
+    @due_today_tasks_on_hold = Task.on_hold.where(due_date: Date.today).count
+    @due_today_goals_on_hold = Goal.on_hold.where(due_date: Date.today).count
+    @due_today_tasks_completed = Task.completed.where(due_date: Date.today).count
+    @due_today_goals_completed = Goal.completed.where(due_date: Date.today).count
+
+    remaining_tasks = Task.where.not(status: :completed)
+
+  @total_estimated_minutes = remaining_tasks.sum(:estimated_time).to_i
+  @total_actual_minutes = remaining_tasks.sum(:actual_time).to_i
+  @time_remaining_minutes = @total_estimated_minutes - @total_actual_minutes
 
   end
 end

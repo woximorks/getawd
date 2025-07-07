@@ -19,10 +19,6 @@ class GoalsController < ApplicationController
         # ignore bad date
       end
     end
-
-    unless params[:show_completed] == "1"
-      @goals = @goals.where(completed_at: nil)
-    end
     
     @goal_icons = GOAL_ICONS
   
