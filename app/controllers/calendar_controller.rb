@@ -4,6 +4,6 @@ class CalendarController < ApplicationController
 
   def show
     @tasks = Task.all
-    @this_months_tasks = Task.where(due_date: Date.today.beginning_of_month..Date.today.end_of_month)
+    @this_months_tasks = Task.where(due_date: Time.zone.today.beginning_of_month..Time.zone.today.end_of_month)
   end
 end
