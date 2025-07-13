@@ -12,7 +12,7 @@ class TasksController < ApplicationController
     # Filter by due date (e.g., '2025-07-07')
     if params[:due].present?
       begin
-        date = Date.parse(params[:due])
+        date = Time.zone.parse(params[:due]).to_date
         @tasks = @tasks.where(due_date: date)
       rescue ArgumentError
         # ignore bad date

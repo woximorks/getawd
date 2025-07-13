@@ -21,23 +21,23 @@
   <h3>📊 Quick Report (Today)</h3>
   <div class="summary-section">
     <strong>Due Today (Not Started):</strong>
-    Tasks: <%= link_to @due_today_tasks_not_started, tasks_path(status: 'not_started', due: Date.today) %>,
-    Goals: <%= link_to @due_today_goals_not_started, goals_path(status: 'not_started', due: Date.today) %>
+    Tasks: <%= link_to @due_today_tasks_not_started, tasks_path(status: 'not_started', due: Time.zone.today) %>,
+    Goals: <%= link_to @due_today_goals_not_started, goals_path(status: 'not_started', due: Time.zone.today) %>
     <br>
 
     <strong>Due Today (In Progress):</strong>
-    Tasks: <%= link_to @due_today_tasks_in_progress, tasks_path(status: 'in_progress', due: Date.today) %>,
-    Goals: <%= link_to @due_today_goals_in_progress, goals_path(status: 'in_progress', due: Date.today) %>
+    Tasks: <%= link_to @due_today_tasks_in_progress, tasks_path(status: 'in_progress', due: Time.zone.today) %>,
+    Goals: <%= link_to @due_today_goals_in_progress, goals_path(status: 'in_progress', due: Time.zone.today) %>
     <br>
 
     <strong>Due Today (On Hold):</strong>
-    Tasks: <%= link_to @due_today_tasks_on_hold, tasks_path(status: 'on_hold', due: Date.today) %>,
-    Goals: <%= link_to @due_today_goals_on_hold, goals_path(status: 'on_hold', due: Date.today) %>
+    Tasks: <%= link_to @due_today_tasks_on_hold, tasks_path(status: 'on_hold', due: Time.zone.today) %>,
+    Goals: <%= link_to @due_today_goals_on_hold, goals_path(status: 'on_hold', due: Time.zone.today) %>
     <br>
 
     <strong>Due Today (Completed):</strong>
-    Tasks: <%= link_to @due_today_tasks_completed, tasks_path(status: 'completed', due: Date.today) %>,
-    Goals: <%= link_to @due_today_goals_completed, goals_path(status: 'completed', due: Date.today) %>
+    Tasks: <%= link_to @due_today_tasks_completed, tasks_path(status: 'completed', due: Time.zone.today) %>,
+    Goals: <%= link_to @due_today_goals_completed, goals_path(status: 'completed', due: Time.zone.today) %>
   </div>
   
   <div class="summary-section">

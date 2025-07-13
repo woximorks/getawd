@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.13.12] - 2025/07/012
+### Time Zone Consistency Fixes (Continued...)
+
+### Changed
+- **`dashboard_controller.rb`**
+  - Replaced all instances of `Date.today` with `Time.zone.today` to ensure date filtering aligns with the app's configured time zone (Pacific).
+
+- **`dashboard/index.html.erb`**
+  - Updated all date-based filter links (`tasks_path`, `goals_path`) to use `Time.zone.today` instead of `Date.today`.
+
+- **`tasks_controller.rb`**, **`goals_controller.rb`**
+  - Replaced `Date.parse(params[:due])` with `Time.zone.parse(params[:due]).to_date` to prevent UTC-related offset bugs when filtering by due date.
+
+### Notes
+- Fully resolves discrepancies between user-visible dates and system time behavior.
+- Improves accuracy and consistency of all date-based filtering.
+
+
 ## [1.13.11] - 2025/07/11
 ### Time Zone Fixes & Contact/About Updates
 
