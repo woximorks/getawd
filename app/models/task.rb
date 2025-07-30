@@ -9,11 +9,15 @@ class Task < ApplicationRecord
           "completed" => "Completed"
         }[status]
       end
-
     validates :due_date, presence: true
     validates :estimated_time, presence: true, numericality: true
     validates :actual_time, presence: true, numericality: true
 
     belongs_to :goal, optional: true
+    has_many :reward_tasks
+    has_many :rewards, through: :reward_tasks
 
+    def completed?
+      status == "completed"
+    end
 end

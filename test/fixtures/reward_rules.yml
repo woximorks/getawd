@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reward: one
+  rule_type: MyString
+  params: 
+
+two:
+  reward: two
+  rule_type: MyString
+  params: 

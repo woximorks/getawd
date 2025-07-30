@@ -1,0 +1,41 @@
+<div class="rewards">
+
+  <% @rewards.each do |reward| %>
+    <div class="reward-card">
+      <h2><%= reward.name %></h2>
+      <p><%= reward.description %></p>
+      <p><strong>Goal:</strong> <%= reward.goal.title %></p>
+      <p><strong>Status:</strong> <%= reward.eligible? ? "✅ Available" : "❌ Locked" %></p>
+      <p><strong>Last used:</strong> <%= reward.last_redeemed_at || "Never" %></p>
+
+      <% if reward.eligible? %>
+        <%= button_to "Use Reward", redeem_reward_path(reward), method: :post, class: "btn btn-success" %>
+      <% end %>
+
+      <%= button_to "Re-evaluate", evaluate_reward_path(reward), method: :post, class: "btn btn-secondary", form: { data: { turbo: false } } %>
+
+      <%= button_to "Delete", reward_path(reward), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+
+      <details>
+        <summary><strong>Required Tasks</strong></summary>
+        <ul>
+          <% reward.tasks.each do |task| %>
+            <li>
+              <%= link_to task.task_name, edit_task_path(task), target: "_blank" %>
+              <% if task.completed? %>✅<% else %>❌<% end %>
+            </li>
+          <% end %>
+        </ul>
+      </details>
+
+      <details>
+        <summary><strong>Reward Rules</strong></summary>
+        <ul>
+          <% reward.reward_rules.each do |rule| %>
+            <li><code><%= rule.rule_type %></code>: <%= rule.params.to_json %></li>
+          <% end %>
+        </ul>
+      </details>
+    </div>
+  <% end %>
+</div>

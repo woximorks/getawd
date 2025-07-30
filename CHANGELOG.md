@@ -4,6 +4,39 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.14.0] - 2025/07/10
+### Rewards System Integration
+
+### Added
+- **Models**
+  - `Reward`: Belongs to a goal; may require specific tasks for eligibility.
+  - `RewardRule`: Supports rule-based criteria (e.g., task streaks, calories) associated with a reward.
+  - `RewardTask`: Joins specific tasks to rewards when needed.
+
+- **Controllers / Actions**
+  - `rewards#index`: Displays all rewards, their status, associated tasks, and available actions.
+  - `rewards#new`, `rewards#create`: Enables frontend creation of rewards.
+  - `rewards#redeem`: Allows users to redeem eligible rewards.
+  - `rewards#evaluate`: Manually re-evaluate rule-based availability.
+  - `rewards#destroy`: Supports frontend deletion of rewards.
+
+- **Rule Logic**
+  - Implemented flexible rule parsing from `task_name` and `description`.
+    - Supports custom conditions like `run_streak`, `calorie_limit`, etc.
+  - `eligible?` logic determines if a reward can be redeemed.
+
+### Changed
+- **Views / Layout**
+  - Applied `.rewards`, `.reward-card`, `.btn` styles for consistent UI.
+  - Forms use a two-column layout with full-width fields for readability.
+  - Tasks listed under each reward include `link_to` helpers for quick editing access.
+  - Synced buttons with backend routes (redeem, evaluate, delete).
+
+### Notes
+- Initial integration focuses on task-based reward criteria.
+- System is structured for future expansion of rule types and reward logic.
+- Displays on dashboard, with link to rewards.
+
 ## [1.13.12] - 2025/07/012
 ### Time Zone Consistency Fixes (Continued...)
 

@@ -45,6 +45,14 @@
     <%= @time_remaining_minutes_today %> min
     (Est: <%= @total_estimated_minutes_today %> | Logged: <%= @total_actual_minutes_today %>)
   </div>
+
+    <h3>🎁  Rewards / Vices:</h3>
+    <div class="summary-section">
+      <strong>Total:</strong> <%= Reward.count %></li><br>
+      <strong>Available:</strong> <%= Reward.select(&:eligible?).count %><br>
+      <%= link_to 'View All Rewards', rewards_path, class: 'btn' %>
+    </div>
+
 </div>
 
 <section class="dashboard">

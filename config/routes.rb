@@ -32,6 +32,12 @@ Rails.application.routes.draw do
   resources :projects, only: [:index, :show]
   resources :tasks
   resources :videos, only: [:index, :show]
+  resources :rewards, only: [:index, :new, :create, :destroy] do
+    member do
+      post :redeem
+      post :evaluate
+    end
+  end
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.

@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  goal: one
+  cooldown_days: 1
+  allowed_duration_days: 1
+  last_redeemed_at: 2025-07-29
+  available: false
+
+two:
+  name: MyString
+  description: MyText
+  goal: two
+  cooldown_days: 1
+  allowed_duration_days: 1
+  last_redeemed_at: 2025-07-29
+  available: false

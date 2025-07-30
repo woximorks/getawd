@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_06_08_051550) do
+ActiveRecord::Schema[7.1].define(version: 2025_07_29_215842) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -77,6 +77,37 @@ ActiveRecord::Schema[7.1].define(version: 2025_06_08_051550) do
     t.boolean "featured"
   end
 
+  create_table "reward_rules", force: :cascade do |t|
+    t.bigint "reward_id", null: false
+    t.string "rule_type"
+    t.jsonb "params"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["reward_id"], name: "index_reward_rules_on_reward_id"
+  end
+
+  create_table "reward_tasks", force: :cascade do |t|
+    t.bigint "reward_id", null: false
+    t.bigint "task_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["reward_id"], name: "index_reward_tasks_on_reward_id"
+    t.index ["task_id"], name: "index_reward_tasks_on_task_id"
+  end
+
+  create_table "rewards", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.bigint "goal_id", null: false
+    t.integer "cooldown_days"
+    t.integer "allowed_duration_days"
+    t.date "last_redeemed_at"
+    t.boolean "available"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["goal_id"], name: "index_rewards_on_goal_id"
+  end
+
   create_table "tasks", force: :cascade do |t|
     t.string "task_name"
     t.text "description"
@@ -117,5 +148,9 @@ ActiveRecord::Schema[7.1].define(version: 2025_06_08_051550) do
     t.boolean "featured"
   end
 
+  add_foreign_key "reward_rules", "rewards"
+  add_foreign_key "reward_tasks", "rewards"
+  add_foreign_key "reward_tasks", "tasks"
+  add_foreign_key "rewards", "goals"
   add_foreign_key "tasks", "goals"
 end
