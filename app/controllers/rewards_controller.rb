@@ -8,7 +8,7 @@ class RewardsController < ApplicationController
   def new
     @reward = Reward.new
     @goals = Goal.all
-    @tasks = Task.all
+    @tasks = Task.where(status: [:not_started, :in_progress, :on_hold])
   end
 
   def create
