@@ -1,4 +1,8 @@
 <div class="rewards">
+  
+  <div style="text-align: center; margin-bottom: 1em;">
+    <%= link_to "➕ Create New", new_reward_path, class: "new-button" %>
+  </div>
 
   <% @rewards.each do |reward| %>
     <div class="reward-card">
