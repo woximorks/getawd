@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.15.0] - 2025/08/01
+### Added
+- **`config/s3.yml`**
+  - Environment-specific bucket, region, and access key config for AWS S3
+- **`app/services/s3_service.rb`**
+  - Service class to upload and access files from S3, supports public/private files
+- **`Gemfile`**
+  - Added `aws-sdk-s3` for S3 integration
+
 ## [1.14.5] - 2025/07/30
 ### Changed
 - **`rewards/index.html.erb`**
