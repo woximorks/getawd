@@ -2,7 +2,7 @@
 
     <% if @blog_post.image.present? %>
         <div class="img">
-            <%= image_tag @blog_post.image, alt: @blog_post.title %>
+            <%= image_tag(blog_image_url(@blog_post.image)) if @blog_post.image.present? %>
         </div>
     <% end %>
 

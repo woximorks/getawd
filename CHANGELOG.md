@@ -4,6 +4,32 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.15.2] - 2025-08-02
+### Changed
+- **`app/views/layouts/_navbar.html.erb`**
+  - Replaced local `logo.png` with S3-hosted version via `logo_url` helper.
+  
+- **`app/views/about/index.html.erb`**
+  - Updated all about section images to use `about_image_url(num)` helper for S3-hosted images.
+  
+- **`app/views/blog_posts/index.html.erb`**, **`blog_posts/show.html.erb`**
+  - Replaced local blog post images with S3-hosted versions via `blog_image_url(filename)`.
+  
+- **`app/views/projects/index.html.erb`**
+  - Replaced all project images with S3 URLs using `project_image_url(filename)` helper.
+  
+- **`app/views/landscaping_jobs/index.html.erb`**
+  - Updated landscaping job images to use S3-hosted URLs via `landscaping_image_url(filename)` helper.
+
+### Added
+- **`application_helper.rb`**
+  - `logo_url`, `about_image_url(num)`, `blog_image_url(filename)`,  
+    `project_image_url(filename)`, and `landscaping_image_url(filename)` helpers.
+
+### Removed
+- Local assets from `app/assets/images/` now hosted on S3:
+  - `about1.png` to `about3.png`, `blogx.png`, `projectx.png`, `landscapingx.png`, etc.
+
 ## [1.15.1] - 2025/08/01
 ### Setting bucket to public altogether, will only be used for public facing images.
 

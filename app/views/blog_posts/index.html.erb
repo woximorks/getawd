@@ -5,7 +5,9 @@
       <li>
         <h3><%= blog_post.title %></h3>
         <p><%= blog_post.description %></p>
-        <%= image_tag blog_post.image if blog_post.image.present? %>
+        <% if blog_post.image.present? %>
+          <%= image_tag(blog_image_url(blog_post.image)) %>
+        <% end %>
         <div>
           <%= link_to 'Read More', blog_post_path(blog_post) %>
         </div>

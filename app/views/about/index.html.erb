@@ -1,18 +1,18 @@
 <section class="about">
-<h1>About</h1>
+  <h1>About</h1>
 
-<ul id="paragraphs_from_yml">
-  <li>
-    <%= image_tag "about1.png", alt: "Logo", class: "navbar-logo" %>
-    <p><%= @about_info['about']['paragraph2'] %></p>
-  </li>  
-  <li>
-    <%= image_tag "about3.png", alt: "Logo", class: "navbar-logo" %>
-    <p><%= @about_info['about']['paragraph1'] %></p>
-  </li>
-  <li>
-    <%= image_tag "about2.png", alt: "Logo", class: "navbar-logo" %>
-    <p><%= @about_info['about']['paragraph3'] %></p>
-  </li>
-</ul>
+  <ul id="paragraphs_from_yml">
+    <li>
+      <%= image_tag about_image_url(1), alt: "Logo", class: "navbar-logo" %>
+      <p><%= @about_info['about']['paragraph2'] %></p>
+    </li>  
+    <li>
+      <%= image_tag about_image_url(3), alt: "Logo", class: "navbar-logo" %>
+      <p><%= @about_info['about']['paragraph1'] %></p>
+    </li>
+    <li>
+      <%= image_tag about_image_url(2), alt: "Logo", class: "navbar-logo" %>
+      <p><%= @about_info['about']['paragraph3'] %></p>
+    </li>
+  </ul>
 </section>
