@@ -12,7 +12,7 @@ class S3Service
   end
 
   def upload(file_path, key, public: false)
-    opts = { acl: public ? "public-read" : "private" }
+    opts = {}
     obj = @bucket.object(key)
     obj.upload_file(file_path, opts)
     public ? obj.public_url : obj.key
