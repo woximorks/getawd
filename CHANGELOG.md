@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.16.1] - 2025-08-04
+### Ideas
+
+### Added
+- `IdeasController#show` displays emoji from `idea_icons.yml` and lists associated goals and tasks
+- New route for `ideas#show` to enable drilldown per idea
+- Dashboard view: each emoji now links to its corresponding idea show page
+- Dashboard controller: includes `id:` in emoji data to support linking
+- `app/views/ideas/show.html.erb` renders:
+  - Icon for the idea (from YAML config)
+  - All goals under that idea
+  - All tasks under each goal
+
 ## [1.16.0] - 2025-08-04
 ### Ideas
 

@@ -62,7 +62,8 @@ class DashboardController < ApplicationController
               else 'black'
               end
 
-      { emoji: emoji, color: color }
+      { id: idea.id, emoji: emoji, color: color }
     end
+
   end
 end
