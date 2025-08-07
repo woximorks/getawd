@@ -44,6 +44,25 @@ class DashboardController < ApplicationController
     @total_estimated_minutes_today = remaining_tasks_today.sum(:estimated_time).to_i
     @total_actual_minutes_today = remaining_tasks_today.sum(:actual_time).to_i
     @time_remaining_minutes_today = @total_estimated_minutes_today - @total_actual_minutes_today
+    
+    @ideas = Idea.includes(goals: :tasks).map do |idea|
+      emoji = IDEAS[idea.title] || "❓"
 
+      recent_task = idea.goals.flat_map(&:tasks)
+                        .select { |t| t.completion_date.present? }
+                        .max_by(&:completion_date)
+
+      days_ago = recent_task ? (Time.zone.today - recent_task.completion_date.to_date).to_i : nil
+
+      color = case days_ago
+              when nil then 'gray'
+              when 0 then 'green'
+              when 1..2 then 'yellow'
+              when 3..6 then 'red'
+              else 'black'
+              end
+
+      { emoji: emoji, color: color }
+    end
   end
 end

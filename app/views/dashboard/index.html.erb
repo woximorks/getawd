@@ -1,5 +1,13 @@
 <h1 style="text-align: center;">Dashboard</h1>
 
+<div class="ideas-indicator">
+  <% @ideas.each do |entry| %>
+    <div class="idea-icon <%= entry[:color] %>">
+      <%= entry[:emoji] %>
+    </div>
+  <% end %>
+</div>
+
 <div class="summary-box">
   <h3>📊 Summary</h3>
   <div class="summary-section">

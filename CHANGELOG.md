@@ -4,6 +4,32 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.16.0] - 2025-08-04
+### Ideas
+
+### Added
+- **Idea model** with `has_many :goals` association
+- `idea_id:references` added to **goals** table via migration
+- `config/idea_icons.yml` created to define emoji icons per idea title
+- `IDEAS` constant initialized using `YAML.load_file(...).with_indifferent_access`
+
+### Linked
+- `Goal` model now `belongs_to :idea`
+- Dashboard controller updated to:
+  - Load all ideas with associated goals and tasks
+  - Compute latest task completion per idea
+  - Assign background color based on recency
+  - Display emoji icon per idea from YAML config
+
+### UI/UX
+- Dashboard view updated to show idea emojis in a horizontal bar with status-based background color
+- `.ideas-indicator` and `.idea-icon` styled for alignment and responsive layout
+
+### Seed Data
+- Added `Idea` records for: Fitness, Career, Social, Travel, Learning
+- Added corresponding `Goal` records linked to ideas
+- Added sample `Task` records linked to goals
+
 ## [1.15.4] - 2025-08-02
 ### Verified
 - Rails version `7.1.4.1` and Ruby version `3.2.2` confirmed consistent across macOS and WSL

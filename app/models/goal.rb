@@ -1,5 +1,6 @@
 class Goal < ApplicationRecord
   has_many :tasks, dependent: :destroy
+  belongs_to :idea
 
   enum status: { not_started: 0, in_progress: 1, on_hold: 2, completed: 3 }
 

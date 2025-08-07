@@ -1,125 +1,73 @@
-Task.create!(
-  task_name: "Edit this task",
-  description: "Navigate to seeds.rb file, you'll find me :D.",
-  status: 0,
-  priority: 2,
-  start_date: Date.today,
-  due_date: Date.today + 7,
-  completion_date: nil,
-  assigned_to: "Alice",
-  estimated_time: 4,
-  actual_time: 0,
-  goal_id: 1
-)
+# Create Ideas
+fitness  = Idea.find_or_create_by!(title: "Fitness")
+career   = Idea.find_or_create_by!(title: "Career")
+social   = Idea.find_or_create_by!(title: "Social")
+travel   = Idea.find_or_create_by!(title: "Travel")
+learning = Idea.find_or_create_by!(title: "Learning")
 
-Task.create!(
-  task_name: "Seed the database with some starter tasks",
-  description: "Just run rails db:seed in the terminal",
-  status: 1,
-  priority: 1,
-  start_date: Date.today - 2,
+# Create Goals
+goal_run = Goal.create!(
+  title: "Run a 5K",
+  description: "Train for and complete a 5K run.",
   due_date: Date.today + 5,
-  completion_date: nil,
-  assigned_to: "Bob",
-  estimated_time: 3,
-  actual_time: 0,
-  goal_id: 2
+  priority: 4,
+  category: "Health",
+  status: 2,
+  completed_at: nil,
+  idea: fitness
 )
 
-Task.create!(
-  task_name: "Learn postgreSQL",
-  description: "Update this content in the database directly.",
-  status: 0,
-  priority: 3,
-  start_date: Date.today - 1,
-  due_date: Date.today + 3,
-  completion_date: nil,
-  assigned_to: "Charlie",
-  estimated_time: 2,
-  actual_time: 0,
-  goal_id: 3
-)
-
-Task.create!(
-  task_name: "Edit this task2",
-  description: "Navigate to seeds.rb file, you'll find me :D.",
-  status: 0,
-  priority: 2,
-  start_date: Date.today,
-  due_date: Date.today + 3,
-  completion_date: nil,
-  assigned_to: "Alice",
-  estimated_time: 123,
-  actual_time: 0,
-  goal_id: 4
-)
-
-Task.create!(
-  task_name: "Seed the database with some starter tasks2",
-  description: "Just run rails db:seed in the terminal",
-  status: 1,
+goal_project = Goal.create!(
+  title: "Complete Project Proposal",
+  description: "Draft and finalize the proposal document for the new project.",
+  due_date: Date.today + 14,
   priority: 1,
-  start_date: Date.today - 2,
-  due_date: Date.today + 5,
-  completion_date: nil,
-  assigned_to: "Bob",
-  estimated_time: 3,
-  actual_time: 0,
-  goal_id: 5
-)
-
-Task.create!(
-  task_name: "Learn postgreSQL2",
-  description: "Update this content in the database directly.",
-  status: 0,
-  priority: 3,
-  start_date: Date.today - 1,
-  due_date: Date.today + 3,
-  completion_date: nil,
-  assigned_to: "Charlie",
-  estimated_time: 2,
-  actual_time: 0,
-  goal_id: 4
-)
-
-Task.create!(
-  task_name: "Edit this task3",
-  description: "Navigate to seeds.rb file, you'll find me :D.",
-  status: 0,
-  priority: 2,
-  start_date: Date.today,
-  due_date: Date.today + 7,
-  completion_date: nil,
-  assigned_to: "Alice",
-  estimated_time: 4,
-  actual_time: 0,
-  goal_id: 3
-)
-
-Task.create!(
-  task_name: "Seed the database with some starter tasks3",
-  description: "Just run rails db:seed in the terminal",
+  category: "Work",
   status: 1,
-  priority: 1,
-  start_date: Date.today - 2,
-  due_date: Date.today + 5,
-  completion_date: nil,
-  assigned_to: "Bob",
-  estimated_time: 3,
-  actual_time: 0,
-  goal_id: 2
+  completed_at: nil,
+  idea: career
+)
+
+goal_book = Goal.create!(
+  title: "Read a New Book",
+  description: "Finish reading 'Atomic Habits' and take notes.",
+  due_date: Date.today + 3,
+  priority: 5,
+  category: "Learning",
+  status: 2,
+  completed_at: nil,
+  idea: learning
+)
+
+# Create Tasks tied to each Goal
+Task.create!(
+  task_name: "Buy running shoes",
+  description: "Get a decent pair for training.",
+  due_date: Date.today + 1,
+  estimated_time: 60,
+  actual_time: 60,
+  status: 3,
+  goal: goal_run,
+  completion_date: Date.today
 )
 
 Task.create!(
-  task_name: "Learn postgreSQL3",
-  description: "Update this content in the database directly.",
-  status: 0,
-  priority: 3,
-  start_date: Date.today - 1,
+  task_name: "Outline key proposal sections",
+  description: "Break project into main deliverables.",
   due_date: Date.today + 3,
-  completion_date: nil,
-  assigned_to: "Charlie",
-  estimated_time: 2,
-  actual_time: 0,
-  goal_id: 1
+  estimated_time: 120,
+  actual_time: 90,
+  status: 2,
+  goal: goal_project
+)
+
+Task.create!(
+  task_name: "Finish last 3 chapters",
+  description: "Wrap up the reading.",
+  due_date: Date.today + 1,
+  estimated_time: 90,
+  actual_time: 100,
+  status: 3,
+  goal: goal_book,
+  completion_date: Date.today - 1
 )

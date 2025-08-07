@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_07_29_215842) do
+ActiveRecord::Schema[7.1].define(version: 2025_08_06_224657) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -57,6 +57,14 @@ ActiveRecord::Schema[7.1].define(version: 2025_07_29_215842) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "status", default: 0, null: false
+    t.bigint "idea_id", null: false
+    t.index ["idea_id"], name: "index_goals_on_idea_id"
+  end
+
+  create_table "ideas", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "landscaping_jobs", force: :cascade do |t|
@@ -148,6 +156,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_07_29_215842) do
     t.boolean "featured"
   end
 
+  add_foreign_key "goals", "ideas"
   add_foreign_key "reward_rules", "rewards"
   add_foreign_key "reward_tasks", "rewards"
   add_foreign_key "reward_tasks", "tasks"
