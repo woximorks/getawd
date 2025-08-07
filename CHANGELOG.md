@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.16.2] - 2025-08-04
+### Ideas
+
+### Added
+- Emoji tiles on dashboard now wrap to multiple lines using `flex-wrap: wrap`
+- Hovering over each emoji now shows the `Idea` title as a tooltip via the `title` attribute
+
+### Changed
+- Dashboard controller now includes `title:` in each emoji tile hash for hover display
+
 ## [1.16.1] - 2025-08-04
 ### Ideas
 

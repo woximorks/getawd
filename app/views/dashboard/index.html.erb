@@ -3,7 +3,9 @@
 <div class="ideas-indicator">
   <% @ideas.each do |entry| %>
     <div class="idea-icon <%= entry[:color] %>">
-      <%= link_to entry[:emoji], idea_path(entry[:id]), class: "idea-icon #{entry[:color]}" %>
+      <%= link_to entry[:emoji], idea_path(entry[:id]),
+      class: "idea-icon #{entry[:color]}",
+      title: entry[:title] %>
     </div>
   <% end %>
 </div>
