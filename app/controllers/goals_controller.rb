@@ -90,6 +90,6 @@ class GoalsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def goal_params
-      params.require(:goal).permit(:title, :description, :due_date, :priority, :category, :status, :completed_at)
+      params.require(:goal).permit(:title, :description, :due_date, :priority, :category, :status, :completed_at, :idea_id)
     end
 end

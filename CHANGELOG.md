@@ -4,6 +4,29 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.16.3] - 2025-08-04
+
+### Ideas
+- Created `ideas` table and model with `title` and `emoji` attributes
+- Established `has_many :goals` relationship for ideas; `goals` now `belongs_to :idea`
+- Added full UI support for creating, viewing, and deleting ideas
+- `Ideas#show` view lists all associated goals and their tasks
+
+### Changed
+- Goal form now supports selecting an associated idea
+- Dashboard layout updated to align idea sections with consistent design
+- Goals on idea show page styled with color-coding based on task recency
+- Tasks under each goal are collapsed by default with a toggle to expand
+- Fixed dashboard layout alignment and re-centered main content
+- Updated SCSS to include `.idea-status-legend` styles for visual consistency across status indicators
+
+### Fixed
+- Prevented duplicate goal titles under the same idea
+
+### Added
+- Color-coded status legend to the top of the `ideas#show` page
+- Legend displays status meaning for `.not_started`, `.in_progress`, `.on_hold`, and `.completed` with matching background/border styles
+
 ## [1.16.2] - 2025-08-04
 ### Ideas
 
