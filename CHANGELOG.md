@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.16.5] - 2025-08-09
+
+### Added
+- DashboardController#index now calculates `goals_count` and `tasks_count` for each idea by counting associated goals and tasks.
+- Ideas section tooltip updated to display `"{goals_count} goals, {tasks_count} tasks"` instead of the idea title.
+- Optional `.idea-stats` element in dashboard ideas for inline display of goals/tasks counts.
+
+### Changed
+- Updated dashboard ideas loop to pass new counts into the tooltip via `title` attribute.
+- `dashboard.scss`
+  - `.goal-summary` and `.task-card` updated to span 100% of their container width.
+
 ## [1.16.4] - 2025-08-08
 
 ### Changed

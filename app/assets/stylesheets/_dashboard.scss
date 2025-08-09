@@ -128,18 +128,24 @@
 .task-card.not_started {
   background-color: #fffde7; // light yellow
   border-color: #fff176;
+  width: 100%;
+  margin-bottom: .5em;
 }
 
 .goal-summary.in_progress,
 .task-card.in_progress {
   background-color: #f3e5f5; // light purple
   border-color: #ba68c8;
+  width: 100%;
+  margin-bottom: .5em;
 }
 
 .goal-summary.on_hold,
 .task-card.on_hold {
   background-color: #ffebee; // light red
   border-color: #ef9a9a;
+  width: 100%;
+  margin-bottom: .5em;
 }
 
 .goal-summary.completed,
@@ -148,5 +154,7 @@
   border-color: #c8e6c9;
   text-decoration: line-through;
   color: #888;
+  width: 100%;
+  margin-bottom: .5em;
 }
 

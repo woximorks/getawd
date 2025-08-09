@@ -13,7 +13,10 @@
     <div class="ideas-indicator">
       <% @ideas.each do |entry| %>
         <div class="idea-box <%= entry[:color] %>">
-          <%= link_to entry[:emoji], idea_path(entry[:id]), class: "idea-link", title: entry[:title] %>
+          <%= link_to entry[:emoji],
+            idea_path(entry[:id]),
+            class: "idea-link",
+            title: "#{entry[:goals_count]} goal(s), #{entry[:tasks_count]} task(s)" %>
           <div class="idea-label"><%= entry[:title] %></div>
         </div>
       <% end %>

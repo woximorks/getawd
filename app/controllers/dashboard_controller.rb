@@ -48,10 +48,10 @@ class DashboardController < ApplicationController
     @ideas = Idea.includes(goals: :tasks).map do |idea|
       emoji = IDEAS[idea.title] || "❓"
 
-      recent_task = idea.goals.flat_map(&:tasks)
-                        .select { |t| t.completion_date.present? }
-                        .max_by(&:completion_date)
+      goals = idea.goals
+      tasks = goals.flat_map(&:tasks)
 
+      recent_task = tasks.select { |t| t.completion_date.present? }.max_by(&:completion_date)
       days_ago = recent_task ? (Time.zone.today - recent_task.completion_date.to_date).to_i : nil
 
       color = case days_ago
@@ -62,8 +62,14 @@ class DashboardController < ApplicationController
               else 'black'
               end
 
-      { id: idea.id, title: idea.title, emoji: emoji, color: color }
+      {
+        id: idea.id,
+        title: idea.title,
+        emoji: emoji,
+        color: color,
+        goals_count: goals.size,
+        tasks_count: tasks.size
+      }
     end
-
   end
 end
