@@ -1,6 +1,6 @@
 class VideosController < ApplicationController
   def index
-    @videos = Video.all
+    @videos = Video.order(created_at: :desc)
   end
 
   def show
