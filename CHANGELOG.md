@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.17.2] - 2025-09-16
+
+### Added
+- Dashboard updates:
+  - Linked each goal on the dashboard to its associated idea show page
+  - Linked each task on the dashboard to its associated idea show page for context
+
+### Changed
+- Improved navigation flow between dashboard, ideas, goals, and tasks by ensuring relationships are explicitly linked
+- Additional clarity added to ideas in relation to how the colors are coordinating to the ideas
+- SCSS cleaned up for dashboard
+
 ## [1.17.1] -2025-09-11
 
 ### Changed
