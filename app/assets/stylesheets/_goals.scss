@@ -1,0 +1,58 @@
+/* Shared layout for goal and task cards */
+.goal-card,
+.task-card {
+  margin: 0.5rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  text-align: center;
+}
+
+/* Status states */
+.goal-card.not_started,
+.task-card.not_started {
+  @extend .not_started;
+  margin-bottom: .5em;
+}
+
+.goal-card.in_progress,
+.task-card.in_progress {
+  @extend .in_progress;
+  margin-bottom: .5em;
+}
+
+.goal-card.on_hold,
+.task-card.on_hold {
+  @extend .on_hold;
+  margin-bottom: .5em;
+}
+
+.goal-card.completed,
+.task-card.completed {
+  @extend .completed;
+  text-decoration: line-through;
+  color: #888;
+  margin-bottom: .5em;
+}
+
+/* Container alignment for index pages */
+.goals-list,
+.tasks-list {
+  width: 90%;
+  max-width: 1150px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Task extras */
+.task-toggle {
+  margin-top: 0.5rem;
+  width: 100%;
+  text-align: left;
+
+  summary {
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+  }
+}

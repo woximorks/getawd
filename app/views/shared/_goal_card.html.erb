@@ -1,0 +1,9 @@
+<div class="goal-card <%= goal.status %>">
+  <h2><%= GOAL_ICONS["goal"] %> | <%= link_to goal.title, goal_path(goal) %></h2>
+  <p><%= goal.description %></p>
+  <p>Priority: <%= goal.priority %></p>
+  <p>Due: <%= goal.due_date %></p>
+  <% if goal.completed_at.present? %>
+    <p>Completed at: <%= goal.completed_at %></p>
+  <% end %>
+</div>

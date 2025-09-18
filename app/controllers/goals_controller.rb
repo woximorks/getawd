@@ -4,32 +4,25 @@ class GoalsController < ApplicationController
 
   # GET /goals or /goals.json
   def index
-    @goals = Goal.all
+  scope = Goal.all
 
-    if params[:status].present? && Goal.statuses.key?(params[:status])
-      @goals = @goals.where(status: Goal.statuses[params[:status]])
-    end
+  if params[:status].present? && Goal.statuses.key?(params[:status])
+    scope = scope.where(status: Goal.statuses[params[:status]])
+  end
 
-    # Filter by due date (e.g., '2025-07-07')
-    if params[:due].present?
-      begin
-        date = Time.zone.parse(params[:due]).to_date
-        @goals = @goals.where(due_date: date)
-      rescue ArgumentError
-        # ignore bad date
-      end
+  if params[:due].present?
+    begin
+      date = Time.zone.parse(params[:due]).to_date
+      scope = scope.where(due_date: date)
+    rescue ArgumentError
     end
-    
-    @goal_icons = GOAL_ICONS
-  
-    # Apply search filter using 'title'
-    if params[:search].present?
-      @goals = @goals.where("title ILIKE ?", "%#{params[:search]}%")
-    end
-  
-    # Keep due date sorting if needed
-    @goals_by_due_date_asc = @goals.order(due_date: :asc)
-  end  
+  end
+
+  scope = scope.where("title ILIKE ?", "%#{params[:search]}%") if params[:search].present?
+
+  @goals, @page, @total_pages = paginate(scope.order(due_date: :asc), per_page: 25)
+  end
+
 
   # GET /goals/1 or /goals/1.json
   def show

@@ -4,6 +4,31 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.18.0] – 2025-09-17
+
+### Added
+- `paginate` helper in `ApplicationController`, reusable across controllers
+- Pagination for **Goals index** and **Tasks index**, with shared partial `_pagination.html.erb`
+- Shared partials `_goal_card.html.erb` and `_task_card.html.erb` to standardize goal/task card rendering
+- New SCSS partials: `_dashboard.scss`, `_goals.scss`, `_tasks.scss`, `_ideas.scss`, `_colors.scss`
+- `goals-list` and `tasks-list` containers with centered layout on index pages
+
+### Changed
+- `DashboardController` and views now render goals/tasks using shared partials instead of inline markup
+- `GoalsController#index` and `TasksController#index` refactored to use `paginate` instead of custom pagination
+- Updated SCSS structure:
+  - Moved goals, tasks, ideas, and dashboard styles into their own files
+  - Removed duplication
+- `application.scss` slimmed down:
+  - Removed legacy `.goals`, `.tasks`, `#goal`, `#task` table styles
+  - Kept only global variables and shared layout rules
+- Unified design:
+  - Consistent centering, width, and status coloring between dashboard cards and index pages
+
+### Fixed
+- Goals on index page are now centered (previously left-aligned)
+- Removed conflicting/duplicate SCSS selectors that caused inconsistent sizing for goals and tasks
+
 ## [1.17.2] - 2025-09-16
 
 ### Added

@@ -1,73 +1,16 @@
+<h1>Goals</h1>
 
-<section class="search">
-  <%= form_with url: goals_path, method: :get, local: true do |f| %>
-    <div>
-      <%= f.text_field :search, value: params[:search], placeholder: "Enter goal name", style: "width: 200px;" %>
-      <%= f.submit "Search", style: "margin-right: 1em;" %>
-      <div>
-        <%= label_tag :status, "Filter by Status:" %>
-        <%= select_tag :status,
-              options_for_select(
-                [["All (default)", ""],
-                ["Not Started", "not_started"],
-                ["In Progress", "in_progress"],
-                ["On Hold", "on_hold"],
-                ["Completed", "completed"]],
-                selected: params[:status]
-              ),
-              onchange: "this.form.submit()" %>
-      </div>
-    </div>
+<div class="goals-list">
+  <% @goals.each do |goal| %>
+    <%= render "shared/goal_card", goal: goal %>
   <% end %>
-</section>
+</div>
 
-<hr>
-
-<section class="goals">
-  <h1><%= GOAL_ICONS["goal"] %> | Goals</h1>
-  <p>
-    Goals are long-term objectives designed to be achieved through measurable progress. They are broken down into specific <%= link_to 'tasks', tasks_path %>, which serve as actionable steps toward completion. Progress is tracked, and key milestones are met along the way to ensure steady advancement.
-  </p>
-  <table>
-    <thead>
-      <tr>
-        <th>Goal</th>
-        <th>Deadline</th>
-        <th>Projected Time</th>
-        <th>Actual Time</th>
-        <th>Related Tasks</th>
-        <th>Due Date</th>
-        <th>Status</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @goals_by_due_date_asc.each do |goal| %>
-        <tr>
-          <td style="text-align: left"><%= GOAL_ICONS[goal.category] || "📝" %> | <%= goal.title %></td>
-          <td>
-            <%= (goal.due_date - Date.today).to_i %> days
-          </td>
-          <td><%= goal.tasks.sum(:estimated_time) %> minutes</td>
-          <td><%= goal.tasks.sum(:actual_time) %> minutes</td>
-          <td>
-            <%= link_to goal.tasks.count, tasks_path(goal_id: goal.id) %>
-          </td>
-          <td>
-            <%= goal.due_date %> 
-          </td>
-          <td>
-            <%= goal.status %> 
-          </td>
-          <td>
-            <%= link_to "Show", goal %> | 
-            <%= link_to "Edit", edit_goal_path(goal) %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-  <%= link_to "New Goal", new_goal_path, class: "new-button" %>
-  <%= link_to "New Task", new_task_path, class: "new-button" %>
-</section>
+<div class="pagination">
+  <% if @page > 1 %>
+    <%= link_to "Previous", goals_path(page: @page - 1) %>
+  <% end %>
+  <% if @page < @total_pages %>
+    <%= link_to "Next", goals_path(page: @page + 1) %>
+  <% end %>
+</div>

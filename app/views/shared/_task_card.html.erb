@@ -1,0 +1,7 @@
+<div class="task-card <%= task.status %>">
+  <h2><%= GOAL_ICONS["task"] %> | <%= link_to task.task_name, task_path(task) %></h2>
+  <p><%= task.description %></p>
+  <p>Priority: <%= task.priority %></p>
+  <p>Due: <%= task.due_date %></p>
+  <p>Goal: <%= link_to task.goal.title, goal_path(task.goal) if task.goal %></p>
+</div>

@@ -1,74 +1,16 @@
-<section class="search">
-  <%= form_with url: tasks_path, method: :get, local: true do |f| %>
-    <div>
-      <%= f.text_field :search, value: params[:search], placeholder: "Enter task name", style: "width: 200px;" %>
-      <%= f.submit "Search", style: "margin-right: 1em;" %>
-      <%= link_to "Clear", tasks_path, class: "button", style: "margin-left: 1em;" %>
-    </div>
-    <div>
-      <%= label_tag :status, "Filter by Status:" %>
-      <%= select_tag :status,
-            options_for_select(
-              [["All (default)", ""],
-              ["Not Started", "not_started"],
-              ["In Progress", "in_progress"],
-              ["On Hold", "on_hold"],
-              ["Completed", "completed"]],
-              selected: params[:status]
-            ),
-            onchange: "this.form.submit()" %>
-    </div>
+<h1>Tasks</h1>
+
+<div class="tasks-list">
+  <% @tasks.each do |task| %>
+    <%= render "shared/task_card", task: task %>
   <% end %>
-</section>
+</div>
 
-<hr>
-
-<section class="tasks">
-<h1><%= GOAL_ICONS["task"] %> | Tasks</h1>
-<p>Tasks represent specific objectives that contribute to the completion of broader <%= link_to 'goals', goals_path %>. They define actionable steps necessary for achieving these longer-term objectives. Designed to follow the SMART (Specific, Measurable, Achievable, Relevant, and Time-Bound) criteria, tasks should be measurable, and ideally completable within a single day or short period of time. Time spent should be estimated, monitored and later recorded within each individual task as these are worked on / completed.</p>
-  <table>
-    <thead>
-      <tr>
-        <th><%= link_to 'Task Name', tasks_path(sort: 'task_name') %></th>
-        <th style="text-align: center";><%= link_to 'Related Goal', tasks_path(sort: 'goal') %></th>
-        <th><%= link_to 'Status', tasks_path(sort: 'status') %></th>
-        <th><%= link_to 'Priority', tasks_path(sort: 'priority') %></th>
-        <th><%= link_to 'Due Date', tasks_path(params.to_unsafe_h.merge(sort: 'due_date')) %></th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @tasks.each do |task| %>
-        <tr class="<%= 'overdue' if task.due_date < Date.today %>">
-          <td style="text-align: left" class="<%= 'highlight' if params[:search].present? && task.task_name.downcase.include?(params[:search].downcase) %>">
-            <%= task.task_name %>
-          </td>
-          <td>
-            <%= link_to "#{GOAL_ICONS[task.goal.category] || '📝'} | #{task.goal.title}", goal_path(task.goal) if task.goal %>
-          </td>
-          <td><%= task.human_status %></td>
-          <td><%= task.priority %></td>
-          <td><%= task.due_date %></td>
-          <td>
-            <%= link_to 'Show', task_path(task) %> |
-            <%= link_to 'Edit', edit_task_path(task) %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-  <div>
-    <% if @page > 1 %>
-      <%= link_to "Previous", tasks_path(page: @page - 1, search: params[:search], show_all: params[:show_all], on_hold: params[:on_hold], completed: params[:completed]) %>
-    <% end %>
-
-    Page <%= @page %> of <%= @total_pages %>
-
-    <% if @page < @total_pages %>
-      <%= link_to "Next", tasks_path(page: @page + 1, search: params[:search], show_all: params[:show_all], on_hold: params[:on_hold], completed: params[:completed]) %>
-    <% end %>
-  </div>
-  <%= link_to "New Goal", new_goal_path, class: "new-button" %>
-  <%= link_to "New Task", new_task_path, class: "new-button" %>
-</section>
+<div class="pagination">
+  <% if @page > 1 %>
+    <%= link_to "Previous", tasks_path(page: @page - 1) %>
+  <% end %>
+  <% if @page < @total_pages %>
+    <%= link_to "Next", tasks_path(page: @page + 1) %>
+  <% end %>
+</div>

@@ -2,24 +2,27 @@ class DashboardController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @tasks = Task.all
-    @goals = Goal.all
+    # Paginate tasks
+    @tasks, @task_page, @task_total_pages = paginate(Task.all, per_page: 50)
 
-    @not_started_goals = Goal.where(status: :not_started).order(:due_date)
-    @in_progress_goals = Goal.where(status: :in_progress).order(:due_date)
-    @on_hold_goals     = Goal.where(status: :on_hold).order(:due_date)
-    @completed_goals   = Goal.where(status: :completed).order(:due_date)
+    # Paginate goals
+    @goals, @goal_page, @goal_total_pages = paginate(Goal.all, per_page: 25)
 
-    @not_started_tasks = Task.where(status: :not_started).order(:due_date)
-    @in_progress_tasks = Task.where(status: :in_progress).order(:due_date)
-    @on_hold_tasks     = Task.where(status: :on_hold).order(:due_date)
-    @completed_tasks   = Task.where(status: :completed).order(:due_date)
-    
+    @not_started_goals = Goal.not_started.order(:due_date)
+    @in_progress_goals = Goal.in_progress.order(:due_date)
+    @on_hold_goals     = Goal.on_hold.order(:due_date)
+    @completed_goals   = Goal.completed.order(:due_date)
+
+    @not_started_tasks = Task.not_started.order(:due_date)
+    @in_progress_tasks = Task.in_progress.order(:due_date)
+    @on_hold_tasks     = Task.on_hold.order(:due_date)
+    @completed_tasks   = Task.completed.order(:due_date)
+
     @goal_counts = {
-    not_started: Goal.not_started.count,
-    in_progress: Goal.in_progress.count,
-    on_hold:     Goal.on_hold.count,
-    completed:   Goal.completed.count
+      not_started: Goal.not_started.count,
+      in_progress: Goal.in_progress.count,
+      on_hold:     Goal.on_hold.count,
+      completed:   Goal.completed.count
     }
 
     @task_counts = {
@@ -39,11 +42,11 @@ class DashboardController < ApplicationController
     @due_today_goals_completed = Goal.completed.where(due_date: Time.zone.today).count
 
     remaining_tasks_today = Task.where.not(status: :completed)
-                      .where(due_date: Time.zone.today.all_day)
+                                .where(due_date: Time.zone.today.all_day)
 
     @total_estimated_minutes_today = remaining_tasks_today.sum(:estimated_time).to_i
-    @total_actual_minutes_today = remaining_tasks_today.sum(:actual_time).to_i
-    @time_remaining_minutes_today = @total_estimated_minutes_today - @total_actual_minutes_today
+    @total_actual_minutes_today    = remaining_tasks_today.sum(:actual_time).to_i
+    @time_remaining_minutes_today  = @total_estimated_minutes_today - @total_actual_minutes_today
     
     @ideas = Idea.includes(goals: :tasks).map do |idea|
       emoji = IDEAS[idea.title] || "❓"

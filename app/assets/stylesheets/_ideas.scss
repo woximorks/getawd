@@ -1,0 +1,30 @@
+.ideas-indicator {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+
+  .idea-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 2rem;
+    transition: transform 0.15s ease-in-out;
+
+    &:hover { transform: scale(1.08); }
+
+    .idea-link {
+      text-decoration: none;
+      font-size: 2.25rem;
+    }
+
+    .idea-label {
+      font-size: 0.75rem;
+      margin-top: 4px;
+      color: inherit;
+    }
+  }
+}

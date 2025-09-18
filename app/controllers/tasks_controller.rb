@@ -2,44 +2,31 @@ class TasksController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @tasks = Task.all
+  scope = Task.all
 
-    # Filter by status (e.g., 'not_started')
-    if params[:status].present? && Task.statuses.key?(params[:status])
-      @tasks = @tasks.where(status: Task.statuses[params[:status]])
-    end
+  # existing filters (status, due date, goal_id, sort, search)…
+  if params[:status].present? && Task.statuses.key?(params[:status])
+    scope = scope.where(status: Task.statuses[params[:status]])
+  end
 
-    # Filter by due date (e.g., '2025-07-07')
-    if params[:due].present?
-      begin
-        date = Time.zone.parse(params[:due]).to_date
-        @tasks = @tasks.where(due_date: date)
-      rescue ArgumentError
-        # ignore bad date
-      end
+  if params[:due].present?
+    begin
+      date = Time.zone.parse(params[:due]).to_date
+      scope = scope.where(due_date: date)
+    rescue ArgumentError
     end
-  
-    # Filter by goal if goal_id is provided
-    if params[:goal_id].present?
-      @tasks = @tasks.where(goal_id: params[:goal_id])
-    end
-  
-    # Sorting logic
-    allowed_sort_columns = %w[task_name status priority due_date]
-    if params[:sort].present? && allowed_sort_columns.include?(params[:sort])
-      @tasks = @tasks.order(params[:sort])
-    end
-  
-    # Search filter
-    if params[:search].present?
-      @tasks = @tasks.where("task_name ILIKE ?", "%#{params[:search]}%")
-    end
-  
-    # Pagination (manual, 10 tasks per page)
-    @page = (params[:page] || 1).to_i
-    @per_page = 100
-    @total_pages = (@tasks.count / @per_page.to_f).ceil
-    @tasks = @tasks.offset((@page - 1) * @per_page).limit(@per_page)
+  end
+
+  scope = scope.where(goal_id: params[:goal_id]) if params[:goal_id].present?
+
+  allowed_sort_columns = %w[task_name status priority due_date]
+  if params[:sort].present? && allowed_sort_columns.include?(params[:sort])
+    scope = scope.order(params[:sort])
+  end
+
+  scope = scope.where("task_name ILIKE ?", "%#{params[:search]}%") if params[:search].present?
+
+  @tasks, @page, @total_pages = paginate(scope, per_page: 25)
   end
   
   # Action to show a specific task
