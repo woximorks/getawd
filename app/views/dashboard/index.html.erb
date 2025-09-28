@@ -18,10 +18,30 @@
             idea_path(entry[:id]),
             class: "idea-link",
             title: "#{entry[:goals_count]} goal(s), #{entry[:tasks_count]} task(s)" %>
+
           <div class="idea-label"><%= entry[:title] %></div>
+
+          <div class="idea-stats">
+            <div class="completed">✅ <%= entry[:completed_time] %>m</div>
+            <div class="upcoming">⏳ <%= entry[:upcoming_time] %>m</div>
+            <div class="partial">➖ <%= entry[:partial_time] %>m</div>
+          </div>
         </div>
       <% end %>
     </div>
+
+    <div class="time-legend">
+      <div class="legend-item">
+        ✅ Completed — Total actual minutes logged on finished tasks
+      </div>
+      <div class="legend-item">
+        ⏳ Upcoming — Remaining minutes (estimated − actual) for tasks not yet completed
+      </div>
+      <div class="legend-item">
+        ➖ Partial — Minutes already logged on tasks currently in progress
+      </div>
+    </div>
+
     <div class="dashboard-nav">
       <%= link_to "➕ New Task", new_task_path, class: "new-task-btn" %>
       <%= link_to "➕ New Goal", new_goal_path, class: "new-goal-btn" %>

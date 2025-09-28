@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   resources :blog_posts, only: [:index, :show]
   resources :games,     only: [:index, :show]
   resources :ideas, only: [:show]
+  resources :idea_stats, only: [:index]
   resources :projects,  only: [:index, :show]
   resources :videos,    only: [:index, :show]
   resources :rewards,   only: [:index, :new, :create, :destroy] do

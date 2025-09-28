@@ -47,7 +47,8 @@ class DashboardController < ApplicationController
     @total_estimated_minutes_today = remaining_tasks_today.sum(:estimated_time).to_i
     @total_actual_minutes_today    = remaining_tasks_today.sum(:actual_time).to_i
     @time_remaining_minutes_today  = @total_estimated_minutes_today - @total_actual_minutes_today
-    
+
+    # Build ideas with stats included
     @ideas = Idea.includes(goals: :tasks).map do |idea|
       emoji = IDEAS[idea.title] || "❓"
 
@@ -71,7 +72,22 @@ class DashboardController < ApplicationController
         emoji: emoji,
         color: color,
         goals_count: goals.size,
-        tasks_count: tasks.size
+        tasks_count: tasks.size,
+
+        # ✅ total actual time for completed tasks
+        completed_time: tasks
+          .select { |t| t.status == "completed" || t.status == 3 }
+          .sum { |t| t.actual_time.to_i },
+
+        # ⏳ total remaining time (est - actual) for all not completed
+        upcoming_time: tasks
+          .reject { |t| t.status == "completed" || t.status == 3 }
+          .sum { |t| [t.estimated_time.to_i - t.actual_time.to_i, 0].max },
+
+        # ➖ actual time already logged on in_progress tasks
+        partial_time: tasks
+          .select { |t| t.status == "in_progress" || t.status == 1 }
+          .sum { |t| t.actual_time.to_i }
       }
     end
   end

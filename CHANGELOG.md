@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.18.4] - 2025-09-28
+
+### Changed
+- Consolidated duplicate `.dashboard-panel` definitions into a single block
+- Split out `.status-legend` (color-coded recency) and `.time-legend` (emoji-based time stats) into separate, non-conflicting sections
+- Made `.time-legend` display as a vertical stack with left-aligned items for improved readability
+- Simplified `.idea-box` styles by moving `.idea-stats` handling inside each tile instead of relying on `.idea-stats-panel`
+- Removed unused `.idea-stats-panel` and `.idea-stat-box` styles, as stats now live inside individual idea tiles
+
 ## [1.18.3] – 2025-09-27
 
 ### Changed
