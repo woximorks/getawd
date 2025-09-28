@@ -38,23 +38,21 @@
   border-radius: 0.75rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 
-  .idea-status-legend {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin: 1rem 0;
+  .new-task-btn, .new-goal-btn {
+    display: inline-block;
+    margin: .5rem;
+    margin-bottom: 0;
+    padding: 0.5rem 1rem;
+    background-color: #0056b3;
+    color: #fff;
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
 
-    .legend-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.9rem;
-
-      .color-box {
-        width: 15px;
-        height: 15px;
-        border-radius: 3px;
-      }
+    &:hover {
+      background-color: #006de1;
     }
   }
 }
