@@ -63,6 +63,17 @@ class TasksController < ApplicationController
     @task.destroy
     redirect_to tasks_url, notice: 'Task was successfully deleted.'
   end
+
+  def complete_on_time
+  @task = Task.find(params[:id])
+  @task.update(
+    status: :completed,
+    completion_date: Date.today,
+    actual_time: @task.estimated_time
+  )
+  redirect_to @task, notice: "Task completed on time."
+  end
+
   private
 
   def task_params

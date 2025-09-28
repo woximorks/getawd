@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.18.1] – 2025-09-27
+
+### Added
+- New `complete_on_time` member route for tasks
+- `TasksController#complete_on_time` action to mark a task as completed with:
+  - `completion_date = Time.zone.today`
+  - `actual_time = estimated_time`
+- "Complete On Time Today" button on task show page to trigger the action
+- `.actions-list` class for styling action links/buttons on task and goal show pages
+- New SCSS rules for `.actions-list` with centered column layout, consistent spacing, and styled dividers
+
+### Changed
+- Task show view updated to only display the "Complete On Time Today" button if the task is not already completed
+- Task show page updated to render inside `.task-card` for consistency with index views
+- Goal show page updated to render inside `.goal-card` for consistency with index views
+- Replaced raw `<hr>` separators in show page action lists with `.divider` list items styled via SCSS
+
 ## [1.18.0] – 2025-09-17
 
 ### Added

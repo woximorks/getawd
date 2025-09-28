@@ -12,7 +12,11 @@ Rails.application.routes.draw do
 
   # Resources
   resources :goals
-  resources :tasks
+  resources :tasks do
+    member do
+      patch :complete_on_time
+    end
+  end
   resources :documents
   resources :about,     only: [:index]
   resources :contacts,  only: [:index]
