@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.18.3] – 2025-09-27
+
+### Changed
+- Completing a goal toady should actually make it complete today, even if we're not in UTC. :|
+
 ## [1.18.2] – 2025-09-27
 
 ### Changed

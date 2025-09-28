@@ -68,7 +68,7 @@ class TasksController < ApplicationController
   @task = Task.find(params[:id])
   @task.update(
     status: :completed,
-    completion_date: Date.today,
+    completion_date: Time.zone.today,
     actual_time: @task.estimated_time
   )
   redirect_to @task, notice: "Task completed on time."
