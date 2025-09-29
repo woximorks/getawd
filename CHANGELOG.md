@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.18.5] - 2025-09-28
+
+### Changed
+- Tasks are now sorted by priority: `nil` values appear first, followed by ascending numbers (lowest at the top, highest at the bottom).
+- Some other updates made to goal / task views to center content.
+
 ## [1.18.4] - 2025-09-28
 
 ### Changed

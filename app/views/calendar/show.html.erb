@@ -5,7 +5,7 @@
         <!-- Fetch tasks for this specific date, adjusted for timezone -->
         <% tasks_for_date = @tasks.select { |task| task.due_date.in_time_zone.to_date == date } %>
 
-        <% tasks_for_date.each do |task| %>
+      <% tasks_for_date.sort_by { |t| [t.priority.nil? ? -1 : t.priority] }.each do |task| %>
           <li class="task">
             <%= link_to (GOAL_ICONS[task.goal.category] || "📝"), task_path(task), title: task.task_name %> | 
             <span><%= task.task_name %></span> |
@@ -39,7 +39,7 @@
       <!-- Fetch tasks for this specific date, adjusted for timezone -->
       <% tasks_for_date = @tasks.select { |task| task.due_date.in_time_zone.to_date == date } %>
 
-      <% tasks_for_date.each do |task| %>
+      <% tasks_for_date.sort_by { |t| [t.priority.nil? ? -1 : t.priority] }.each do |task| %>
         <li class="task">
           <%= link_to (GOAL_ICONS[task.goal.category] || "📝"), task_path(task), title: task.task_name %> | 
             <span class="estimated-time" style="font-family: 'Orbitron';">
