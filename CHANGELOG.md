@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.18.6] - 2025-10-03
+
+### Added
+- Support for repeating tasks daily until a user-specified date (`repeat_until` field).
+- Validation in controller to prevent `repeat_until` date from being before the initial `due_date`.
+
+### Changed
+- Simplified task creation logic by removing `repeat_type` options ("week", "month").
+- Controller `create` action cleaned up with proper nesting and single redirect/render paths.
+- Task form updated to only show a `repeat_until` date field for new tasks.
+
 ## [1.18.5] - 2025-09-28
 
 ### Changed
